@@ -16,8 +16,7 @@ import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from google import genai
-from google.genai import types
+import google.generativeai as genai
 
 MODEL = "gemini-1.5-flash-latest"
 
@@ -130,7 +129,6 @@ WEEKDAY_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 def extract_json(text: str) -> str:
     text = re.sub(r"```(?:json)?\s*", "", text)
     text = text.replace("```", "").strip()
-    # Remove inline citation brackets like [1] [2] that Gemini sometimes adds
     text = re.sub(r"\[\d+\]", "", text)
 
     start = text.find("{")
@@ -150,8 +148,22 @@ def extract_json(text: str) -> str:
 
 
 def call_gemini() -> dict:
-    api_key = os.environ["GEMINI_API_KEY"]
-    client = genai.Client(api_key=api_key)
+    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+
+    search_tool = genai.protos.Tool(
+        google_search_retrieval=genai.protos.GoogleSearchRetrieval(
+            dynamic_retrieval_config=genai.protos.DynamicRetrievalConfig(
+                mode=genai.protos.DynamicRetrievalConfig.Mode.MODE_DYNAMIC,
+                dynamic_threshold=0.0,
+            )
+        )
+    )
+
+    model = genai.GenerativeModel(
+        model_name=MODEL,
+        system_instruction=SYSTEM_PROMPT,
+        tools=[search_tool],
+    )
 
     now = datetime.now(ZoneInfo("Asia/Taipei"))
     user_prompt = USER_PROMPT_TEMPLATE.format(
@@ -160,15 +172,7 @@ def call_gemini() -> dict:
         now_time=now.strftime("%H:%M"),
     )
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=[user_prompt],
-        config=types.GenerateContentConfig(
-            system_instruction=SYSTEM_PROMPT,
-            tools=[types.Tool(google_search=types.GoogleSearch())],
-            temperature=0.1,
-        ),
-    )
+    response = model.generate_content(user_prompt)
 
     raw_text = response.text
     if not raw_text:
