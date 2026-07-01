@@ -68,3 +68,4 @@ jobs:
             --image-url "${BASE_URL}/card.png" \
             --preview-url "${BASE_URL}/card_preview.png" \
             --text-file "reports/${DATE}/line_text.txt"
+
