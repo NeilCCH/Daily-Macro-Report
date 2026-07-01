@@ -34,10 +34,10 @@ jobs:
         id: workday
         run: python scripts/check_workday.py
 
-      - name: Generate report (Claude + web search)
+      - name: Generate report (Gemini + Google Search)
         if: steps.workday.outputs.is_workday == 'true'
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/generate_report.py --out-dir "reports/${{ steps.workday.outputs.report_date }}"
 
       - name: Render card image

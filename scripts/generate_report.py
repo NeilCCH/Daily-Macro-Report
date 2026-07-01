@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
-"""Call the Claude API (with the server-side web_search tool) to research
+"""Call the Gemini API (with Google Search grounding) to research
 overnight global macro/market data and produce today's "每日晨報".
 
 Outputs (into --out-dir, default reports/<date>/):
   report.json     structured data consumed by make_card.py
   line_text.txt   the literal LINE text message body
 
-Requires env var ANTHROPIC_API_KEY.
+Requires env var GEMINI_API_KEY.
 """
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-import anthropic
+from google import genai
+from google.genai import types
 
-MODEL = "claude-opus-4-8"
+MODEL = "gemini-2.0-flash"
 
 SYSTEM_PROMPT = """\
 你是 Neil 的「每日晨報」研究與編輯助手。Neil 是一位資深保險經紀業務主管，
@@ -36,7 +38,7 @@ SYSTEM_PROMPT = """\
   且要在合理時間範圍內（最近一次收盤後到現在）。若搜尋不到某項數據，這一項
   就整列省略，不要寫 N/A、「無數據」、「--」等占位字樣。
 
-# 需要搜尋的資料（請分別搜尋，必要時可用網頁擷取補充財經新聞網站）
+# 需要搜尋的資料（請使用 Google Search 搜尋，必要時分多次搜尋）
 - S&P 500 收盤指數與漲跌幅
 - 費城半導體指數（SOX）收盤與漲跌幅
 - 日經 225（Nikkei 225）收盤與漲跌幅
@@ -78,17 +80,17 @@ SYSTEM_PROMPT = """\
   講「預期報酬」「績效」「賺多少」。
 
 # 輸出格式（極重要，必須嚴格遵守）
-你必須只回傳一個 JSON 物件，不要有任何 JSON 以外的文字、不要用 markdown code
-fence 包裹。JSON 結構如下：
+你必須只回傳一個 JSON 物件，不要有任何 JSON 以外的文字，不要用 markdown code
+fence 包裹，不要加任何引用來源標記或數字角標。JSON 結構如下：
 
 {
-  "report_date": "yyyy/mm/dd",            // 台灣今天日期
-  "us_market_closed": false,              // 美股是否休市（true 則 rows 可為空陣列）
+  "report_date": "yyyy/mm/dd",
+  "us_market_closed": false,
   "sections": {
-    "us_market": [ {"label": "S&P 500", "value": "5,420.12", "change_pct": "+0.45%", "up": true}, ... ],
-    "asia_market": [ {"label": "日經225", "value": "...", "change_pct": "...", "up": true}, ... ],
-    "fx": [ {"label": "美元/新台幣", "value": "32.10", "change_pct": "+0.12%", "up": true}, ... ],
-    "commodity_rate": [ {"label": "WTI原油", "value": "...", "change_pct": "...", "up": false}, ... ]
+    "us_market": [ {"label": "S&P 500", "value": "5,420.12", "change_pct": "+0.45%", "up": true} ],
+    "asia_market": [ {"label": "日經225", "value": "...", "change_pct": "...", "up": true} ],
+    "fx": [ {"label": "美元/新台幣", "value": "32.10", "change_pct": "+0.12%", "up": true} ],
+    "commodity_rate": [ {"label": "WTI原油", "value": "...", "change_pct": "...", "up": false} ]
   },
   "highlights": "今日重點，1-2句話",
   "business_angle": "今日業務切入點，1句關心問候開場白",
@@ -118,14 +120,39 @@ fence 包裹。JSON 結構如下：
 換行位置要避免把一個詞拆成兩行。"""
 
 USER_PROMPT_TEMPLATE = """\
-今天台灣日期是 {today}（{weekday}），現在台灣時間 {now_time}。
-請開始搜尋上述所有資料，整理後直接回傳符合規格的 JSON（只回傳 JSON，不要任何其他文字）。"""
+今天台灣日期是 {today}（週{weekday}），現在台灣時間 {now_time}。
+請使用 Google Search 搜尋上述所有市場資料，整理後直接回傳符合規格的 JSON。
+只回傳 JSON 物件本身，不要任何其他文字，不要 markdown fence，不要引用角標。"""
 
 WEEKDAY_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
 
-def call_claude() -> dict:
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+def extract_json(text: str) -> str:
+    text = re.sub(r"```(?:json)?\s*", "", text)
+    text = text.replace("```", "").strip()
+    # Remove inline citation brackets like [1] [2] that Gemini sometimes adds
+    text = re.sub(r"\[\d+\]", "", text)
+
+    start = text.find("{")
+    if start == -1:
+        raise ValueError(f"No JSON object found in response: {text[:300]}")
+
+    depth = 0
+    for i, c in enumerate(text[start:], start):
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start : i + 1]
+
+    raise ValueError("Unclosed JSON object in Gemini response")
+
+
+def call_gemini() -> dict:
+    api_key = os.environ["GEMINI_API_KEY"]
+    client = genai.Client(api_key=api_key)
+
     now = datetime.now(ZoneInfo("Asia/Taipei"))
     user_prompt = USER_PROMPT_TEMPLATE.format(
         today=now.strftime("%Y/%m/%d"),
@@ -133,37 +160,22 @@ def call_claude() -> dict:
         now_time=now.strftime("%H:%M"),
     )
 
-    messages = [{"role": "user", "content": user_prompt}]
-    tools = [{"type": "web_search_20260209", "name": "web_search"}]
+    response = client.models.generate_content(
+        model=MODEL,
+        contents=[user_prompt],
+        config=types.GenerateContentConfig(
+            system_instruction=SYSTEM_PROMPT,
+            tools=[types.Tool(google_search=types.GoogleSearch())],
+            temperature=0.1,
+        ),
+    )
 
-    final_text_parts = []
-    while True:
-        response = client.messages.create(
-            model=MODEL,
-            max_tokens=4096,
-            system=SYSTEM_PROMPT,
-            tools=tools,
-            messages=messages,
-        )
+    raw_text = response.text
+    if not raw_text:
+        raise ValueError("Empty response from Gemini API")
 
-        for block in response.content:
-            if block.type == "text":
-                final_text_parts.append(block.text)
-
-        if response.stop_reason == "pause_turn":
-            messages.append({"role": "assistant", "content": response.content})
-            continue
-
-        break
-
-    raw_text = "".join(final_text_parts).strip()
-    if raw_text.startswith("```"):
-        raw_text = raw_text.strip("`")
-        if raw_text.startswith("json"):
-            raw_text = raw_text[4:]
-        raw_text = raw_text.strip()
-
-    return json.loads(raw_text)
+    json_str = extract_json(raw_text.strip())
+    return json.loads(json_str)
 
 
 def main() -> None:
@@ -171,7 +183,7 @@ def main() -> None:
     parser.add_argument("--out-dir", default=None)
     args = parser.parse_args()
 
-    report = call_claude()
+    report = call_gemini()
 
     today = datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y-%m-%d")
     out_dir = args.out_dir or os.path.join("reports", today)
