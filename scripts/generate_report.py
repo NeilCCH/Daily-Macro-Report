@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Call the Gemini API (with Google Search grounding) to research
+"""Call the Gemini REST API (with Google Search grounding) to research
 overnight global macro/market data and produce today's "每日晨報".
 
 Outputs (into --out-dir, default reports/<date>/):
   report.json     structured data consumed by make_card.py
   line_text.txt   the literal LINE text message body
 
-Requires env var GEMINI_API_KEY.
+Requires env var GEMINI_API_KEY (Google AI Studio key).
 """
 import argparse
 import json
@@ -16,9 +16,17 @@ import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-import google.generativeai as genai
+import requests
 
-MODEL = "gemini-1.5-flash-latest"
+GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+# Tried in order; first 200 wins
+MODELS = [
+    "gemini-1.5-flash-latest",
+    "gemini-1.5-flash-002",
+    "gemini-1.5-flash-001",
+    "gemini-2.0-flash",
+    "gemini-1.5-pro-latest",
+]
 
 SYSTEM_PROMPT = """\
 你是 Neil 的「每日晨報」研究與編輯助手。Neil 是一位資深保險經紀業務主管，
@@ -130,11 +138,9 @@ def extract_json(text: str) -> str:
     text = re.sub(r"```(?:json)?\s*", "", text)
     text = text.replace("```", "").strip()
     text = re.sub(r"\[\d+\]", "", text)
-
     start = text.find("{")
     if start == -1:
-        raise ValueError(f"No JSON object found in response: {text[:300]}")
-
+        raise ValueError(f"No JSON object in response: {text[:300]}")
     depth = 0
     for i, c in enumerate(text[start:], start):
         if c == "{":
@@ -143,28 +149,11 @@ def extract_json(text: str) -> str:
             depth -= 1
             if depth == 0:
                 return text[start : i + 1]
-
-    raise ValueError("Unclosed JSON object in Gemini response")
+    raise ValueError("Unclosed JSON in response")
 
 
 def call_gemini() -> dict:
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-
-    search_tool = genai.protos.Tool(
-        google_search_retrieval=genai.protos.GoogleSearchRetrieval(
-            dynamic_retrieval_config=genai.protos.DynamicRetrievalConfig(
-                mode=genai.protos.DynamicRetrievalConfig.Mode.MODE_DYNAMIC,
-                dynamic_threshold=0.0,
-            )
-        )
-    )
-
-    model = genai.GenerativeModel(
-        model_name=MODEL,
-        system_instruction=SYSTEM_PROMPT,
-        tools=[search_tool],
-    )
-
+    api_key = os.environ["GEMINI_API_KEY"]
     now = datetime.now(ZoneInfo("Asia/Taipei"))
     user_prompt = USER_PROMPT_TEMPLATE.format(
         today=now.strftime("%Y/%m/%d"),
@@ -172,14 +161,56 @@ def call_gemini() -> dict:
         now_time=now.strftime("%H:%M"),
     )
 
-    response = model.generate_content(user_prompt)
+    payload = {
+        "systemInstruction": {"parts": [{"text": SYSTEM_PROMPT}]},
+        "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
+        "tools": [
+            {
+                "googleSearchRetrieval": {
+                    "dynamicRetrievalConfig": {
+                        "mode": "MODE_DYNAMIC",
+                        "dynamicThreshold": 0.0,
+                    }
+                }
+            }
+        ],
+        "generationConfig": {"temperature": 0.1},
+    }
 
-    raw_text = response.text
-    if not raw_text:
-        raise ValueError("Empty response from Gemini API")
+    last_error = None
+    for model in MODELS:
+        url = f"{GEMINI_BASE}/{model}:generateContent"
+        print(f"Trying {model} ...", file=sys.stderr)
+        try:
+            resp = requests.post(
+                url,
+                params={"key": api_key},
+                json=payload,
+                timeout=120,
+            )
+        except requests.RequestException as e:
+            print(f"  Request error: {e}", file=sys.stderr)
+            last_error = e
+            continue
 
-    json_str = extract_json(raw_text.strip())
-    return json.loads(json_str)
+        if resp.status_code == 200:
+            print(f"  OK with {model}", file=sys.stderr)
+            data = resp.json()
+            parts = data["candidates"][0]["content"]["parts"]
+            text = "".join(p.get("text", "") for p in parts)
+            return json.loads(extract_json(text))
+
+        print(f"  {resp.status_code}: {resp.text[:200]}", file=sys.stderr)
+        last_error = resp.status_code
+        if resp.status_code not in (400, 404, 429):
+            # Unexpected error — stop trying
+            resp.raise_for_status()
+
+    raise RuntimeError(
+        f"All Gemini models failed. Last error: {last_error}\n"
+        "Check that GEMINI_API_KEY is a valid AI Studio key and "
+        "the Generative Language API is enabled for the project."
+    )
 
 
 def main() -> None:
@@ -198,7 +229,6 @@ def main() -> None:
 
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
-
     with open(text_path, "w", encoding="utf-8") as f:
         f.write(report["line_text"])
 
