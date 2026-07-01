@@ -19,7 +19,7 @@ from zoneinfo import ZoneInfo
 from google import genai
 from google.genai import types
 
-MODEL = "gemini-2.0-flash"
+MODEL = "gemini-1.5-flash"
 
 SYSTEM_PROMPT = """\
 你是 Neil 的「每日晨報」研究與編輯助手。Neil 是一位資深保險經紀業務主管，
