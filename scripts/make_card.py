@@ -19,6 +19,7 @@ NAVY = (20, 38, 66)
 GOLD = (212, 175, 55)
 RED_UP = (214, 40, 40)
 GREEN_DOWN = (30, 140, 80)
+FLAT = (120, 128, 142)
 INK = (32, 32, 32)
 SUBINK = (90, 90, 90)
 WHITE = (255, 255, 255)
@@ -75,11 +76,21 @@ def load_fonts():
     }
 
 
+def row_direction(row):
+    """Return 'up' | 'down' | 'flat'. Honors explicit row['dir'], else falls back
+    to the legacy boolean row['up']."""
+    d = row.get("dir")
+    if d in ("up", "down", "flat"):
+        return d
+    return "up" if row.get("up") else "down"
+
+
 def draw_rows(draw, fonts, y, rows):
     for row in rows:
         draw.text((MARGIN + 20, y), row["label"], font=fonts["row_label"], fill=INK)
-        color = RED_UP if row.get("up") else GREEN_DOWN
-        arrow = "▲" if row.get("up") else "▼"
+        direction = row_direction(row)
+        color = {"up": RED_UP, "down": GREEN_DOWN, "flat": FLAT}[direction]
+        arrow = {"up": "▲", "down": "▼", "flat": "→"}[direction]
         value_text = f"{row['value']}  {arrow}{row.get('change_pct', '')}"
         bbox = draw.textbbox((0, 0), value_text, font=fonts["row_value"])
         text_w = bbox[2] - bbox[0]
@@ -133,7 +144,10 @@ def draw_box(draw, fonts, y, title, body, bg, accent):
 
 def render(report: dict, out_path: str) -> None:
     fonts = load_fonts()
-    height_estimate = 1400
+    # Generous canvas; the final crop trims to the actual content height. Must stay
+    # larger than any real card (3 US rows + 5 commodity rows + 3 wrapped text boxes
+    # already reach ~1650px), otherwise overflow gets padded black by the crop.
+    height_estimate = 2600
     img = Image.new("RGB", (WIDTH, height_estimate), WHITE)
     draw = ImageDraw.Draw(img)
 
@@ -168,10 +182,16 @@ def render(report: dict, out_path: str) -> None:
     y = draw_box(draw, fonts, y, "今日業務切入點", report.get("business_angle", ""), BOX_BLUE_BG, BOX_BLUE_ACCENT)
     y = draw_box(draw, fonts, y, "貼心小語", report.get("caring_note", ""), BOX_PINK_BG, BOX_PINK_ACCENT)
 
-    footer_text = "資料來源：即時網路搜尋·僅供參考，不構成任何投資建議"
+    # Footer: source line (data-driven) + fixed internal-use disclaimer.
+    source_line = report.get(
+        "source_note", "資料來源：TheStreet / Yahoo Finance / Reuters"
+    )
+    footer_lines = [source_line, "本訊息僅供內部參考，不構成投資建議。"]
     y += 12
-    draw.text((MARGIN, y), footer_text, font=fonts["footer"], fill=SUBINK)
-    y += 36
+    for line in footer_lines:
+        draw.text((MARGIN, y), line, font=fonts["footer"], fill=SUBINK)
+        y += 30
+    y += 6
 
     img = img.crop((0, 0, WIDTH, y))
     img.save(out_path, "PNG", optimize=True)
