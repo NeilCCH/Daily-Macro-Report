@@ -227,17 +227,18 @@ https://raw.githubusercontent.com/NeilCCH/daily-macro-report/<BRANCH>/reports/<D
 
 > 註：本流程走 Claude Code Routine，這兩個環境變數要設在 **Claude Code 環境（Environment）設定**裡，不是 GitHub Secrets（GitHub Secrets 只給 GitHub Actions 用）。若 sandbox 內讀不到（`echo $LINE_GROUP_IDS` 為空），就無法自動推播，此時保留已產出的 `card.png` 與 `line_text.txt` 供人工張貼，並回報缺少環境變數。
 
+**只推送圖片卡片，不推送文字訊息**（不要帶 `--text-file`）：
+
 ```bash
 DATE="<YYYY-MM-DD>"
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 BASE="https://raw.githubusercontent.com/NeilCCH/daily-macro-report/${BRANCH}/reports/${DATE}"
 python scripts/push_line.py \
   --image-url "${BASE}/card.png" \
-  --preview-url "${BASE}/card_preview.png" \
-  --text-file "reports/${DATE}/line_text.txt"
+  --preview-url "${BASE}/card_preview.png"
 ```
 
-`push_line.py` 會對每個群組送出「圖片訊息＋文字訊息」，並逐一回報成功與否。
+`push_line.py` 會對每個群組送出「圖片訊息」，並逐一回報成功與否。`line_text.txt` 仍會產生，作為卡片內容來源與 repo 記錄，但**不推送到 LINE**。
 
 ---
 
@@ -245,5 +246,5 @@ python scripts/push_line.py \
 
 - 工作日閘門為 `true` 才執行；否則明確回報已跳過。
 - `report.json`、`line_text.txt`、`card.png`、`card_preview.png` 都已產出並 commit/push。
-- 每個 LINE 群組都收到圖片＋文字，`push_line.py` 全部回報 OK。
+- 每個 LINE 群組都收到**圖片卡片**（不推送文字），`push_line.py` 全部回報 OK。
 - 全程遵守合規防呆規則；數字全部來自當次搜尋。
