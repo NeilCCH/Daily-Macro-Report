@@ -1,71 +1,59 @@
 # daily-macro-report
 
-每個台灣工作日早上自動產出「每日晨報」（全球總經/市場速報），並推播到 LINE 官方帳號
-**NeilCCH** 的 3 個業務群組。整條流程全部跑在 GitHub Actions 上（排程／抓資料／產圖／
-推播），不依賴任何外部圖床或本機/Claude Cloud session。
+每個台灣工作日早上（台北 08:00）自動產出「每日晨報」（全球總經/市場速報）卡片圖片，
+並推播到 LINE 官方帳號 **NeilCCH** 的 3 個業務群組。**只發圖片，不發文字。**
 
-## 架構
+## 架構（現行）
+
+整套跑在 **Claude Code Routine**（Anthropic 雲端），由 **Claude 本人**查證與撰寫，
+**不使用 Gemini、不使用任何外部 LLM API key**。電腦關機、人不在都照跑。
 
 ```
-GitHub Actions cron (00:00 UTC = 08:00 Asia/Taipei，每天觸發)
-  1. scripts/check_workday.py   讀 data/taiwan_calendar_<year>.json 判斷是否工作日
-  2. scripts/generate_report.py 呼叫 Claude API（web_search 工具）→ report.json + line_text.txt
-  3. scripts/make_card.py       依 report.json 用 Pillow 渲染 card.png + card_preview.png
-  4. commit + push 報告資產回 repo（raw.githubusercontent.com 網址立即生效，當圖床用）
-  5. scripts/push_line.py       對 3 個 LINE 群組呼叫 Messaging API pushMessage（圖片 + 文字）
+Claude Code Routine（工作日 08:00 台北）
+  1. scripts/check_workday.py   判斷是否台灣工作日；非工作日→整個跳過
+  2. Claude 用 WebSearch 抓最近收盤行情 + 當日財經新聞
+  3. Claude 依合規規則寫三段文案 → report.json + line_text.txt
+  4. scripts/make_card_html.py  → card.html
+     scripts/shot_card.js       → card.png + card_preview.png（內建 Chromium 截圖，免 Pillow）
+  5. git commit + push（raw.githubusercontent.com 當圖床）
+  6. scripts/push_line.py       對 3 個群組推播「圖片卡片」（不帶 --text-file）
 ```
 
-非工作日（假日／週末，且未被排成補班日）時，第 1 步之後的所有步驟都會被跳過。
+- 每日「執行流程」定義：`.claude/skills/daily-macro-report/SKILL.md`
+- **從零重建/搬移的完整手冊**：[`docs/RUNBOOK.md`](docs/RUNBOOK.md) ← 未來要重建看這份
 
-## 為什麼全部跑在 GitHub Actions
+## 快速重點
 
-Claude Cloud session 的網路代理層會封鎖 `api.line.me` 與一般圖床（已實測確認 403），
-但放行 GitHub 網域。因此 LINE 推播與圖片託管都必須由 GitHub Actions（在 GitHub 自己
-的機器上執行，不受該代理限制）負責，而不是在互動式 Claude session 裡直接呼叫。
+- **repo 必須 public**：LINE 伺服器要抓 `raw.githubusercontent.com` 上的卡片圖。
+- **LINE token / 群組 ID 放在 Claude Code 環境變數**（`LINE_CHANNEL_ACCESS_TOKEN`、
+  `LINE_GROUP_IDS`），**不是** GitHub Secrets（Routine 跑在 Claude 雲端，讀不到 GitHub Secrets）。
+- **產圖不用 Pillow**：Claude sandbox 出網被擋裝不了；改用 base image 內建的
+  Chromium + 文泉驛正黑字型。產圖前設 `NODE_PATH=/opt/node22/lib/node_modules`。
 
-## 需要設定的 GitHub Actions Secrets
-
-到 repo **Settings → Secrets and variables → Actions** 新增：
-
-| Secret | 說明 |
-|---|---|
-| `ANTHROPIC_API_KEY` | Claude API 金鑰 |
-| `LINE_CHANNEL_ACCESS_TOKEN` | LINE Messaging API 的 Channel Access Token |
-| `LINE_GROUP_IDS` | 逗號分隔的群組 ID，例如 `Cxxxx1,Cxxxx2,Cxxxx3` |
-
-> ⚠️ **務必使用重新發行（Reissue）過的新 token。** 若這個 channel access token 曾經
-> 在任何聊天記錄、文件或截圖中以明文出現過，代表它已經外流，必須先到 LINE Developers
-> Console 重新發行/作廢舊 token，再把新 token 填進這個 Secret。Token 絕對不要寫進任何
-> 會被 commit 的檔案。
-
-## 本機測試
+## 產圖 / 推播手動測試
 
 ```bash
-pip install -r requirements.txt
-sudo apt-get install -y fonts-noto-cjk   # PNG 渲染需要中文字型
+export PATH=/opt/node22/bin:$PATH
+export NODE_PATH=/opt/node22/lib/node_modules
 
-export ANTHROPIC_API_KEY=...
-python scripts/generate_report.py --out-dir reports/test
-python scripts/make_card.py reports/test/report.json reports/test/card.png
+python3 scripts/make_card_html.py reports/<日期>/report.json reports/<日期>/card.html
+node scripts/shot_card.js reports/<日期>/card.html reports/<日期>/card.png reports/<日期>/card_preview.png
 
-export LINE_CHANNEL_ACCESS_TOKEN=...
-export LINE_GROUP_IDS=Cxxxx1
-python scripts/push_line.py \
-  --image-url https://raw.githubusercontent.com/<owner>/<repo>/<branch>/reports/test/card.png \
-  --preview-url https://raw.githubusercontent.com/<owner>/<repo>/<branch>/reports/test/card_preview.png \
-  --text-file reports/test/line_text.txt
+# 先用單一群組驗證圖片正常顯示，再放行全部群組
+SHA="<含該日報告的 commit SHA>"
+BASE="https://raw.githubusercontent.com/NeilCCH/daily-macro-report/${SHA}/reports/<日期>"
+FIRST=$(echo "$LINE_GROUP_IDS" | cut -d',' -f1)
+LINE_GROUP_IDS="$FIRST" python scripts/push_line.py \
+  --image-url "${BASE}/card.png" --preview-url "${BASE}/card_preview.png"
 ```
-
-建議先用單一群組（例如群組1）驗證圖片與文字都正確送達後，才把 `LINE_GROUP_IDS` 換成
-正式的 3 個群組。
-
-## 手動觸發整條 workflow
-
-在 GitHub repo 的 **Actions → Daily Macro Report → Run workflow** 可以手動觸發
-（`workflow_dispatch`），不需要等到隔天 08:00。
 
 ## 行事曆資料
 
-`data/taiwan_calendar_<year>.json` 取自台灣政府公開的工作日行事曆資料集，包含一般
-假日、週末，以及國定假日的補班日（`isHoliday: false` 的週六）。每年需要更新/新增對應
-年度的 JSON 檔。
+`data/taiwan_calendar_<year>.json` 為工作日判斷來源（含假日、週末、補班日）。
+**每年需新增次年度 JSON**，否則跨年後 `check_workday.py` 找不到當年度資料。
+
+## 舊架構（已停用）
+
+早期版本跑在 GitHub Actions + Gemini/Claude API + Pillow，並使用 GitHub Secrets。
+相關檔案 `scripts/generate_report.py`、`scripts/make_card.py` 已停用（保留供參考），
+`.github/workflows/daily-report.yml` 已移除。詳見 `docs/RUNBOOK.md` 第 11 節決策紀錄。
