@@ -8,9 +8,9 @@ description: 產出每日全球總經晨報（繁體中文文字訊息＋PNG 卡
 你正在為一位資深保險經紀業務主管（Neil）執行每日早晨的全球總經晨報任務。輸出會自動推播到他的 LINE 業務群組。本任務在**台灣時間早晨**於雲端自動執行，全程無人監看，請嚴格照下列步驟與規格完成，不要中途停下來問問題。
 
 最終要在 `reports/<YYYY-MM-DD>/` 產出並推播：
-- `report.json`：結構化資料（給 `make_card.py`）
+- `report.json`：結構化資料（給 `make_card_html.py`）
 - `line_text.txt`：可直接貼到 LINE 的繁體中文文字訊息
-- `card.png` / `card_preview.png`：晨報卡片圖片
+- `card.html` / `card.png` / `card_preview.png`：晨報卡片（HTML 排版 → Chromium 截圖）
 
 ---
 
@@ -84,7 +84,7 @@ python scripts/check_workday.py
 
 ## 步驟 3：寫出 `report.json`
 
-存到 `reports/<YYYY-MM-DD>/report.json`，格式（`make_card.py` 依此渲染）：
+存到 `reports/<YYYY-MM-DD>/report.json`，格式（`make_card_html.py` 依此渲染）：
 
 ```json
 {
@@ -175,13 +175,29 @@ Brent 原油：$72.20 🔻1.0%
 
 ---
 
-## 步驟 5：渲染卡片
+## 步驟 5：渲染卡片（HTML → Chromium 截圖）
+
+Claude Code 雲端 sandbox 的出網被政策擋掉（`pip install`／`apt install` 會 403），
+所以**不要用** Pillow 版的 `make_card.py`。改用 base image 內建的文泉驛正黑字型
+（`wqy-zenhei.ttc`）＋預裝的無頭 Chromium（全域 Playwright）產圖，全程不需外網、
+不需裝任何套件：
 
 ```bash
-python scripts/make_card.py "reports/<YYYY-MM-DD>/report.json" "reports/<YYYY-MM-DD>/card.png"
+export PATH=/opt/node22/bin:$PATH
+export NODE_PATH=/opt/node22/lib/node_modules   # 讓 node 找到全域 playwright
+# PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers 環境已預設
+
+python3 scripts/make_card_html.py \
+  "reports/<YYYY-MM-DD>/report.json" "reports/<YYYY-MM-DD>/card.html"
+node scripts/shot_card.js \
+  "reports/<YYYY-MM-DD>/card.html" \
+  "reports/<YYYY-MM-DD>/card.png" \
+  "reports/<YYYY-MM-DD>/card_preview.png"
 ```
 
-會同時輸出 `card.png` 與 `card_preview.png`（<1MB，給 LINE previewImageUrl）。紅漲綠跌、持平 `→`、畫布依內容自動裁切。若字型缺失，環境的 setup script 應已安裝 `fonts-noto-cjk`。
+會輸出 `card.html`、`card.png` 與 `card_preview.png`（<1MB，給 LINE previewImageUrl）。
+紅漲綠跌、持平 `→`、卡片高度依內容自動撐開。產完後用 Read 檢視 `card.png`，確認中文
+有正確渲染再繼續。
 
 ---
 
@@ -208,6 +224,8 @@ https://raw.githubusercontent.com/NeilCCH/daily-macro-report/<BRANCH>/reports/<D
 ## 步驟 7：推播到 LINE 群組
 
 需要環境變數 `LINE_CHANNEL_ACCESS_TOKEN` 與 `LINE_GROUP_IDS`（逗號分隔），以及網路白名單允許 `api.line.me`。
+
+> 註：本流程走 Claude Code Routine，這兩個環境變數要設在 **Claude Code 環境（Environment）設定**裡，不是 GitHub Secrets（GitHub Secrets 只給 GitHub Actions 用）。若 sandbox 內讀不到（`echo $LINE_GROUP_IDS` 為空），就無法自動推播，此時保留已產出的 `card.png` 與 `line_text.txt` 供人工張貼，並回報缺少環境變數。
 
 ```bash
 DATE="<YYYY-MM-DD>"

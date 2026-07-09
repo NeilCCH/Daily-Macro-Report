@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/07/09",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,465", "change_pct": "0.52%", "dir": "down"},
+      {"label": "NASDAQ", "value": "25,871", "change_pct": "0.20%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,300", "change_pct": "2.23%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,819", "change_pct": "2.11%", "dir": "down"},
+      {"label": "台股加權", "value": "45,734", "change_pct": "0.56%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.03", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "162.4", "change_pct": "0.20%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.81", "change_pct": "", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.877", "change_pct": "0.33%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$73.52", "change_pct": "4.4%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$78.02", "change_pct": "5.2%", "dir": "up"},
+      {"label": "黃金", "value": "$4,050", "change_pct": "", "dir": "down"},
+      {"label": "白銀", "value": "$58.4", "change_pct": "", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.57%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "川普宣布美伊停火「已結束」，中東緊張推升油價（WTI +4.4%、Brent +5.2%），美債殖利率彈升至4.57%；費半、那斯達克受聯準會會議紀要激勵、晶片股反彈而收紅，標普與日股則承壓走跌。",
+  "business_angle": "美10年期公債殖利率彈升至4.57%，正好與夥伴聊聊「資產配置中固定收益的角色」——美元利變型保單在長期規劃裡的定位，值得找時間一起檢視。",
+  "caring_note": "小暑時節暑氣漸盛，提醒夥伴們留意消暑保健，工作之餘也別忘了照顧好自己與家人的健康。",
+  "source_note": "資料來源：CNBC／The Street／鉅亨網／新浪財經・數據為2026/07/08最近交易日收盤"
+}
