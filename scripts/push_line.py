@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""Push today's report (image + text) to the LINE groups via pushMessage.
+"""Push today's report card image to the LINE groups via pushMessage.
+
+By default only the image card is sent. Passing --text-file additionally
+sends a text message, but the standard daily flow is image-only.
 
 Env vars required:
   LINE_CHANNEL_ACCESS_TOKEN
   LINE_GROUP_IDS          comma-separated group IDs
 
-Usage:
+Usage (image only, the default):
   push_line.py --image-url https://raw.githubusercontent.com/.../card.png \\
-               --preview-url https://raw.githubusercontent.com/.../card_preview.png \\
-               --text-file reports/2026-06-25/line_text.txt
+               --preview-url https://raw.githubusercontent.com/.../card_preview.png
 """
 import argparse
 import os
