@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/07/13",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,575.39", "change_pct": "0.42%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,281.61", "change_pct": "0.29%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,967.16", "change_pct": "0.04%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "68,557.73", "change_pct": "1.20%", "dir": "up"},
+      {"label": "台股加權", "value": "45,751", "change_pct": "0.87%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.07", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "161.7", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.78", "change_pct": "", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.88", "change_pct": "", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$71.77", "change_pct": "", "dir": "up"},
+      {"label": "Brent 原油", "value": "$76.03", "change_pct": "", "dir": "up"},
+      {"label": "黃金", "value": "$4,143.59", "change_pct": "1.48%", "dir": "up"},
+      {"label": "白銀", "value": "$60.61", "change_pct": "3.22%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.54%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美伊緊張再起、荷莫茲海峽航運疑慮推升金銀走高；SK海力士掛牌那斯達克首日大漲近13%，帶動半導體與科技股齊揚，市場靜候Fed七月利率會議。台股颱風休市後今日開盤補漲。",
+  "business_angle": "台股補漲、費半與日股同步走揚，是個提醒自己回頭看看投資型保單帳戶、養成定期檢視習慣的好時機。",
+  "caring_note": "大暑將至，盛夏悶熱多變，如同市場高低起伏，記得為自己與家人的保障和心情都預留一份從容。",
+  "source_note": "資料來源：CNBC / Yahoo Finance / 鉅亨網・美股為7/10最近交易日收盤，台股為7/13盤中"
+}
