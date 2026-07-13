@@ -90,6 +90,7 @@ def render(report: dict) -> str:
   #card {{
     width:1080px; background:#f4f6f9;
     font-family:'WenQuanYi Zen Hei','Noto Sans CJK TC',sans-serif;
+    font-weight:600;
     color:#202020;
   }}
   .hdr {{ background:#142642; padding:44px 56px 32px; position:relative; }}
