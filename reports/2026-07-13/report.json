@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/07/13",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,575", "change_pct": "0.42%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,282", "change_pct": "0.29%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,708", "change_pct": "1.95%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "68,558", "change_pct": "1.20%", "dir": "up"},
+      {"label": "台股加權", "value": "45,355", "change_pct": "0.83%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.18", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "161.7", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.78", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.88", "change_pct": "", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$71.41", "change_pct": "0.9%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$75.56", "change_pct": "1.0%", "dir": "down"},
+      {"label": "黃金", "value": "$4,099", "change_pct": "0.59%", "dir": "down"},
+      {"label": "白銀", "value": "$59.85", "change_pct": "", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.54%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美股續創高，S&P 500、那斯達克同步上漲，費半類股獲利了結拉回近2%；台股週四收黑，週五因颱風假休市；新台幣貶至32.18，美債殖利率連兩日回落。",
+  "business_angle": "美債殖利率近日連兩日回落、降息預期升溫，正好和客戶聊聊變動型保單宣告利率的長期觀察重點，一起重新檢視資產配置中固定收益的角色。",
+  "caring_note": "時序仍在小暑節氣，暑氣正盛，提醒夥伴多補水、留意早晚溫差，也別忘了關心客戶的保單健康。",
+  "source_note": "資料來源：CNBC／MarketScreener／日經／鉅亨網・美股與商品為2026/07/10最近交易日收盤，台股因颱風假提前至2026/07/09收盤"
+}
