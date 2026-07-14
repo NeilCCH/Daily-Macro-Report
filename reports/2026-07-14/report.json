@@ -9,24 +9,25 @@
     ],
     "asia_market": [
       {"label": "日經 225", "value": "67,243", "change_pct": "1.92%", "dir": "down"},
-      {"label": "台股加權", "value": "45,354", "change_pct": "0.83%", "dir": "down"}
+      {"label": "台股加權", "value": "45,354", "change_pct": "0.83%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "45,631", "change_pct": "0.14%", "dir": "up"}
     ],
     "fx": [
-      {"label": "USD / TWD", "value": "31.20", "change_pct": "", "dir": "up"},
-      {"label": "USD / JPY", "value": "162.0", "change_pct": "", "dir": "up"},
-      {"label": "USD / CNY", "value": "6.78", "change_pct": "", "dir": "up"},
-      {"label": "USD / EUR", "value": "0.877", "change_pct": "", "dir": "up"}
+      {"label": "USD / TWD", "value": "32.19", "change_pct": "0.20%", "dir": "down"},
+      {"label": "USD / JPY", "value": "162.4", "change_pct": "0.04%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.78", "change_pct": "0.04%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.878", "change_pct": "0.08%", "dir": "down"}
     ],
     "commodity_rate": [
-      {"label": "WTI 原油", "value": "$74.51", "change_pct": "4.0%", "dir": "up"},
-      {"label": "Brent 原油", "value": "$82.30", "change_pct": "4.3%", "dir": "up"},
-      {"label": "黃金", "value": "$4,063.5", "change_pct": "1.4%", "dir": "down"},
+      {"label": "WTI 原油", "value": "$79.31", "change_pct": "6.5%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$84.23", "change_pct": "6.3%", "dir": "up"},
+      {"label": "黃金", "value": "$4,011.9", "change_pct": "0.27%", "dir": "up"},
       {"label": "白銀", "value": "$58.25", "change_pct": "", "dir": "down"},
-      {"label": "美 10Y 公債", "value": "4.59%", "change_pct": "", "dir": "up"}
+      {"label": "美 10Y 公債", "value": "4.56%", "change_pct": "", "dir": "up"}
     ]
   },
-  "highlights": "美伊圍繞荷姆茲海峽情勢再度升溫，川普重申封鎖行動，帶動油價彈升逾4%、美債殖利率攀上七週高點；費半重挫3.6%，日經、台股同步收黑，市場對Fed維持高利率的預期升溫。",
-  "business_angle": "美債殖利率攀上七週高點，正是與夥伴聊聊「固定收益在資產配置中角色」的好時機——一起檢視美元利變型保單，在客戶長期規劃中的定位。",
+  "highlights": "美伊地緣緊張未歇，油價續飆逾6%、美債殖利率維持高檔；今日稍晚將公布6月CPI、Fed主席沃許首度赴國會作證，市場關注升息預期是否進一步升溫。",
+  "business_angle": "美債殖利率維持高檔、市場升息預期升溫，正是與夥伴聊聊「固定收益在資產配置中角色」的好時機——一起檢視美元利變型保單，在客戶長期規劃中的定位。",
   "caring_note": "今日交小暑、農曆迎來六月初一，暑氣漸盛也是新月份的起點，提醒夥伴多補水消暑，也為自己與家人的下半年立個照顧計畫。",
-  "source_note": "資料來源：CNBC／Yahoo Finance／經濟日報／鉅亨網・美股與原物料為7/13(一)最近交易日收盤，亞股為7/13(一)收盤（今日盤前）"
+  "source_note": "資料來源：Alpha Vantage／Twelve Data／Oil Price API／CNBC／經濟日報／工商時報・匯率與部分原物料為即時 API 報價，美股與亞股為 7/13(一) 最近交易日收盤"
 }
