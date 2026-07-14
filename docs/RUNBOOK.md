@@ -255,27 +255,38 @@ LINE_GROUP_IDS="$FIRST" python scripts/push_line.py \
 
 ---
 
-## 12.（尚未實作／待 Neil 決定是否要做）改用行情 API 取代部分 WebSearch
+## 12. 行情 API 取代部分 WebSearch（已實作，2026-07-14 上線）
 
-**背景**：WebSearch 常回傳過時或彼此矛盾的數字（同一數據要交叉查證 2-3 次），拖慢每日執行時間。曾評估改用 Alpha Vantage / Twelve Data / Finnhub 等有免費額度的行情 API 取代部分 WebSearch。
+**背景**：WebSearch 常回傳過時或彼此矛盾的數字（同一數據要交叉查證 2-3 次），拖慢每日執行時間。評估後改用 Alpha Vantage / Twelve Data / Oil Price API 這幾個有免費額度的行情 API，取代部分 WebSearch。
 
-**實測結論（2026-07-14）**：sandbox 的網路政策是**明確白名單**，不是黑名單擋特定站——目前只有 `api.line.me`、`github.com`/`api.github.com` 這類已核准的網域能連，其餘一律 403（不論有沒有 API key）。實測直接 403 的網域：`www.alphavantage.co`、`api.twelvedata.com`、`finnhub.io`、`api.frankfurter.dev`、`api.gold-api.com`、`openapi.taifex.tw`。**這代表在「Network access」允許清單加入新網域，是這個方案能不能動的前提，比申請 API key 更優先。**
+**網路政策**：sandbox 的網路政策是**明確白名單**，不是黑名單擋特定站。要讓新的 API 網域能連，必須到 Claude Code 環境設定 → **Network access** → 選 **Custom** → 把網域加入允許清單（不要選 Full，沒必要開放到套件庫等無關網域）：
+```
+www.alphavantage.co
+api.twelvedata.com
+api.oilpriceapi.com
+```
+「Also include default list of common package managers」**不勾**——這次不需要 pip/npm，維持最小權限。
 
-**若之後要啟用，建議的分工（尚未寫成程式）**：
+**已實作、每天會自動使用**（`scripts/fetch_market_data.py`，2026-07-14 實測全部跑通）：
 
-| 資料 | 建議來源 | 備註 |
+| 資料 | 來源 | 備註 |
 |---|---|---|
-| 美 10Y 公債殖利率 | Alpha Vantage `TREASURY_YIELD`（免費，但 25 次/天配額很緊） | 需申請免費 API key |
-| 四組匯率（TWD/JPY/CNY/EUR） | ExchangeRate-API 或 Frankfurter | Frankfurter 免 key 但需確認是否收錄 TWD；ExchangeRate-API 免費 1,500 次/月、有涵蓋 TWD |
-| 黃金／白銀 | Gold API（gold-api.com） | 免 key |
-| WTI／Brent | Oil Price API（免費 200 次/月） | 需申請免費 API key |
-| 美股/亞股指數（S&P 500、NASDAQ、日經225） | Twelve Data（免費 800 次/天） | 需申請免費 API key、需先驗證免費版真的能查到這些指數 |
-| **費半 SOX、台股加權(TAIEX)、台指期夜盤** | 目前找不到可靠的免費 API 直接支援這幾個較冷門的標的 | 即使開通上述網域，這幾項可能還是得留 WebSearch 當備援 |
+| 美 10Y 公債殖利率 | Alpha Vantage `TREASURY_YIELD` | 免費額度緊：**25 次/天**，腳本只呼叫 1 次，夠每天用但不要拿去做額外測試 |
+| 四組匯率（TWD/JPY/CNY/EUR） | Twelve Data `/quote` | 免費 800 次/天、8 次/分鐘 |
+| 黃金 | Twelve Data `/quote?symbol=XAU/USD` | 免費版可查 |
+| WTI／Brent | Oil Price API `/v1/prices/latest?code=...`（`WTI_USD`／`BRENT_CRUDE_USD`） | 免費 200 次/月，每天 2 次，一個月約 44 次，額度充裕 |
 
-**要啟用這個方案，Neil 需要做的事**（比照當初設定 LINE token 的模式）：
-1. 到 Claude Code 環境設定 → **Network access**，把上表用到的網域加入允許清單。
-2. 到 Alpha Vantage / Twelve Data / Oil Price API 官網各自申請免費 API key。
-3. 把新的 API key 用 `.env` 格式加進 **Environment variables**（例如 `ALPHA_VANTAGE_API_KEY=...`）。
-4. 開新 session 讓環境變數生效後，再請 Claude 實作對應的抓資料腳本並逐一測試——因為目前 sandbox 連不上這些網域，這段程式碼還沒辦法寫出來就先測試過，等網路開通後才能真的驗證。
+**確認免費版查不到、仍然固定用 WebSearch 的項目**（2026-07-14 實測）：
+- **美股三指數**：S&P 500（Twelve Data 免費版查 `SPX` 回「需升級 Grow/Venture 方案」）、NASDAQ、費半 SOX（Twelve Data 的 symbol_search 完全查不到這兩個 symbol，只找得到不相關市場的同名 ETF）
+- **亞股**：日經 225、台股加權(TAIEX)、台指期夜盤——同樣不在 Twelve Data 免費版的 symbol 清單裡
+- **白銀**：Twelve Data 的 `XAG/USD` 回「需升級方案」（金/銀待遇不一致，黃金免費、白銀要付費）；Oil Price API 只做原油，沒有貴金屬
+- **`highlights` 新聞事件**：兩個 API 都不含新聞，固定要 WebSearch
 
-在完成以上設定之前，**維持現行的 WebSearch 流程**（已在步驟 1 加上「加速原則」降低來回查證次數），避免上線一段目前測不了的半成品。
+**運作方式**：`fetch_market_data.py` 對每一項獨立呼叫、獨立 try/except，任何一項失敗（額度用完、網路問題、免費版不支援）就直接從輸出省略該欄位，**不會塞假資料或 null**。SKILL.md 步驟 1a 會先跑這支腳本，只對它沒回傳到的欄位才動用 WebSearch——所以就算某天 API 全掛，流程還是能完全靠 WebSearch 跑完，不會中斷。
+
+**環境變數**（已設定在 Claude Code 環境變數，`.env` 格式）：
+```
+ALPHA_VANTAGE_API_KEY=...
+TWELVE_DATA_API_KEY=...
+OIL_PRICE_API_KEY=...
+```

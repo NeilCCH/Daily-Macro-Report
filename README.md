@@ -10,13 +10,16 @@
 
 ```
 Claude Code Routine（工作日 08:00 台北）
-  1. scripts/check_workday.py   判斷是否台灣工作日；非工作日→整個跳過
-  2. Claude 用 WebSearch 抓最近收盤行情 + 當日財經新聞
+  1. scripts/check_workday.py       判斷是否台灣工作日；非工作日→整個跳過
+  2. scripts/fetch_market_data.py   先抓匯率/黃金/原油/10Y殖利率（Alpha Vantage、
+                                    Twelve Data、Oil Price API），抓不到的欄位
+                                    再用 Claude WebSearch 補（美股三指數、日經、
+                                    台股加權、台指期夜盤、白銀、新聞恆定用 WebSearch）
   3. Claude 依合規規則寫三段文案 → report.json + line_text.txt
-  4. scripts/make_card_html.py  → card.html
-     scripts/shot_card.js       → card.png + card_preview.png（內建 Chromium 截圖，免 Pillow）
+  4. scripts/make_card_html.py      → card.html
+     scripts/shot_card.js           → card.png + card_preview.png（內建 Chromium 截圖，免 Pillow）
   5. git commit + push（raw.githubusercontent.com 當圖床）
-  6. scripts/push_line.py       對啟用中的群組推播「圖片卡片」（不帶 --text-file）
+  6. scripts/push_line.py           對啟用中的群組推播「圖片卡片」（不帶 --text-file）
 ```
 
 - 每日「執行流程」定義：`.claude/skills/daily-macro-report/SKILL.md`
@@ -31,6 +34,9 @@ Claude Code Routine（工作日 08:00 台北）
   commit 併回預設分支即可，不需要動環境變數（見 `docs/RUNBOOK.md` 3.3.1 節）。
 - **產圖不用 Pillow**：Claude sandbox 出網被擋裝不了；改用 base image 內建的
   Chromium + 文泉驛正黑字型。產圖前設 `NODE_PATH=/opt/node22/lib/node_modules`。
+- **行情 API key 放在 Claude Code 環境變數**（`ALPHA_VANTAGE_API_KEY`、
+  `TWELVE_DATA_API_KEY`、`OIL_PRICE_API_KEY`），對應網域也要在環境設定的
+  **Network access → Custom** 裡加入白名單，見 `docs/RUNBOOK.md` 第 12 節。
 
 ## 產圖 / 推播手動測試
 

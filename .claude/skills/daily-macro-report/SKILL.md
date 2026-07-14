@@ -44,7 +44,32 @@ git show "origin/${DEFAULT_BRANCH}:reports/<YYYY-MM-DD>/report.json" > /dev/null
 
 ---
 
-## 步驟 1：抓資料（WebSearch／WebFetch）
+## 步驟 1：抓資料（API 優先，WebSearch／WebFetch 補缺口）
+
+### 步驟 1a：先跑 API 腳本，拿到的欄位不用再搜尋
+
+```bash
+python3 scripts/fetch_market_data.py
+```
+
+這支腳本會呼叫 Alpha Vantage（10Y 公債殖利率）、Twelve Data（USD/TWD、USD/JPY、
+USD/CNY、USD/EUR、黃金 XAU/USD）、Oil Price API（WTI、Brent），回傳一份 JSON，
+內含 `fx` 與 `commodity_rate` 兩個 section 裡已經能直接用的列（欄位格式跟
+`report.json` schema 完全一致，可以直接搬進去）。**任何一項抓失敗（網路、額度、
+需要付費方案）會直接從輸出省略，不會給假資料**，所以看輸出缺哪幾項，才對那幾項
+補 WebSearch。
+
+**已知這支腳本查不到、一定要靠 WebSearch 的項目**（免費方案沒有這些冷門標的，
+2026-07-14 實測結論）：
+- 美股三指數：S&P 500、NASDAQ、費半 SOX
+- 亞股：日經 225、台股加權、台指期夜盤
+- 白銀（Twelve Data 白銀要付費方案；Oil Price API 只做原油）
+
+`highlights`（今日重點的新聞事件）也一定要另外 WebSearch，這支腳本不處理新聞。
+
+若三組 API key（`ALPHA_VANTAGE_API_KEY`／`TWELVE_DATA_API_KEY`／`OIL_PRICE_API_KEY`）
+未設定或網路被擋，腳本對應欄位會直接是空的，等同於整個 `fx`／`commodity_rate`
+都要 WebSearch——不影響任務繼續進行。
 
 ### 數據時間的正確理解（重要，避免抓到不存在的「今天」數據）
 
@@ -54,18 +79,21 @@ git show "origin/${DEFAULT_BRANCH}:reports/<YYYY-MM-DD>/report.json" > /dev/null
 - **匯率**：取最近即時報價。
 - **美股休市（美國假日）**：`us_market` 區塊留空、並在 `us_market_closed` 設 `true`；不可沿用舊數據、不可杜撰。
 
-### 用 WebSearch 搜尋以下關鍵字（需多次搜尋，取最新即時資訊）
+### 用 WebSearch 搜尋步驟 1a 沒抓到的項目
+
+步驟 1a 的 API 腳本正常狀況下已經能拿到 `fx`（四組匯率）與 `commodity_rate` 裡的 WTI／Brent／黃金／10Y 殖利率。WebSearch 只需要補以下缺口：
 
 - `"S&P 500 close"`、`"NASDAQ close"`、`"費半 SOX 收盤"`
-- `"USD/TWD 匯率"`、`"USD/JPY"`、`"USD/CNY"`、`"USD/EUR"`
-- `"WTI 原油"`、`"Brent 原油"`、`"黃金 金價"`、`"白銀"`
 - `"日經 225"`、`"台股加權 指數"`、`"台指期 夜盤 收盤"`
-- `"美國 10年期 公債殖利率"`
-- `"Fed 最新發言"` 或 `"今日 全球 經濟 重點"`
+- `"白銀 金價"`（Twelve Data 免費版查不到，固定要 WebSearch）
+- `"Fed 最新發言"` 或 `"今日 全球 經濟 重點"`（給 highlights 用，每天都要查）
+
+若步驟 1a 因為網路或額度問題整組失敗（`fx`／`commodity_rate` 是空的），再補查：
+`"USD/TWD 匯率"`、`"USD/JPY"`、`"USD/CNY"`、`"USD/EUR"`、`"WTI 原油"`、`"Brent 原油"`、`"黃金 金價"`、`"美國 10年期 公債殖利率"`。
 
 若搜尋結果指向財經新聞網站（鉅亨、Bloomberg、Reuters、MoneyDJ、TheStreet），可用 **WebFetch** 補充細節。比對前一交易日數據，標出漲跌方向。
 
-**每一個數值都須來自實際搜尋結果，不可推估、不可沿用記憶中的舊值。查不到的那一列直接省略，不留空欄位、不寫「N/A」。**
+**每一個數值都須來自 API 或實際搜尋結果，不可推估、不可沿用記憶中的舊值。查不到的那一列直接省略，不留空欄位、不寫「N/A」。**
 
 ### 加速原則（避免不必要的重複搜尋）
 
