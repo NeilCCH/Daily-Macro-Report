@@ -252,3 +252,30 @@ LINE_GROUP_IDS="$FIRST" python scripts/push_line.py \
 - **只發圖片、不發文字**：依 Neil 需求，卡片已含完整資訊。（PR #2）
 - **token 放 Claude 環境變數、非 GitHub Secrets**：因系統跑在 Claude Routine，
   GitHub Secrets 只餵 GitHub Actions，餵不到 Claude sandbox。
+
+---
+
+## 12.（尚未實作／待 Neil 決定是否要做）改用行情 API 取代部分 WebSearch
+
+**背景**：WebSearch 常回傳過時或彼此矛盾的數字（同一數據要交叉查證 2-3 次），拖慢每日執行時間。曾評估改用 Alpha Vantage / Twelve Data / Finnhub 等有免費額度的行情 API 取代部分 WebSearch。
+
+**實測結論（2026-07-14）**：sandbox 的網路政策是**明確白名單**，不是黑名單擋特定站——目前只有 `api.line.me`、`github.com`/`api.github.com` 這類已核准的網域能連，其餘一律 403（不論有沒有 API key）。實測直接 403 的網域：`www.alphavantage.co`、`api.twelvedata.com`、`finnhub.io`、`api.frankfurter.dev`、`api.gold-api.com`、`openapi.taifex.tw`。**這代表在「Network access」允許清單加入新網域，是這個方案能不能動的前提，比申請 API key 更優先。**
+
+**若之後要啟用，建議的分工（尚未寫成程式）**：
+
+| 資料 | 建議來源 | 備註 |
+|---|---|---|
+| 美 10Y 公債殖利率 | Alpha Vantage `TREASURY_YIELD`（免費，但 25 次/天配額很緊） | 需申請免費 API key |
+| 四組匯率（TWD/JPY/CNY/EUR） | ExchangeRate-API 或 Frankfurter | Frankfurter 免 key 但需確認是否收錄 TWD；ExchangeRate-API 免費 1,500 次/月、有涵蓋 TWD |
+| 黃金／白銀 | Gold API（gold-api.com） | 免 key |
+| WTI／Brent | Oil Price API（免費 200 次/月） | 需申請免費 API key |
+| 美股/亞股指數（S&P 500、NASDAQ、日經225） | Twelve Data（免費 800 次/天） | 需申請免費 API key、需先驗證免費版真的能查到這些指數 |
+| **費半 SOX、台股加權(TAIEX)、台指期夜盤** | 目前找不到可靠的免費 API 直接支援這幾個較冷門的標的 | 即使開通上述網域，這幾項可能還是得留 WebSearch 當備援 |
+
+**要啟用這個方案，Neil 需要做的事**（比照當初設定 LINE token 的模式）：
+1. 到 Claude Code 環境設定 → **Network access**，把上表用到的網域加入允許清單。
+2. 到 Alpha Vantage / Twelve Data / Oil Price API 官網各自申請免費 API key。
+3. 把新的 API key 用 `.env` 格式加進 **Environment variables**（例如 `ALPHA_VANTAGE_API_KEY=...`）。
+4. 開新 session 讓環境變數生效後，再請 Claude 實作對應的抓資料腳本並逐一測試——因為目前 sandbox 連不上這些網域，這段程式碼還沒辦法寫出來就先測試過，等網路開通後才能真的驗證。
+
+在完成以上設定之前，**維持現行的 WebSearch 流程**（已在步驟 1 加上「加速原則」降低來回查證次數），避免上線一段目前測不了的半成品。
