@@ -1,7 +1,7 @@
 # daily-macro-report
 
 每個台灣工作日早上（台北 08:00）自動產出「每日晨報」（全球總經/市場速報）卡片圖片，
-並推播到 LINE 官方帳號 **NeilCCH** 的 3 個業務群組。**只發圖片，不發文字。**
+並推播到 LINE 官方帳號 **NeilCCH** 旗下已啟用的業務群組（名單見 `data/line_groups.json`）。**只發圖片，不發文字。**
 
 ## 架構（現行）
 
@@ -16,7 +16,7 @@ Claude Code Routine（工作日 08:00 台北）
   4. scripts/make_card_html.py  → card.html
      scripts/shot_card.js       → card.png + card_preview.png（內建 Chromium 截圖，免 Pillow）
   5. git commit + push（raw.githubusercontent.com 當圖床）
-  6. scripts/push_line.py       對 3 個群組推播「圖片卡片」（不帶 --text-file）
+  6. scripts/push_line.py       對啟用中的群組推播「圖片卡片」（不帶 --text-file）
 ```
 
 - 每日「執行流程」定義：`.claude/skills/daily-macro-report/SKILL.md`
@@ -27,6 +27,8 @@ Claude Code Routine（工作日 08:00 台北）
 - **repo 必須 public**：LINE 伺服器要抓 `raw.githubusercontent.com` 上的卡片圖。
 - **LINE token / 群組 ID 放在 Claude Code 環境變數**（`LINE_CHANNEL_ACCESS_TOKEN`、
   `LINE_GROUP_IDS`），**不是** GitHub Secrets（Routine 跑在 Claude 雲端，讀不到 GitHub Secrets）。
+- **要暫停/恢復某個群組的推播**：改 `data/line_groups.json` 裡該群組的 `enabled`，
+  commit 併回預設分支即可，不需要動環境變數（見 `docs/RUNBOOK.md` 3.3.1 節）。
 - **產圖不用 Pillow**：Claude sandbox 出網被擋裝不了；改用 base image 內建的
   Chromium + 文泉驛正黑字型。產圖前設 `NODE_PATH=/opt/node22/lib/node_modules`。
 
