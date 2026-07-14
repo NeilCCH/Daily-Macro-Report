@@ -29,6 +29,21 @@ python scripts/check_workday.py
 
 ---
 
+## 步驟 0.5：今日是否已產出過（防止 Routine 重複觸發造成重複推播）
+
+```bash
+git fetch origin "$(git ls-remote --symref origin HEAD | awk '/^ref:/{print $2}' | sed 's#refs/heads/##')" 2>/dev/null || true
+DEFAULT_BRANCH="$(git ls-remote --symref origin HEAD | awk '/^ref:/{print $2}' | sed 's#refs/heads/##')"
+git show "origin/${DEFAULT_BRANCH}:reports/<YYYY-MM-DD>/report.json" > /dev/null 2>&1 && echo "ALREADY_DONE=true" || echo "ALREADY_DONE=false"
+```
+
+- 用 `git ls-remote --symref origin HEAD` 動態找出**目前的預設分支**（不要寫死分支名稱，因為分支名稱會變）。
+- 檢查該預設分支上 `reports/<今天日期>/report.json` 是否已存在。
+- **若已存在（`ALREADY_DONE=true`）→ 立刻結束整個任務**，不要重抓資料、不要重推播。直接回報「今日報告已於預設分支產出，本次為重複觸發，跳過。」
+- 這一步能防止 Routine 同一天觸發兩次時重複推播 LINE（LINE 有每月推播則數上限，重複推播只會更快把配額用完）。這個機制能生效的前提是步驟 8（自動合併回預設分支）確實有執行；若步驟 8 沒做，這裡永遠檢查不到，請優先確保步驟 8 落實。
+
+---
+
 ## 步驟 1：抓資料（WebSearch／WebFetch）
 
 ### 數據時間的正確理解（重要，避免抓到不存在的「今天」數據）
@@ -50,6 +65,15 @@ python scripts/check_workday.py
 若搜尋結果指向財經新聞網站（鉅亨、Bloomberg、Reuters、MoneyDJ、TheStreet），可用 **WebFetch** 補充細節。比對前一交易日數據，標出漲跌方向。
 
 **每一個數值都須來自實際搜尋結果，不可推估、不可沿用記憶中的舊值。查不到的那一列直接省略，不留空欄位、不寫「N/A」。**
+
+### 加速原則（避免不必要的重複搜尋）
+
+WebSearch 常會回傳過時或彼此矛盾的數字（例如把好幾天前的舊收盤數字標成「今日」）。為了不讓查證迴圈無限拉長：
+
+- 查詢字串**帶精確日期**（如 `2026-07-13` 或 `7月13日`），比只寫「今日」「最新」更容易命中正確那天的報導。
+- 台股加權、日經 225 這類容易撈到舊快取的項目，優先信任**帶明確日期的新聞標題**（如「XX月XX日盤後：加權指數收跌...」），而不是泛用即時報價頁的摘要。
+- 每個數據點最多**再次確認 1 次**（也就是最多 2 次搜尋/該數據點）；兩次搜尋結果仍衝突時，採用敘事最一致、來源最具體（有明確日期標題）的那個，並繼續往下走，不要無限重查。
+- 同一輪能平行下的查詢就一次平行送出（多個 WebSearch 放在同一個 tool call 訊息裡），不要逐一序列查詢。
 
 ---
 
@@ -242,9 +266,26 @@ python scripts/push_line.py \
 
 ---
 
+## 步驟 8：自動開 PR 並立即合併回預設分支（關鍵，勿省略）
+
+Routine 每次都是從預設分支開一個新的一次性工作分支執行，**若不做這一步，今天的成果會孤立在這個工作分支上，預設分支永遠看不到**，隔天 Routine 又會從舊的預設分支重新開始，形成「看起來每天都沒跑」的假象。
+
+```bash
+DEFAULT_BRANCH="$(git ls-remote --symref origin HEAD | awk '/^ref:/{print $2}' | sed 's#refs/heads/##')"
+BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+```
+
+用 GitHub MCP 工具（`mcp__github__create_pull_request`）從 `$BRANCH` 開一個 PR 到 `$DEFAULT_BRANCH`，標題如「Daily macro report <YYYY-MM-DD>」。**開完後立即用 `mcp__github__merge_pull_request` 自動合併**，不要等待人工審核——這是每日固定格式的資料寫入（report.json / line_text.txt / card 圖片），內容已依合規規則產出，屬於低風險自動化流程，Neil 已同意此步驟免人工 review 直接合併。
+
+若 `create_pull_request` 或 `merge_pull_request` 失敗（例如權限不足、衝突），不要中止整個任務——LINE 推播已完成才是最優先的交付物；記錄失敗原因於最終回報中，讓 Neil 知道需要手動合併。
+
+---
+
 ## 完成準則
 
 - 工作日閘門為 `true` 才執行；否則明確回報已跳過。
+- 步驟 0.5 檢查今日尚未產出過，才繼續往下執行。
 - `report.json`、`line_text.txt`、`card.png`、`card_preview.png` 都已產出並 commit/push。
 - 每個 LINE 群組都收到**圖片卡片**（不推送文字），`push_line.py` 全部回報 OK。
+- PR 已開立並合併回預設分支（步驟 8）；若合併失敗，已在回報中明確說明。
 - 全程遵守合規防呆規則；數字全部來自當次搜尋。
