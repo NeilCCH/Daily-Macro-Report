@@ -103,6 +103,27 @@ docs/RUNBOOK.md         本文件
 
 對照：`C`=群組(要這個) / `R`=多人聊天室 / `U`=個人。
 
+### 3.3.1 群組名稱對照與開關（`data/line_groups.json`）
+
+`LINE_GROUP_IDS` 只是一串不透明的 `Cxxxx...`，光看環境變數認不出是哪個群組。
+`data/line_groups.json` 記錄每個群組 ID 對應的人類可讀名稱與是否啟用：
+
+```json
+{
+  "Cxxxx1": {"name": "南區組訓", "enabled": false},
+  "Cxxxx2": {"name": "南區 單位主管群組", "enabled": true}
+}
+```
+
+- 群組名稱可用 LINE Messaging API 的 `GET /v2/bot/group/{groupId}/summary` 反查
+  （帶 `Authorization: Bearer $LINE_CHANNEL_ACCESS_TOKEN`）。
+- **要暫停對某個群組推播**：把該群組 `enabled` 改成 `false`，commit 併回預設分支即可生效，
+  **不需要**去改 `LINE_GROUP_IDS` 環境變數（環境變數只對新 session 生效，而這個 json 是
+  repo 內容，下一次 Routine 一啟動就會讀到最新版）。
+- 若某個 ID 不在這份 json 裡，`push_line.py` 預設當作啟用（向下相容，不會漏推）。
+- 這份 json 只是「顯示名稱 + 開關」，實際能不能推播、token 有沒有效，還是要看
+  `LINE_GROUP_IDS` / `LINE_CHANNEL_ACCESS_TOKEN` 這兩個環境變數。
+
 ### 3.4 設定 Claude Code 環境變數（**不是** GitHub Secrets）
 因為系統跑在 Claude Routine（Anthropic 雲端），token 要放在 Claude 環境，
 GitHub Secrets 餵不到這裡。

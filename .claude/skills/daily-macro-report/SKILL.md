@@ -262,7 +262,7 @@ python scripts/push_line.py \
   --preview-url "${BASE}/card_preview.png"
 ```
 
-`push_line.py` 會對每個群組送出「圖片訊息」，並逐一回報成功與否。`line_text.txt` 仍會產生，作為卡片內容來源與 repo 記錄，但**不推送到 LINE**。
+`push_line.py` 會對 `LINE_GROUP_IDS` 裡、且在 `data/line_groups.json` 未被標記 `enabled: false` 的每個群組送出「圖片訊息」，並逐一回報成功／跳過／失敗。`line_text.txt` 仍會產生，作為卡片內容來源與 repo 記錄，但**不推送到 LINE**。
 
 ---
 
