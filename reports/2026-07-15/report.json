@@ -1,0 +1,31 @@
+{
+  "report_date": "2026/07/15",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,543.59", "change_pct": "0.38%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,107.01", "change_pct": "0.9%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "67,743.50", "change_pct": "0.74%", "dir": "up"},
+      {"label": "台股加權", "value": "22,614.97", "change_pct": "0.6%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.15", "change_pct": "0.04%", "dir": "down"},
+      {"label": "USD / JPY", "value": "162.2", "change_pct": "0.04%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "0.05%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.875", "change_pct": "0.04%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$80.09", "change_pct": "0.6%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$85.54", "change_pct": "1.0%", "dir": "up"},
+      {"label": "黃金", "value": "$4,054.2", "change_pct": "0.03%", "dir": "up"},
+      {"label": "白銀", "value": "$59.29", "change_pct": "2.83%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.62%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "Fed主席Warsh赴國會作證，誓言持續對抗通膨；6月CPI年增3.5%雖較5月降溫但仍高於2%目標。荷莫茲海峽緊張情勢再起，油金同步走揚，市場避險氣氛升溫。",
+  "business_angle": "地緣局勢牽動油價與金價走揚，避險情緒升溫之際，不妨與客戶聊聊「家庭風險保障額度是否仍與現況相符」，一起做個檢視。",
+  "caring_note": "盛夏將至，天氣漸熱，拜訪客戶記得多補充水分、注意防曬，願夥伴們都能保持好體力，穩健迎接下半年。",
+  "source_note": "資料來源：TheStreet / CNBC / Yahoo Finance / 鉅亨網・美股與日股數據為 2026/07/14 最近交易日收盤，台股加權為 2026/07/14 收盤，匯率與原物料為即時報價"
+}
