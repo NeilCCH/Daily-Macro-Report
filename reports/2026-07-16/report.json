@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/07/16",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,572.43", "change_pct": "0.40%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,269.23", "change_pct": "0.62%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,281.82", "change_pct": "3.00%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "68,751.51", "change_pct": "1.49%", "dir": "up"},
+      {"label": "台股加權", "value": "45,631.59", "change_pct": "2.00%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "45,015", "change_pct": "0.5%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.23", "change_pct": "0.25%", "dir": "up"},
+      {"label": "USD / JPY", "value": "162.1", "change_pct": "0.06%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.872", "change_pct": "0.07%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$80.02", "change_pct": "0.3%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$85.26", "change_pct": "0.1%", "dir": "up"},
+      {"label": "黃金", "value": "$4,055.8", "change_pct": "0.11%", "dir": "down"},
+      {"label": "白銀", "value": "$58.35", "change_pct": "0.60%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.58%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "紐約Fed總裁威廉姆斯表示通膨跡象已現頂部、利率水位仍屬合宜；惟半導體類股受IBM財報疑慮拖累重挫，費半重挫3%，S&P 500與那斯達克指數仍雙雙收紅創高。",
+  "business_angle": "S&P 500與蘋果股價續創新高之際，正是提醒客戶為投資型保單帳戶安排一次定期檢視、盤點停利紀律的好時機。",
+  "caring_note": "小暑節氣暑氣正盛，天氣悶熱多變，提醒夥伴多留意消暑補水，也別忘了替家人的保障需求做個溫暖的健檢。",
+  "source_note": "資料來源：Yahoo Finance／日本經濟新聞／經濟日報／Alpha Vantage・Twelve Data・Oil Price API・數據為2026/07/15最近交易日收盤"
+}
