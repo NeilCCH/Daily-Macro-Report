@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/07/21",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,443.28", "change_pct": "0.19%", "dir": "down"},
+      {"label": "NASDAQ", "value": "25,508.07", "change_pct": "0.05%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,743.93", "change_pct": "0.6%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "64,544", "change_pct": "0.63%", "dir": "up"},
+      {"label": "台股加權", "value": "42,449.70", "change_pct": "0.52%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "43,396", "change_pct": "1.72%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.29", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / JPY", "value": "162.5", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "0.01%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.876", "change_pct": "0.02%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$82.54", "change_pct": "0.9%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$88.89", "change_pct": "2.0%", "dir": "down"},
+      {"label": "黃金", "value": "$4,005.7", "change_pct": "0.06%", "dir": "down"},
+      {"label": "白銀", "value": "$56.75", "change_pct": "1.43%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.55%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美伊軍事衝突持續延燒，荷莫茲海峽航運風險升溫推升油價；Fed 維持利率不變但官員後續動向分歧，晶片股從上週熊市重挫中反彈，市場靜待本週科技巨頭財報。",
+  "business_angle": "地緣局勢持續牽動市場情緒，正是與客戶聊聊「家庭保障缺口是否足夠」的好時機。",
+  "caring_note": "大暑將至，盛夏酷熱，提醒夥伴與客戶多補水消暑，願大家平安清涼度過一年最熱時節。",
+  "source_note": "資料來源：CNBC／MoneyDJ／鉅亨網／期交所・數據為 2026/07/20 最近交易日收盤與 07/21 即時報價"
+}
