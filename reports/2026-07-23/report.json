@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/07/23",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,499.04", "change_pct": "0.14%", "dir": "down"},
+      {"label": "NASDAQ", "value": "25,690.90", "change_pct": "0.57%", "dir": "down"},
+      {"label": "費半 SOX", "value": "12,410", "change_pct": "0.44%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,116", "change_pct": "0.18%", "dir": "up"},
+      {"label": "台股加權", "value": "44,826", "change_pct": "1.34%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.40", "change_pct": "0.03%", "dir": "down"},
+      {"label": "USD / JPY", "value": "163.1", "change_pct": "0.04%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "0.05%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.876", "change_pct": "", "dir": "flat"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$87.95", "change_pct": "3.9%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$95.50", "change_pct": "4.2%", "dir": "up"},
+      {"label": "黃金", "value": "$4,129.0", "change_pct": "0.03%", "dir": "down"},
+      {"label": "白銀", "value": "$59.39", "change_pct": "1.06%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.63%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "中東地緣風險再升溫、荷莫茲海峽通行疑慮推升國際油價單日大漲逾4%；美股在科技巨頭財報公布前震盪收平，美10年期公債殖利率同步走高至4.63%相對高點。",
+  "business_angle": "美10年期公債殖利率走高至4.63%的相對高點，正好提醒夥伴：可以和客戶聊聊資產配置中固定收益的角色，一起檢視美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "今日大暑準時報到，是一年中最炎熱的節氣，老一輩說「大暑吃鳳梨」最能敗火消暑，願夥伴忙碌之餘也記得為自己與家人補水降溫、照顧好身體。",
+  "source_note": "資料來源：TheStreet／CNBC／TradingKey／UDN／日經新聞／Twelve Data／Oil Price API・數據為 2026/07/22 最近交易日收盤"
+}
