@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/07/24",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,408.30", "change_pct": "1.21%", "dir": "down"},
+      {"label": "NASDAQ", "value": "25,137.69", "change_pct": "2.15%", "dir": "down"},
+      {"label": "費半 SOX", "value": "12,343.80", "change_pct": "0.54%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,422.60", "change_pct": "0.46%", "dir": "up"},
+      {"label": "台股加權", "value": "44,850.81", "change_pct": "0.06%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "44,770", "change_pct": "0.32%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.31", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "163.9", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.879", "change_pct": "", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$92.69", "change_pct": "6.74%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$100.65", "change_pct": "7.00%", "dir": "up"},
+      {"label": "黃金", "value": "$4,045.3", "change_pct": "0.10%", "dir": "down"},
+      {"label": "白銀", "value": "$58.77", "change_pct": "1.59%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.67%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "中東緊張情勢升溫，胡塞武裝攻擊沙國油輪並揚言封鎖港口，帶動WTI單日大漲逾6%；美股受AI資本支出疑慮與Alphabet、特斯拉財報拖累重挫，那斯達克跌逾2%。",
+  "business_angle": "地緣風險升溫、油價劇烈波動的時刻，正好是和客戶聊聊「家庭風險保障是否仍然足夠」的好起手式。",
+  "caring_note": "大暑已至，正值一年最熱時節，別忘了多補水消暑，也提醒自己在忙碌中維持穩定步調，把身體照顧好才能長長久久。",
+  "source_note": "資料來源：CNBC / Yahoo Finance / 工商時報 / 株探・美股與亞股為 07/23 最近交易日收盤，台指期夜盤為 07/23 夜間場收盤（亞股尚未開盤）"
+}
