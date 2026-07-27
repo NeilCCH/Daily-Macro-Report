@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/07/27",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,411.98", "change_pct": "0.05%", "dir": "up"},
+      {"label": "NASDAQ", "value": "24,975.82", "change_pct": "0.64%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,818.90", "change_pct": "4.25%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "64,611.15", "change_pct": "1.20%", "dir": "up"},
+      {"label": "台股加權", "value": "43,654.84", "change_pct": "2.67%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "43,369", "change_pct": "1.02%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.34", "change_pct": "0.01%", "dir": "up"},
+      {"label": "USD / JPY", "value": "163.6", "change_pct": "0.04%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.877", "change_pct": "0.07%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$90.47", "change_pct": "1.87%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$97.24", "change_pct": "3.34%", "dir": "down"},
+      {"label": "黃金", "value": "$4,052", "change_pct": "0.06%", "dir": "up"},
+      {"label": "白銀", "value": "$58.40", "change_pct": "1.98%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.69%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "上週五費半重挫4.25%、那斯達克連跌第三日，AI資本支出疑慮持續發酵；反觀布蘭特原油因美伊和談進展重挫逾3%。本週聯準會（7/28-29）與日本央行（7/30-31）利率決策登場，市場緊盯後續方向。",
+  "business_angle": "近期美債殖利率持續處於4.7%附近的相對高檔，本週聯準會利率會議即將登場，適合與夥伴聊聊固定收益在資產配置中的角色，以及美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "現正值大暑節氣，一年最炎熱的時候，提醒夥伴們拜訪客戶之餘也別忘了多補水、注意防暑，把身體照顧好才有本錢繼續衝刺業績。",
+  "source_note": "資料來源：CNBC／TheStreet／Yahoo Finance／Bloomberg・美股與原物料為 2026/07/24 最近交易日收盤"
+}
