@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/07/28",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,413.18", "change_pct": "0.02%", "dir": "up"},
+      {"label": "NASDAQ", "value": "24,932.08", "change_pct": "0.18%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,695.88", "change_pct": "1.04%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "64,931.19", "change_pct": "0.50%", "dir": "up"},
+      {"label": "台股加權", "value": "43,634.19", "change_pct": "0.05%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "44,193", "change_pct": "0.71%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.32", "change_pct": "0.06%", "dir": "up"},
+      {"label": "USD / JPY", "value": "163.8", "change_pct": "0.04%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "0.04%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.880", "change_pct": "", "dir": "flat"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$82.10", "change_pct": "3.2%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$85.29", "change_pct": "2.8%", "dir": "down"},
+      {"label": "黃金", "value": "$4,066.9", "change_pct": "0.25%", "dir": "down"},
+      {"label": "白銀", "value": "$59.43", "change_pct": "2.26%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.69%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美伊停火帶動中東緊張情勢降溫，國際油價重挫逾3%；市場聚焦本週稍晚Fed利率決策，多數機構預期維持利率不變。",
+  "business_angle": "美元兌台幣持續走升，若手上資產仍集中單一幣別，不妨趁機和夥伴聊聊外幣保單在多幣別資產配置中的角色。",
+  "caring_note": "大暑暑氣正盛，提醒辛苦跑外勤的夥伴們別忘了多補水、多歇口氣，把身體照顧好才能走得長久。",
+  "source_note": "資料來源：CNBC／Yahoo Finance／日本經濟新聞／經濟日報／Alpha Vantage／Twelve Data／Oil Price API・美股與費半為2026/07/27最近交易日收盤，日經225與台股加權為前一交易日收盤，台指期夜盤為最新收盤"
+}
