@@ -296,6 +296,8 @@ python scripts/push_line.py \
 
 `push_line.py` 會對 `LINE_GROUP_IDS` 裡、且在 `data/line_groups.json` 未被標記 `enabled: false` 的每個群組送出「圖片訊息」，並逐一回報成功／跳過／失敗。`line_text.txt` 仍會產生，作為卡片內容來源與 repo 記錄，但**不推送到 LINE**。
 
+**若任何群組推播失敗**（例如月推播則數上限 429、token 失效、環境變數缺失，或其他任何非「成功」的結果），**不要只是把失敗寫進最終回報就結束**——改用 `SendUserFile` 直接把 `reports/<DATE>/card.png` 傳給 Neil 本人（可加 caption 簡述失敗原因，例如「LINE推播因月則數上限失敗，附上圖卡供您手動轉發」），讓他當下就能手動轉發到群組，不必等看到回報文字才發現要跟他要圖。這一步不可省略，且不受「非同步/不打擾」的推播節流限制——失敗當下就是需要他行動的時刻。
+
 ---
 
 ## 步驟 8：自動開 PR 並立即合併回預設分支（關鍵，勿省略）
@@ -318,6 +320,6 @@ BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 - 工作日閘門為 `true` 才執行；否則明確回報已跳過。
 - 步驟 0.5 檢查今日尚未產出過，才繼續往下執行。
 - `report.json`、`line_text.txt`、`card.png`、`card_preview.png` 都已產出並 commit/push。
-- 每個 LINE 群組都收到**圖片卡片**（不推送文字），`push_line.py` 全部回報 OK。
+- 每個 LINE 群組都收到**圖片卡片**（不推送文字），`push_line.py` 全部回報 OK；若有任何群組失敗，已用 `SendUserFile` 把 `card.png` 直接傳給 Neil。
 - PR 已開立並合併回預設分支（步驟 8）；若合併失敗，已在回報中明確說明。
 - 全程遵守合規防呆規則；數字全部來自當次搜尋。
