@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/07/29",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,428.78", "change_pct": "0.21%", "dir": "up"},
+      {"label": "NASDAQ", "value": "24,876.91", "change_pct": "0.22%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "62,364.92", "change_pct": "", "dir": "down"},
+      {"label": "台股加權", "value": "41,878.53", "change_pct": "4.02%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "41,889", "change_pct": "", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.38", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "163.9", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.878", "change_pct": "", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$82.23", "change_pct": "0.2%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$84.55", "change_pct": "0.9%", "dir": "down"},
+      {"label": "黃金", "value": "$4,023.7", "change_pct": "0.12%", "dir": "down"},
+      {"label": "白銀", "value": "$57.50", "change_pct": "1.5%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.65%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美國聯準會FOMC會議今日公布利率決議，會前已有地區聯準銀總裁示警能源與AI成本推升通膨、不排除升息；費半重挫拖累那斯達克逼近修正區間，晶片股賣壓延續兩日。",
+  "business_angle": "美10年期公債殖利率持穩在4.65%高檔，不妨與客戶聊聊固定收益在整體資產配置中的角色，一起回顧美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "大暑剛過、暑氣仍盛，夜盤台指卻已透露秋涼將至的訊息，提醒夥伴們早出晚歸多補水，也提早幫客戶把保單健檢排進行事曆。",
+  "source_note": "資料來源：Bloomberg／CNBC／Yahoo Finance／經濟日報／日本經濟新聞・數據為 2026/07/28 最近交易日收盤（台指期夜盤為 2026/07/28 夜盤收盤）"
+}
