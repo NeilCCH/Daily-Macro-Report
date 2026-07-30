@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/07/30",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,316.15", "change_pct": "1.52%", "dir": "down"},
+      {"label": "NASDAQ", "value": "24,442.94", "change_pct": "1.74%", "dir": "down"},
+      {"label": "費半 SOX", "value": "10,447.49", "change_pct": "5.33%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "61,434.19", "change_pct": "1.49%", "dir": "down"},
+      {"label": "台股加權", "value": "40,025.12", "change_pct": "3.79%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "39,645", "change_pct": "1.69%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.36", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "163.3", "change_pct": "0.11%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.77", "change_pct": "0.02%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.872", "change_pct": "0.01%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$84.15", "change_pct": "2.3%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$87.67", "change_pct": "3.7%", "dir": "up"},
+      {"label": "黃金", "value": "$4,083.8", "change_pct": "0.42%", "dir": "up"},
+      {"label": "白銀", "value": "$58.05", "change_pct": "0.90%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.63%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "Fed連五次維持利率3.50%-3.75%不變，主席沃許重申通膨紀律絕不鬆手；鷹派表態加上中東情勢升溫推升油金雙漲，美股四大指數重挫、費半暴跌逾5%，那斯達克正式進入回檔，台股同步收跌逾3.7%。",
+  "business_angle": "中東情勢牽動避險買盤、黃金同步走揚，正是與夥伴聊聊「家庭風險保障是否仍然足夠」的好時機。",
+  "caring_note": "今日正值大暑節氣，天氣濕熱難耐，別忘了提醒夥伴與客戶多補水消暑，讓彼此的關心如涼風送進心坎裡。",
+  "source_note": "資料來源：Bloomberg / CNBC / 經濟日報 / 工商時報・數據為 2026/07/29 最近交易日"
+}
