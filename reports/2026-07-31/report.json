@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/07/31",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,437.63", "change_pct": "1.66%", "dir": "up"},
+      {"label": "NASDAQ", "value": "25,122.18", "change_pct": "2.78%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,302.99", "change_pct": "9.01%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "61,867.43", "change_pct": "0.71%", "dir": "up"},
+      {"label": "台股加權", "value": "39,933.30", "change_pct": "0.26%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "41,394", "change_pct": "2.7%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.42", "change_pct": "0.03%", "dir": "up"},
+      {"label": "USD / JPY", "value": "160.4", "change_pct": "0.54%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.76", "change_pct": "0.07%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.868", "change_pct": "0.06%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$84.03", "change_pct": "0.1%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$87.31", "change_pct": "0.9%", "dir": "down"},
+      {"label": "黃金", "value": "$4,102.6", "change_pct": "0.02%", "dir": "down"},
+      {"label": "白銀", "value": "$59.10", "change_pct": "2.58%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.67%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "Fed維持利率3.50-3.75%不變，但3位地區總裁投票主張升息、鷹派分歧升溫；微軟財報亮眼帶動費半單日狂彈逾9%，美股由跌轉漲。",
+  "business_angle": "近期利率環境牽動市場波動，Fed內部對政策路徑出現分歧，不妨趁此機會與客戶聊聊資產配置中固定收益的角色，檢視美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "大暑餘熱未消、盛夏將盡，提醒夥伴們拜訪客戶之餘也要多補水消暑，穩健步伐迎接立秋。",
+  "source_note": "資料來源：Yahoo Finance / 鉅亨網 / UDN / Alpha Vantage・Twelve Data・Oil Price API・數據為2026/07/30最近交易日"
+}
