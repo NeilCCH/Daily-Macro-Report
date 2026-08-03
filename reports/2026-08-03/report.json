@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/08/03",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,489.72", "change_pct": "0.70%", "dir": "up"},
+      {"label": "NASDAQ", "value": "25,373.85", "change_pct": "1.00%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,311.08", "change_pct": "0.07%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "64,362.02", "change_pct": "4.03%", "dir": "up"},
+      {"label": "台股加權", "value": "43,119.75", "change_pct": "7.98%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.31", "change_pct": "0.06%", "dir": "down"},
+      {"label": "USD / JPY", "value": "157.7", "change_pct": "0.32%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.75", "change_pct": "0.09%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.867", "change_pct": "0.06%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$80.72", "change_pct": "4.7%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$83.88", "change_pct": "6.9%", "dir": "down"},
+      {"label": "黃金", "value": "$4,075.1", "change_pct": "0.80%", "dir": "up"},
+      {"label": "白銀", "value": "$59.37", "change_pct": "0.99%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.68%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "AI資本支出題材持續發燒，那斯達克收漲1%改寫強勁7月收官；台積電漲停領軍，台股單日狂飆逾3,186點寫下史上最大單日漲點紀錄，費半、日經同步走揚。",
+  "business_angle": "台股寫下史上最大單日漲點紀錄、美股同步走揚，正是提醒夥伴，投資型保單帳戶是不是也該安排一次定期檢視，重新盤點資產配置與停利紀律了？",
+  "caring_note": "立秋將於本週五（8/7）到來，大暑餘威未消、暑氣仍盛，提醒夥伴們拜訪客戶之餘也要記得多補水消暑，穩健步伐迎接秋天。",
+  "source_note": "資料來源：CNBC／Washington Post／鉅亨網／日本經濟新聞・Alpha Vantage・Twelve Data・Oil Price API・美股／亞股皆為2026/07/31最近交易日收盤"
+}
