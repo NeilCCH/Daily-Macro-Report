@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/05",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,737", "change_pct": "1.79%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,585", "change_pct": "2.59%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,179", "change_pct": "6.55%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "64,565", "change_pct": "0.95%", "dir": "up"},
+      {"label": "台股加權", "value": "43,361", "change_pct": "0.06%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "44,539", "change_pct": "2.76%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.40", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / JPY", "value": "157.7", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.75", "change_pct": "0.04%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.867", "change_pct": "0.01%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$74.81", "change_pct": "7.2%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$78.68", "change_pct": "6.2%", "dir": "down"},
+      {"label": "黃金", "value": "$4,073.0", "change_pct": "0.11%", "dir": "down"},
+      {"label": "白銀", "value": "$59.50", "change_pct": "2.0%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.70%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美股三大指數同創收盤新高，費半單日勁揚6.55%；中東地緣風險降溫、荷莫茲海峽可望恢復通行帶動油價重挫，晶片股同步反彈。本週市場聚焦美國就業數據與ISM服務業指數，留意Fed利率路徑觀察。",
+  "business_angle": "美股與台指期同步刷新高點，正好提醒夥伴：投資型保單的帳戶價值，也該安排一次定期檢視與回顧了。",
+  "caring_note": "後天（8/7）即將迎來「立秋」，暑氣未消但已是轉季之始，提醒夥伴早晚添件薄衫、注意溫差，照顧好自己才能照顧身邊的人。",
+  "source_note": "資料來源：TheStreet／CNN／自由財經／Alpha Vantage／Twelve Data／Oil Price API・美股為2026/08/04最近交易日收盤，台股加權為前一交易日收盤（今日尚未開盤）"
+}
