@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/06",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,723.55", "change_pct": "0.17%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,363.44", "change_pct": "0.83%", "dir": "down"},
+      {"label": "費半 SOX", "value": "12,008.88", "change_pct": "1.40%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,300.44", "change_pct": "3.66%", "dir": "up"},
+      {"label": "台股加權", "value": "44,611.6", "change_pct": "2.88%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "44,278", "change_pct": "0.58%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.27", "change_pct": "0.03%", "dir": "down"},
+      {"label": "USD / JPY", "value": "157.7", "change_pct": "0.04%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.75", "change_pct": "0.02%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.865", "change_pct": "0.01%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$74.91", "change_pct": "0.1%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$79.42", "change_pct": "0.9%", "dir": "up"},
+      {"label": "黃金", "value": "$4,270.4", "change_pct": "0.55%", "dir": "up"},
+      {"label": "白銀", "value": "$61.58", "change_pct": "3.49%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.63%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美股道瓊、S&P一度創高，但AI資本支出疑慮壓抑晶片股，費半重挫逾1%；Fed 7月以9比3史上最分裂投票維持利率3.50–3.75%，市場靜候本週五非農數據與新關稅上路。",
+  "business_angle": "台股、日股同步強彈創階段新高，正是提醒夥伴的好時機——聊聊投資型保單帳戶是否也該安排一次定期檢視與停利紀律的整理。",
+  "caring_note": "明日即將立秋，暑氣漸收、早晚轉涼，提醒夥伴與家人早晚添衣，多留意身體保養。",
+  "source_note": "資料來源：Yahoo Finance / UDN / 工商時報 / Alpha Vantage / Twelve Data・數據為 2026/08/05 最近交易日"
+}
