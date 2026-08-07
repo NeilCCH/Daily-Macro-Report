@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/07",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,723.55", "change_pct": "0.17%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,363.44", "change_pct": "0.83%", "dir": "down"},
+      {"label": "費半 SOX", "value": "12,008.88", "change_pct": "1.40%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,683.26", "change_pct": "0.93%", "dir": "down"},
+      {"label": "台股加權", "value": "44,396.7", "change_pct": "0.48%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "44,280", "change_pct": "0.58%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.21", "change_pct": "0.12%", "dir": "down"},
+      {"label": "USD / JPY", "value": "158.5", "change_pct": "0.03%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.75", "change_pct": "0.02%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.868", "change_pct": "0.03%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$78.22", "change_pct": "4.4%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$83.08", "change_pct": "4.7%", "dir": "up"},
+      {"label": "黃金", "value": "$4,245.9", "change_pct": "0.12%", "dir": "up"},
+      {"label": "白銀", "value": "$61.52", "change_pct": "2.87%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.67%", "change_pct": "0.06pp", "dir": "up"}
+    ]
+  },
+  "highlights": "美股週四受10年期公債殖利率走升、原油因荷莫茲海峽情勢帶動大漲影響，S&P 500與那斯達克小幅收黑；Fed 7月利率會議連續第5次維持3.5%-3.75%不變。",
+  "business_angle": "美債殖利率走升至逾一年高點，是與客戶聊聊資產配置中固定收益角色、美元利變型保單長期定位的好時機。",
+  "caring_note": "今日立秋，暑氣漸消、秋意將起，願夥伴們耕耘一整年的努力，都能在接下來的日子裡穩穩收成。",
+  "source_note": "資料來源：TheStreet / Yahoo Finance / 工商時報・數據為 2026/08/06 最近交易日收盤"
+}
