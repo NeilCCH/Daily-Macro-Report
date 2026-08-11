@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/11",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,753.11", "change_pct": "0.06%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,605.36", "change_pct": "0.32%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,993.86", "change_pct": "2.94%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,970.22", "change_pct": "2.08%", "dir": "up"},
+      {"label": "台股加權", "value": "44,928.76", "change_pct": "1.59%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "44,719", "change_pct": "0.60%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.23", "change_pct": "0.08%", "dir": "down"},
+      {"label": "USD / JPY", "value": "159.2", "change_pct": "0.10%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.75", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.866", "change_pct": "0.03%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$82.10", "change_pct": "4.4%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$87.88", "change_pct": "4.0%", "dir": "up"},
+      {"label": "黃金", "value": "$4,404.1", "change_pct": "0.32%", "dir": "up"},
+      {"label": "白銀", "value": "$65.76", "change_pct": "3.5%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.69%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美伊荷莫茲海峽談判膠著，油價週一勁揚逾4%，費半重挫近3%、那指小跌，黃金白銀同步走強；市場靜待本週通膨數據，10年期公債殖利率升至4.69%。",
+  "business_angle": "中東地緣情勢牽動油價與金價走揚，正是提醒夥伴的客戶，趁機會重新檢視家庭保障是否仍然充足的好時機。",
+  "caring_note": "立秋已過，秋老虎威力不減、日夜溫差漸大，提醒夥伴與客戶早晚多添件薄外套，留意作息與水分補充。",
+  "source_note": "資料來源：CNBC / TheStreet / 自由財經 / 日本經濟新聞・美股台股日股為2026/08/10最近收盤（台指期夜盤為最新夜盤），匯率原物料為即時報價"
+}
