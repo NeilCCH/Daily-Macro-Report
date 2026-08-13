@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/13",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,749", "change_pct": "0.26%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,588", "change_pct": "0.54%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,465.33", "change_pct": "3.03%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "68,033.17", "change_pct": "0.75%", "dir": "up"},
+      {"label": "台股加權", "value": "45,518.07", "change_pct": "0.88%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "46,201", "change_pct": "2.04%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "32.22", "change_pct": "0.05%", "dir": "down"},
+      {"label": "USD / JPY", "value": "159.4", "change_pct": "0.04%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.74", "change_pct": "0.01%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.867", "change_pct": "0.03%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$82.62", "change_pct": "1.1%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$88.32", "change_pct": "1.1%", "dir": "down"},
+      {"label": "黃金", "value": "$4,419.3", "change_pct": "0.23%", "dir": "up"},
+      {"label": "白銀", "value": "$65.90", "change_pct": "1.06%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.68%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美國7月CPI年增3.4%、核心CPI年增2.5%，雙雙優於前月且符合預期，降息預期升溫；AI晶片資本支出熱潮延續，費半大漲逾3%，台指期夜盤同步勁揚逾900點。",
+  "business_angle": "CPI降溫、降息預期升溫之際，正好與夥伴聊聊變動型保單宣告利率的長期觀察重點，一起留意利率趨勢的變化。",
+  "caring_note": "今日農曆七月初一，願夥伴們平安順心，也提醒多關心家人的日常起居與身體健康。",
+  "source_note": "資料來源：CNBC／BLS／Yahoo Finance／Twelve Data／Alpha Vantage・數據為2026/08/12最近交易日收盤"
+}
