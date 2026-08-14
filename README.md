@@ -49,7 +49,7 @@ node scripts/shot_card.js reports/<日期>/card.html reports/<日期>/card.png r
 
 # 先用單一群組驗證圖片正常顯示，再放行全部群組
 SHA="<含該日報告的 commit SHA>"
-BASE="https://raw.githubusercontent.com/NeilCCH/daily-macro-report/${SHA}/reports/<日期>"
+BASE="https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/${SHA}/reports/<日期>"
 FIRST=$(echo "$LINE_GROUP_IDS" | cut -d',' -f1)
 LINE_GROUP_IDS="$FIRST" python scripts/push_line.py \
   --image-url "${BASE}/card.png" --preview-url "${BASE}/card_preview.png"

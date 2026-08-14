@@ -271,8 +271,8 @@ git push origin "HEAD:${BRANCH}"
 
 圖片公開 URL（repo 需為 public）：
 ```
-https://raw.githubusercontent.com/NeilCCH/daily-macro-report/<BRANCH>/reports/<DATE>/card.png
-https://raw.githubusercontent.com/NeilCCH/daily-macro-report/<BRANCH>/reports/<DATE>/card_preview.png
+https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/<BRANCH>/reports/<DATE>/card.png
+https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/<BRANCH>/reports/<DATE>/card_preview.png
 ```
 
 ---
@@ -288,7 +288,7 @@ https://raw.githubusercontent.com/NeilCCH/daily-macro-report/<BRANCH>/reports/<D
 ```bash
 DATE="<YYYY-MM-DD>"
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-BASE="https://raw.githubusercontent.com/NeilCCH/daily-macro-report/${BRANCH}/reports/${DATE}"
+BASE="https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/${BRANCH}/reports/${DATE}"
 python scripts/push_line.py \
   --image-url "${BASE}/card.png" \
   --preview-url "${BASE}/card_preview.png"
