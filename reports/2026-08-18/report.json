@@ -1,0 +1,31 @@
+{
+  "report_date": "2026/08/18",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,778", "change_pct": "0.10%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,644.91", "change_pct": "0.32%", "dir": "down"},
+      {"label": "費半 SOX", "value": "12,417.1", "change_pct": "0.31%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "69,220.25", "change_pct": "0.74%", "dir": "up"},
+      {"label": "台股加權", "value": "45,857.27", "change_pct": "0.10%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.87", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "159.3", "change_pct": "", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.74", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.863", "change_pct": "", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$84.12", "change_pct": "3.2%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$91.10", "change_pct": "2.7%", "dir": "up"},
+      {"label": "黃金", "value": "$4,424.4", "change_pct": "0.17%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.69%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美股17日焦點：美國7月零售銷售9個月來首見下滑，拖累道瓊、標普小跌；輝達加碼15億美元AI算力投資，費半、美光等AI概念股逆勢走揚。",
+  "business_angle": "美債殖利率仍處4.69%相對高檔，正好和夥伴客戶聊聊固定收益在資產配置中的角色，一起檢視美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "明日七夕將至，別忘了對身邊重要的人說聲關心，用心陪伴永遠是最溫暖的禮物。",
+  "source_note": "資料來源：CNBC／TheStreet／經濟日報／鉅亨網・美股數據為2026/08/17最近交易日收盤，匯率商品為近期報價"
+}
