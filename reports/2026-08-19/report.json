@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/08/19",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,691.76", "change_pct": "0.69%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,289.71", "change_pct": "1.33%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "67,460.73", "change_pct": "2.54%", "dir": "down"},
+      {"label": "台股加權", "value": "45,473.54", "change_pct": "0.84%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "44,847", "change_pct": "0.53%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.90", "change_pct": "0.16%", "dir": "down"},
+      {"label": "USD / JPY", "value": "159.5", "change_pct": "0.09%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.74", "change_pct": "0.01%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.864", "change_pct": "0.02%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$84.40", "change_pct": "0.3%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$91.33", "change_pct": "0.2%", "dir": "up"},
+      {"label": "黃金", "value": "$4,339.7", "change_pct": "0.09%", "dir": "up"},
+      {"label": "白銀", "value": "$64.24", "change_pct": "", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.74%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美伊60天停火協議週一到期未見後續方案，油價走高；美債殖利率同步飆升至近20年高點，通膨與公債供給疑慮引爆半導體股領跌賣壓，美股費半重挫。",
+  "business_angle": "美債殖利率衝上近20年高點，資產配置中固定收益的角色格外受關注，不妨藉此與客戶聊聊美元利變型保單在長期規劃裡扮演的角色，一起檢視整體配置是否仍平衡。",
+  "caring_note": "處暑將至，暑氣漸消早晚生涼，提醒夥伴們留意溫差、照顧好自己，才能穩健迎接秋天的到來。",
+  "source_note": "資料來源：TheStreet / CNBC / Yahoo Finance / 經濟日報・美股為 2026/08/18 最近交易日收盤，亞股與匯率為台北時間 2026/08/19 最新報價"
+}
