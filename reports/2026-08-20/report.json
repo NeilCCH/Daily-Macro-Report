@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/20",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,707.98", "change_pct": "0.21%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,331.09", "change_pct": "0.16%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,992.46", "change_pct": "4.98%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,326.42", "change_pct": "3.16%", "dir": "down"},
+      {"label": "台股加權", "value": "44,719.35", "change_pct": "1.30%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "44,817.00", "change_pct": "0.71%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.84", "change_pct": "0.11%", "dir": "down"},
+      {"label": "USD / JPY", "value": "158.3", "change_pct": "0.12%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.73", "change_pct": "0.04%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.857", "change_pct": "0.03%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$84.34", "change_pct": "0.1%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$91.65", "change_pct": "0.3%", "dir": "up"},
+      {"label": "黃金", "value": "$4,519.2", "change_pct": "0.09%", "dir": "down"},
+      {"label": "白銀", "value": "$63.77", "change_pct": "0.68%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.70%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美國財政部宣布加碼買回長天期公債，殖利率回落帶動美股止跌，費半SOX單日勁揚近5%；但日本公債殖利率飆升拖累日股重挫逾3%，亞洲晶片股同步走弱，利率風險仍是市場焦點。",
+  "business_angle": "近期全球公債殖利率牽動市場神經，這正是和客戶聊聊固定收益在整體資產配置中角色的好時機，一起看看美元利率變動型保單在長期規劃裡的定位。",
+  "caring_note": "農曆七月初八，已進入民俗上的七月，願夥伴們平安順心，凡事多一份留心與祝福，日日吉祥。",
+  "source_note": "資料來源：TheStreet／MoneyDJ／Yahoo Finance／鉅亨網・數據為2026/08/19最近交易日收盤"
+}
