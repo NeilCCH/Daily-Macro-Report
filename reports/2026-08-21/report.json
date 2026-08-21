@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/21",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,680.26", "change_pct": "0.36%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,145.51", "change_pct": "0.70%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,846.94", "change_pct": "0.93%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,216.79", "change_pct": "1.36%", "dir": "up"},
+      {"label": "台股加權", "value": "44,933.74", "change_pct": "0.48%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "44,804", "change_pct": "0.22%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.86", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "159.0", "change_pct": "", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.73", "change_pct": "", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.856", "change_pct": "", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$86.24", "change_pct": "2.0%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$93.13", "change_pct": "1.6%", "dir": "up"},
+      {"label": "黃金", "value": "$4,521.8", "change_pct": "0.05%", "dir": "up"},
+      {"label": "白銀", "value": "$65.94", "change_pct": "1.61%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.71%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "傑克森霍爾全球央行年會登場，多位Fed官員傾向鷹派看待通膨，10年期美債殖利率彈升至4.71%、近20個月高點；中東情勢緊張，布蘭特原油站上93美元、金價續創新高。",
+  "business_angle": "美債殖利率維持高檔，很適合找時間跟客戶聊聊，美元利率變動型保單在整體資產配置中，固定收益角色的定位是否仍然合適。",
+  "caring_note": "處暑將至，暑氣漸消，忙碌衝刺之餘，也別忘了留意早晚溫差，照顧好自己與家人。",
+  "source_note": "資料來源：TheStreet / Yahoo Finance / Nikkei.com / FXStreet・數據為2026/08/20最近交易日（台股加權為前一交易日收盤，台指期夜盤已收盤）"
+}
