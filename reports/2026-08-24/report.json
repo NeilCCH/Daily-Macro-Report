@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/24",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,674.37", "change_pct": "0.43%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,180.45", "change_pct": "0.43%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,740.4", "change_pct": "0.51%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,016.36", "change_pct": "0.30%", "dir": "down"},
+      {"label": "台股加權", "value": "45,224.29", "change_pct": "0.65%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "45,074", "change_pct": "0.14%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.84", "change_pct": "0.02%", "dir": "up"},
+      {"label": "USD / JPY", "value": "158.9", "change_pct": "0.10%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.72", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.856", "change_pct": "0.08%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$86.09", "change_pct": "0.6%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$93.39", "change_pct": "0.2%", "dir": "down"},
+      {"label": "黃金", "value": "$4,638.9", "change_pct": "0.76%", "dir": "up"},
+      {"label": "白銀", "value": "$69.53", "change_pct": "2.09%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.74%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美國10年期公債殖利率再度走升、逼近20個月高點4.74%，市場聚焦本週五聯準會新任主席華許於傑克森洞的談話；那斯達克與標普500同步收紅，費半SOX則受記憶體漲價影響轉黑。",
+  "business_angle": "美債殖利率再測20個月高點，也提醒我們該找時間和夥伴聊聊，資產配置中固定收益部位的角色，一起檢視美元利變型保單是否仍貼合現在的規劃。",
+  "caring_note": "處暑剛過，早晚微涼，忙碌之餘別忘了添件薄外套，祝夥伴們今天平安順心。",
+  "source_note": "資料來源：TheStreet / Yahoo Finance / 鉅亨網・美股與費半為8/21最近交易日收盤，日經225與台股加權為8/21收盤（今日開盤數據來源不穩定，暫以最近收盤為準），台指期夜盤為8/21夜盤收盤"
+}
