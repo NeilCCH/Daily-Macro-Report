@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/25",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,652.86", "change_pct": "0.28%", "dir": "down"},
+      {"label": "NASDAQ", "value": "25,980.19", "change_pct": "0.76%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,300", "change_pct": "3.75%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,528", "change_pct": "0.70%", "dir": "down"},
+      {"label": "台股加權", "value": "44,762.32", "change_pct": "1.02%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "44,858", "change_pct": "0.26%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.83", "change_pct": "0.06%", "dir": "down"},
+      {"label": "USD / JPY", "value": "159.1", "change_pct": "0.01%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.72", "change_pct": "", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.857", "change_pct": "0.05%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$85.14", "change_pct": "1.1%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$92.13", "change_pct": "1.5%", "dir": "down"},
+      {"label": "黃金", "value": "$4,681.6", "change_pct": "0.63%", "dir": "up"},
+      {"label": "白銀", "value": "$68.20", "change_pct": "", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.72%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美股周一收黑，晶片股重挫逾3%，美國對伊朗擴大制裁牽動地緣風險，資金轉向黃金避險；市場同時消化Fed主席鮑爾於Jackson Hole談話後，9月降息機率已上看89%。",
+  "business_angle": "地緣風險升溫、黃金同步走高之際，正是與家人重新確認風險保障是否仍足夠的好時機。",
+  "caring_note": "處暑已過，早晚漸涼、日夜溫差大，提醒夥伴與客戶留意添衣保暖，健康和財務一樣，都值得定期關心。",
+  "source_note": "資料來源：TheStreet / Yahoo Finance / 工商時報 / Reuters・數據為 2026/08/24 最近交易日收盤"
+}
