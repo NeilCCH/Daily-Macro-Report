@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/26",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,677.28", "change_pct": "0.32%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,151.30", "change_pct": "0.66%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,423.17", "change_pct": "2.70%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,856.43", "change_pct": "0.50%", "dir": "up"},
+      {"label": "台股加權", "value": "45,169.46", "change_pct": "0.91%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "45,069", "change_pct": "", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.85", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "159.2", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.72", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.857", "change_pct": "", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$81.08", "change_pct": "4.9%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$87.08", "change_pct": "5.5%", "dir": "down"},
+      {"label": "黃金", "value": "$4,652.8", "change_pct": "0.12%", "dir": "down"},
+      {"label": "白銀", "value": "$69.22", "change_pct": "0.38%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.70%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "Fed維持利率不變的基調延續，AI晶片需求續強帶動那斯達克與費半走高；國際油價因中東停火樂觀情緒與美國原油庫存激增而重挫逾2%。",
+  "business_angle": "美股那斯達克與費半同步走高、台股亦收復失土翻紅，剛好提醒夥伴：投資型保單帳戶不妨趁勢安排一次定期檢視。",
+  "caring_note": "處暑已至，早晚漸涼，提醒夥伴與客戶留意溫差、注意保暖，平安順心過每一天。",
+  "source_note": "資料來源：CNBC／TheStreet／日經新聞／經濟日報・數據為2026/08/25最近交易日收盤"
+}
