@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/28",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,731", "change_pct": "0.72%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,541", "change_pct": "1.57%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,868", "change_pct": "2.21%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,132", "change_pct": "0.20%", "dir": "down"},
+      {"label": "台股加權", "value": "45,975", "change_pct": "0.31%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "46,445", "change_pct": "0.83%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.68", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / JPY", "value": "159.4", "change_pct": "0.03%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.72", "change_pct": "0.00%", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.858", "change_pct": "0.01%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$83.47", "change_pct": "2.0%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$89.39", "change_pct": "2.2%", "dir": "up"},
+      {"label": "黃金", "value": "$4,602", "change_pct": "0.02%", "dir": "up"},
+      {"label": "白銀", "value": "$69.94", "change_pct": "2.7%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.67%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "輝達第二季財報與財測優於預期，激勵費半、那斯達克同步走高，台股、日股跟進反應；Jackson Hole央行年會登場，市場關注新任Fed主席Warsh的政策談話。",
+  "business_angle": "美股、費半接連創高，正是提醒夥伴帶著客戶一起檢視投資型保單帳戶、盤點停利紀律的好時機。",
+  "caring_note": "處暑已過、暑氣漸消，早晚溫差開始拉大，忙碌之餘也別忘了提醒客戶與家人添件外套、照顧好身體。",
+  "source_note": "資料來源：CNBC／中央社／鉅亨網／Yahoo Finance・數據為2026/08/27最近交易日收盤（台指期夜盤為當日收盤）"
+}
