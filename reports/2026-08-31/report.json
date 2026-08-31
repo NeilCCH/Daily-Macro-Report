@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/08/31",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,711.76", "change_pct": "0.25%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,402.42", "change_pct": "0.52%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,469.66", "change_pct": "3.47%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,405.56", "change_pct": "0.41%", "dir": "up"},
+      {"label": "台股加權", "value": "46,331.45", "change_pct": "0.77%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "45,900", "change_pct": "0.99%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.65", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "160.0", "change_pct": "", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.73", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.863", "change_pct": "", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$84.65", "change_pct": "1.4%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$89.46", "change_pct": "1.5%", "dir": "up"},
+      {"label": "黃金", "value": "$4,456.5", "change_pct": "0.01%", "dir": "up"},
+      {"label": "白銀", "value": "$66.15", "change_pct": "4.48%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.67%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "Fed主席華許鷹派發言強調抗通膨紀律未鬆懈，九月升息機率跳升至近六成，美股四大指數與費半應聲收黑，公債殖利率走揚。",
+  "business_angle": "近期公債殖利率走高、市場利率走向仍待觀察，不妨趁機和客戶聊聊固定收益在整體資產配置中扮演的角色，一起檢視美元利變型保單的長期定位是否仍貼合需求。",
+  "caring_note": "處暑已過，早晚漸涼、日夜溫差拉大，提醒夥伴和客戶們留意添衣保暖，也別忘了關心家人的保單健檢喔！",
+  "source_note": "資料來源：Yahoo Finance／日本經濟新聞／TradingEconomics・數據為 2026/08/28 最近美股交易日收盤（台指期夜盤為 08/28 夜盤）"
+}
