@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/01",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,686.14", "change_pct": "0.33%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,370.89", "change_pct": "0.12%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,463.94", "change_pct": "0.05%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,311.93", "change_pct": "0.14%", "dir": "down"},
+      {"label": "台股加權", "value": "46,128.47", "change_pct": "0.44%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "45,983", "change_pct": "0.01%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.69", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "159.7", "change_pct": "", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.72", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.860", "change_pct": "", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$86.63", "change_pct": "2.3%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$91.02", "change_pct": "1.7%", "dir": "up"},
+      {"label": "黃金", "value": "$4,456.7", "change_pct": "0.18%", "dir": "up"},
+      {"label": "白銀", "value": "$67.11", "change_pct": "1.09%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.73%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "Fed主席華許於Jackson Hole央行年會發言偏鷹，暗示物價壓力仍需升息因應，市場對9月升息的預期機率攀升至近六成；美伊軍事衝突再度推升油價，通膨疑慮升溫，10年期美債殖利率同步走高至4.73%。",
+  "business_angle": "美債殖利率走高、升息預期升溫的環境下，正好和夥伴聊聊資產配置中固定收益的角色，一起回顧美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "處暑已過、暑氣漸消，白露將至，早晚溫差漸大，願您與家人日日安好、事事順心。",
+  "source_note": "資料來源：CNBC / Yahoo Finance / 財經新聞・數據為 2026/08/31 最近交易日收盤"
+}
