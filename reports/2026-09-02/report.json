@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/02",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,631.47", "change_pct": "0.71%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,104.85", "change_pct": "1.01%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,186.85", "change_pct": "3.0%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,311.93", "change_pct": "0.14%", "dir": "down"},
+      {"label": "台股加權", "value": "46,948.72", "change_pct": "1.78%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "46,679", "change_pct": "1.11%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.69", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "160.2", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.72", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.863", "change_pct": "", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$90.85", "change_pct": "5.2%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$95.20", "change_pct": "4.6%", "dir": "up"},
+      {"label": "黃金", "value": "$4,322.0", "change_pct": "0.15%", "dir": "down"},
+      {"label": "白銀", "value": "$64.76", "change_pct": "2.69%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.75%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美國對伊朗發動新一輪空襲、荷莫茲海峽情勢升溫，油價急漲逾4%、美債殖利率逼近5%；Fed主席鷹派談話推升9月升息預期至近六成，美股全面走跌、費半重挫3%。",
+  "business_angle": "美債殖利率逼近5%高檔，正是和客戶聊聊固定收益資產配置角色的好時機，一起檢視美元利變型保單在長期規劃中的定位。",
+  "caring_note": "處暑時節暑氣漸消、早晚溫差加大，提醒夥伴與客戶適時添衣，健康平安每一天。",
+  "source_note": "資料來源：CNBC／Yahoo Finance／經濟日報／新頭殼・數據為2026/09/01最近交易日收盤"
+}
