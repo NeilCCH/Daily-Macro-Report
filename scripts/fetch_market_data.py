@@ -20,7 +20,8 @@ Prints a JSON object with "fx" and/or "commodity_rate" row lists -- only
 for the data points that were fetched successfully. A row that fails
 (network error, rate limit, paid-only symbol) is omitted entirely, not
 written as null or "N/A", so the caller knows exactly what to WebSearch
-instead.
+instead. Each row carries both "change_pts" (absolute point/dollar change)
+and "change_pct" (percentage change) alongside "value" and "dir".
 """
 import json
 import os
@@ -69,15 +70,18 @@ def fetch_treasury_yield() -> dict | None:
             return None
         latest = float(series[0]["value"])
         dirn = "flat"
+        change_pts = ""
         if len(series) > 1:
             prev = float(series[1]["value"])
-            dirn = "up" if latest > prev else "down" if latest < prev else "flat"
-        return {"label": "美 10Y 公債", "value": f"{latest:.2f}%", "change_pct": "", "dir": dirn}
+            diff = latest - prev
+            dirn = "up" if diff > 0 else "down" if diff < 0 else "flat"
+            change_pts = f"{abs(diff):.2f}%" if diff else ""
+        return {"label": "美 10Y 公債", "value": f"{latest:.2f}%", "change_pts": change_pts, "change_pct": "", "dir": dirn}
     except (requests.RequestException, ValueError, KeyError):
         return None
 
 
-def fetch_twelve_data_quote(symbol: str, label: str, fmt) -> dict | None:
+def fetch_twelve_data_quote(symbol: str, label: str, fmt, pts_fmt=None) -> dict | None:
     key = os.environ.get("TWELVE_DATA_API_KEY")
     if not key:
         return None
@@ -92,10 +96,13 @@ def fetch_twelve_data_quote(symbol: str, label: str, fmt) -> dict | None:
             return None
         close = float(data["close"])
         pct = data.get("percent_change")
-        dirn = _dir_from_change(data.get("change")) or "flat"
+        change = data.get("change")
+        dirn = _dir_from_change(change) or "flat"
+        pf = pts_fmt or fmt
         return {
             "label": label,
             "value": fmt(close),
+            "change_pts": pf(abs(float(change))) if _is_number(change) else "",
             "change_pct": f"{abs(float(pct)):.2f}%" if _is_number(pct) else "",
             "dir": dirn,
         }
@@ -119,11 +126,13 @@ def fetch_oil_price(code: str, label: str) -> dict | None:
         if price is None:
             return None
         ch = d.get("changes", {}).get("24h", {})
-        dirn = _dir_from_change(ch.get("amount")) or "flat"
+        amount = ch.get("amount")
+        dirn = _dir_from_change(amount) or "flat"
         pct = ch.get("percent")
         return {
             "label": label,
             "value": f"${price:,.2f}",
+            "change_pts": f"${abs(float(amount)):,.2f}" if _is_number(amount) else "",
             "change_pct": f"{abs(float(pct)):.1f}%" if _is_number(pct) else "",
             "dir": dirn,
         }
@@ -150,7 +159,7 @@ def main() -> None:
         if row:
             commodity_rows.append(row)
 
-    gold_row = fetch_twelve_data_quote("XAU/USD", "黃金", lambda v: f"${v:,.1f}")
+    gold_row = fetch_twelve_data_quote("XAU/USD", "黃金", lambda v: f"${v:,.1f}", pts_fmt=lambda v: f"${v:,.1f}")
     if gold_row:
         commodity_rows.append(gold_row)
 
