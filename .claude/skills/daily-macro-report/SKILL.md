@@ -163,27 +163,27 @@ WebSearch 常會回傳過時或彼此矛盾的數字（例如把好幾天前的�
   "us_market_closed": false,
   "sections": {
     "us_market": [
-      {"label": "S&P 500", "value": "7,483", "change_pct": "0.22%", "dir": "down"},
-      {"label": "NASDAQ", "value": "26,040", "change_pct": "0.66%", "dir": "down"},
-      {"label": "費半 SOX", "value": "12,940", "change_pct": "0.31%", "dir": "down"}
+      {"label": "S&P 500", "value": "7,483", "change_pts": "16.8", "change_pct": "0.22%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,040", "change_pts": "173.5", "change_pct": "0.66%", "dir": "down"},
+      {"label": "費半 SOX", "value": "12,940", "change_pts": "40.2", "change_pct": "0.31%", "dir": "down"}
     ],
     "asia_market": [
-      {"label": "日經 225", "value": "70,474", "change_pct": "0.59%", "dir": "up"},
-      {"label": "台股加權", "value": "47,034", "change_pct": "1.97%", "dir": "up"},
-      {"label": "台指期夜盤", "value": "47,120", "change_pct": "0.18%", "dir": "up"}
+      {"label": "日經 225", "value": "70,474", "change_pts": "414.9", "change_pct": "0.59%", "dir": "up"},
+      {"label": "台股加權", "value": "47,034", "change_pts": "908.6", "change_pct": "1.97%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "47,120", "change_pts": "84.0", "change_pct": "0.18%", "dir": "up"}
     ],
     "fx": [
-      {"label": "USD / TWD", "value": "31.83", "change_pct": "", "dir": "up"},
-      {"label": "USD / JPY", "value": "162.0", "change_pct": "", "dir": "up"},
-      {"label": "USD / CNY", "value": "6.80", "change_pct": "", "dir": "flat"},
-      {"label": "USD / EUR", "value": "0.877", "change_pct": "", "dir": "down"}
+      {"label": "USD / TWD", "value": "31.83", "change_pts": "0.03", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "162.0", "change_pts": "0.4", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.80", "change_pts": "0.00", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.877", "change_pts": "0.002", "change_pct": "", "dir": "down"}
     ],
     "commodity_rate": [
-      {"label": "WTI 原油", "value": "$68.77", "change_pct": "1.1%", "dir": "down"},
-      {"label": "Brent 原油", "value": "$72.20", "change_pct": "1.0%", "dir": "down"},
-      {"label": "黃金", "value": "$4,003", "change_pct": "0.88%", "dir": "down"},
-      {"label": "白銀", "value": "$58.47", "change_pct": "2.43%", "dir": "down"},
-      {"label": "美 10Y 公債", "value": "4.46%", "change_pct": "", "dir": "up"}
+      {"label": "WTI 原油", "value": "$68.77", "change_pts": "$0.76", "change_pct": "1.1%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$72.20", "change_pts": "$0.73", "change_pct": "1.0%", "dir": "down"},
+      {"label": "黃金", "value": "$4,003", "change_pts": "$35.4", "change_pct": "0.88%", "dir": "down"},
+      {"label": "白銀", "value": "$58.47", "change_pts": "$1.46", "change_pct": "2.43%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.46%", "change_pts": "0.02%", "change_pct": "", "dir": "up"}
     ]
   },
   "highlights": "……（今日重點 1–2 句）",
@@ -195,9 +195,11 @@ WebSearch 常會回傳過時或彼此矛盾的數字（例如把好幾天前的�
 
 規則：
 - `dir` 只能是 `"up"`（漲，紅）／`"down"`（跌，綠）／`"flat"`（持平，`→`）。台股慣例：漲紅跌綠。
-- `change_pct` 沒有明確百分比時給 `""`（只顯示箭頭）。
+- 每一列都要同時給 `change_pts`（漲跌點數／絕對值，不含正負號，只放數字＋原本單位如 `$`／`%`）與 `change_pct`（漲跌百分比）。兩者其中一個沒有明確數字時給 `""`；只有兩者都查不到才整列省略（見上方「台指期夜盤查詢技巧」與步驟 1 的通則）。
+- `change_pts` 的單位跟著 `value` 走：指數類（美股／亞股）用純數字（如 `"16.8"`）；原物料用 `$` 開頭（如 `"$0.76"`）；殖利率用 `%` 結尾表示變動了幾個百分點（如 `"0.02%"`，代表 2 個基點）；匯率用該幣別小數位（如 `"0.03"`）。
 - 美股區固定三列順序：S&P 500 → NASDAQ → 費半 SOX。
 - 亞股區固定三列順序：日經 225 → 台股加權 → 台指期夜盤。
+- `fetch_market_data.py`（步驟 1a）現在會直接回傳 `change_pts`＋`change_pct`，兩個都能直接搬進 `report.json`，不用再自己算。
 - `source_note` 的日期填「最近交易日」。
 
 ---
@@ -211,27 +213,27 @@ WebSearch 常會回傳過時或彼此矛盾的數字（例如把好幾天前的�
 夥伴早安 ☀
 
 📈 美股
-S&P 500：7,483 🔻0.22%
-NASDAQ：26,040 🔻0.66%
-費半 SOX：12,940 🔻0.31%
+S&P 500：7,483 🔻16.8（0.22%）
+NASDAQ：26,040 🔻173.5（0.66%）
+費半 SOX：12,940 🔻40.2（0.31%）
 
 🌏 亞股
-日經 225：70,474 🔺0.59%
-台股加權：47,034 🔺1.97%
-台指期夜盤：47,120 🔺0.18%
+日經 225：70,474 🔺414.9（0.59%）
+台股加權：47,034 🔺908.6（1.97%）
+台指期夜盤：47,120 🔺84.0（0.18%）
 
 💱 匯率
-USD/TWD：31.83 🔺
-USD/JPY：162.0 🔺
+USD/TWD：31.83 🔺0.03
+USD/JPY：162.0 🔺0.4
 USD/CNY：6.80 ➡️
-USD/EUR：0.877 🔻
+USD/EUR：0.877 🔻0.002
 
 🛢 原物料 / 利率
-WTI 原油：$68.77 🔻1.1%
-Brent 原油：$72.20 🔻1.0%
-黃金：$4,003 🔻0.88%
-白銀：$58.47 🔻2.43%
-美 10Y 公債：4.46% 🔺
+WTI 原油：$68.77 🔻$0.76（1.1%）
+Brent 原油：$72.20 🔻$0.73（1.0%）
+黃金：$4,003 🔻$35.4（0.88%）
+白銀：$58.47 🔻$1.46（2.43%）
+美 10Y 公債：4.46% 🔺0.02%
 
 🔥 今日重點
 ……
@@ -244,6 +246,7 @@ Brent 原油：$72.20 🔻1.0%
 ```
 
 - 漲用 🔺、跌用 🔻、持平用 ➡️。
+- 漲跌點數放箭頭後面，百分比有值時用全形括號附在點數後面（`🔺414.9（0.59%）`）；只有其中一個有值就只顯示那一個（不留空括號）。
 - 查不到的那一列直接刪除，不留空欄位。
 - 結尾就是「❤️ 貼心小語」那一行，不加多餘客套話。
 

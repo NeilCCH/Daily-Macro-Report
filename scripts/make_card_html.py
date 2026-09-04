@@ -56,14 +56,16 @@ def render(report: dict) -> str:
         line_items = []
         for it in items:
             ar, col = arrow(it.get("dir", "flat"))
+            pts = esc(it.get("change_pts", ""))
             pct = esc(it.get("change_pct", ""))
-            pct_html = f'<span class="pct" style="color:{col}">{pct}</span>' if pct else ""
+            delta = " ".join(p for p in (pts, f"({pct})" if pct else "") if p)
+            delta_html = f'<span class="pct" style="color:{col}">{delta}</span>' if delta else ""
             line_items.append(
                 f'<div class="row">'
                 f'<span class="label">{esc(it.get("label",""))}</span>'
                 f'<span class="val">{esc(it.get("value",""))}</span>'
                 f'<span class="arr" style="color:{col}">{ar}</span>'
-                f'{pct_html}</div>'
+                f'{delta_html}</div>'
             )
         rows_html.append(
             f'<div class="sec"><div class="sec-title">{esc(title)}</div>'
@@ -105,10 +107,10 @@ def render(report: dict) -> str:
   .sec-title {{ color:#142642; font-size:34px; font-weight:bold;
     border-bottom:3px solid #e4e7ed; padding-bottom:10px; margin-bottom:12px; }}
   .row {{ display:flex; align-items:baseline; padding:7px 8px; font-size:31px; }}
-  .label {{ color:#5a5a5a; flex:0 0 300px; }}
+  .label {{ color:#5a5a5a; flex:0 0 260px; }}
   .val {{ color:#202020; flex:1; text-align:right; font-weight:bold; }}
   .arr {{ width:52px; text-align:right; font-size:29px; }}
-  .pct {{ width:130px; text-align:right; font-size:28px; }}
+  .pct {{ width:230px; text-align:right; font-size:26px; white-space:nowrap; }}
   .closed {{ color:#788092; font-size:30px; padding:8px; }}
   .box {{ border-radius:20px; padding:26px 30px; margin:0 0 22px; border-left:12px solid; }}
   .box-title {{ font-size:32px; font-weight:bold; margin-bottom:14px; }}
