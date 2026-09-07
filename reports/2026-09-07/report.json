@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/07",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,718.60", "change_pts": "29.11", "change_pct": "0.38%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,506.99", "change_pts": "77.11", "change_pct": "0.29%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,735.26", "change_pts": "383.16", "change_pct": "3.38%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,020.94", "change_pts": "806.46", "change_pct": "1.26%", "dir": "up"},
+      {"label": "台股加權", "value": "46,551.13", "change_pts": "693.47", "change_pct": "1.51%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "24,478.00", "change_pts": "54.00", "change_pct": "0.22%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.64", "change_pts": "0.03", "change_pct": "0.08%", "dir": "down"},
+      {"label": "USD / JPY", "value": "156.2", "change_pts": "0.2", "change_pct": "0.15%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.861", "change_pts": "0.000", "change_pct": "0.00%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$92.13", "change_pts": "$0.91", "change_pct": "1.0%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$96.28", "change_pts": "$0.43", "change_pct": "0.5%", "dir": "up"},
+      {"label": "黃金", "value": "$4,422.8", "change_pts": "$6.2", "change_pct": "0.14%", "dir": "down"},
+      {"label": "白銀", "value": "$66.67", "change_pts": "$0.31", "change_pct": "0.46%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.77%", "change_pts": "0.02%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美國8月非農就業意外暴增16.2萬人，強化Fed本月升息預期，帶動美債殖利率走高、科技股回落；美伊緊張情勢未歇，國際油價維持高檔。",
+  "business_angle": "美債殖利率居高、升息預期升溫，可以藉此和客戶聊聊資產配置中固定收益的角色——美元利變型保單在長期規劃裡的定位，值得找時間一起檢視。",
+  "caring_note": "今日白露，暑氣漸消、早晚轉涼，提醒夥伴們留意保暖，也別忘了照顧好自己與家人的健康。",
+  "source_note": "資料來源：CNBC / Washington Post / 日本經濟新聞 / 豐雲學堂・數據為 2026/09/04（五）最近交易日收盤，台指期夜盤為 09/05 凌晨盤後"
+}
