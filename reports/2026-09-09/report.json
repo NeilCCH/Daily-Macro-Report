@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/09/09",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,673.52", "change_pts": "45.08", "change_pct": "0.6%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,419.69", "change_pts": "87.30", "change_pct": "0.33%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,887.87", "change_pts": "152.61", "change_pct": "1.30%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,278.00", "change_pts": "1,121.84", "change_pct": "1.69%", "dir": "down"},
+      {"label": "台股加權", "value": "47,105.78", "change_pts": "220.49", "change_pct": "0.47%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.53", "change_pts": "0.01", "change_pct": "0.03%", "dir": "up"},
+      {"label": "USD / JPY", "value": "153.6", "change_pts": "0.4", "change_pct": "0.25%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.860", "change_pts": "0.000", "change_pct": "", "dir": "flat"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$94.25", "change_pts": "$1.55", "change_pct": "1.7%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$99.36", "change_pts": "$2.05", "change_pct": "2.1%", "dir": "up"},
+      {"label": "黃金", "value": "$4,353.9", "change_pts": "$2.1", "change_pct": "0.05%", "dir": "down"},
+      {"label": "白銀", "value": "$66.78", "change_pts": "$1.23", "change_pct": "1.88%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.78%", "change_pts": "0.01%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "中東情勢升溫、油價直逼百元大關，加上8月非農就業強勁推升9月Fed升息機率近六成，美股承壓收黑，日股、台股同步走跌。",
+  "business_angle": "中東情勢持續升溫、油價直逼百元大關，牽動全球市場神經，正是與夥伴客戶聊聊家庭風險保障是否仍足夠的好時機。",
+  "caring_note": "白露節氣晝夜溫差仍大，早晚出門記得添件外套，也別忘了提醒家人注意保暖。",
+  "source_note": "資料來源：Yahoo Finance / CNBC / 經濟日報 / Goodinfo・美股與原物料為 2026/09/08 最近交易日收盤，日股為 09/08 收盤，台股加權為 09/08 收盤（台指期夜盤查無當日收盤資料，已省略）"
+}
