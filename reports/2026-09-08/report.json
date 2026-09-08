@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/08",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,718.60", "change_pts": "29.11", "change_pct": "0.38%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,506.99", "change_pts": "77.11", "change_pct": "0.29%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,735.26", "change_pts": "383.16", "change_pct": "3.38%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "66,341.12", "change_pts": "1,320.18", "change_pct": "2.03%", "dir": "up"},
+      {"label": "台股加權", "value": "47,326.27", "change_pts": "775.14", "change_pct": "1.67%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "47,330.00", "change_pts": "132.00", "change_pct": "0.28%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.52", "change_pts": "0.01", "change_pct": "0.03%", "dir": "down"},
+      {"label": "USD / JPY", "value": "153.8", "change_pts": "0.5", "change_pct": "0.35%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.860", "change_pts": "0.000", "change_pct": "0.05%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$92.62", "change_pts": "$0.57", "change_pct": "0.6%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$97.12", "change_pts": "$0.36", "change_pct": "0.4%", "dir": "up"},
+      {"label": "黃金", "value": "$4,418.1", "change_pts": "$12.9", "change_pct": "0.29%", "dir": "up"},
+      {"label": "白銀", "value": "$65.55", "change_pts": "$0.61", "change_pct": "0.92%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.77%", "change_pts": "0.02%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "美國8月非農就業意外強勁，Fed 9月升息機率升至約六成、美債殖利率維持高檔；台積電、聯發科領軍，日股與台股延續漲勢，台指期夜盤同步走高。",
+  "business_angle": "美債殖利率持續偏高、升息預期升溫，正是和夥伴客戶聊聊資產配置中固定收益角色的好時機——美元利變型保單在長期規劃裡的定位，值得找時間一起檢視。",
+  "caring_note": "白露已過，早晚溫差漸大，提醒夥伴們留意添衣保暖，也別忘了關心家人的身體狀況。",
+  "source_note": "資料來源：CNBC / 鉅亨網 / 經濟日報 / Yahoo股市・美股數據為 2026/09/04（五）最近交易日收盤，台股加權為 09/07（一）收盤，台指期夜盤為 09/08 凌晨盤後"
+}
