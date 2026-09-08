@@ -11,7 +11,7 @@
 
 ## 0. 系統概觀（現行架構）
 
-- **做什麼**：每個台灣工作日早上（台北 08:00），自動產出全球總經/市場晨報「卡片圖片」，
+- **做什麼**：每個台灣工作日早上（台北 07:00），自動產出全球總經/市場晨報「卡片圖片」，
   推播到 Neil 的 3 個 LINE 業務群組。**只發圖片，不發文字。**
 - **跑在哪**：**Claude Code Routine**（Anthropic 雲端），不是 GitHub Actions，不是本機。
   電腦關機、人不在都照跑。
@@ -23,7 +23,7 @@
   當圖床；LINE 伺服器自行去公開網址抓圖。
 
 ```
-Claude Code Routine（工作日 08:00 台北）
+Claude Code Routine（工作日 07:00 台北）
   1. scripts/check_workday.py      判斷是否台灣工作日；非工作日→整個跳過
   2. Claude 用 WebSearch 抓最近收盤行情 + 當日財經新聞
   3. Claude 依合規規則寫三段文案，輸出 report.json + line_text.txt
@@ -43,7 +43,7 @@ Claude Code Routine（工作日 08:00 台北）
 | LINE Messaging API channel | 取得 access token、發送推播 |
 | LINE 群組 ID × N | 推播目標 |
 | Claude Code 環境（Environment） | 存放環境變數、網路政策 |
-| Claude Code Routine | 排程每工作日 08:00 觸發 |
+| Claude Code Routine | 排程每工作日 07:00 觸發 |
 | repo 內的 `daily-macro-report` skill | 定義每天執行流程 |
 
 ---
@@ -140,7 +140,7 @@ GitHub Secrets 餵不到這裡。
 ### 3.5 建立 Routine 排程
 1. [claude.ai/code](https://claude.ai/code) → 左側 **Routines** → 建立 routine。
 2. 綁定：本 repo、上面設好的環境、預設分支（見 3.6）。
-3. 排程：每個工作日早上（台北 08:00）。工作日的最終判斷由 `check_workday.py`
+3. 排程：每個工作日早上（台北 07:00）。工作日的最終判斷由 `check_workday.py`
    在 routine 內把關，所以就算排「每天」也沒關係，非工作日會自動跳過。
 4. Routine 的提示詞：叫用 `daily-macro-report` skill 執行完整流程。
 

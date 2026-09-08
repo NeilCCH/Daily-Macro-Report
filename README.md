@@ -1,6 +1,6 @@
 # daily-macro-report
 
-每個台灣工作日早上（台北 08:00）自動產出「每日晨報」（全球總經/市場速報）卡片圖片，
+每個台灣工作日早上（台北 07:00）自動產出「每日晨報」（全球總經/市場速報）卡片圖片，
 並推播到 LINE 官方帳號 **NeilCCH** 旗下已啟用的業務群組（名單見 `data/line_groups.json`）。**只發圖片，不發文字。**
 
 ## 架構（現行）
@@ -9,7 +9,7 @@
 **不使用 Gemini、不使用任何外部 LLM API key**。電腦關機、人不在都照跑。
 
 ```
-Claude Code Routine（工作日 08:00 台北）
+Claude Code Routine（工作日 07:00 台北）
   1. scripts/check_workday.py       判斷是否台灣工作日；非工作日→整個跳過
   2. scripts/fetch_market_data.py   先抓匯率/黃金/原油/10Y殖利率（Alpha Vantage、
                                     Twelve Data、Oil Price API），抓不到的欄位
