@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/10",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,636", "change_pts": "36.6", "change_pct": "0.48%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,253", "change_pts": "169.1", "change_pct": "0.64%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,888", "change_pts": "35.3", "change_pct": "0.3%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,535", "change_pts": "265.5", "change_pct": "0.41%", "dir": "up"},
+      {"label": "台股加權", "value": "47,195", "change_pts": "89.2", "change_pct": "0.19%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "46,872", "change_pts": "306", "change_pct": "0.65%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.47", "change_pts": "0.01", "change_pct": "", "dir": "down"},
+      {"label": "USD / JPY", "value": "153.4", "change_pts": "0.2", "change_pct": "", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.859", "change_pts": "0.000", "change_pct": "", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$97.16", "change_pts": "$2.91", "change_pct": "3.1%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$101.95", "change_pts": "$2.58", "change_pct": "2.6%", "dir": "up"},
+      {"label": "黃金", "value": "$4,394.6", "change_pts": "$7.1", "change_pct": "0.16%", "dir": "down"},
+      {"label": "白銀", "value": "$66.58", "change_pts": "$0.82", "change_pct": "1.23%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.80%", "change_pts": "0.02%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美伊衝突再起，美軍出手攻擊伊朗油輪，布蘭特原油衝破100美元、WTI站上95美元，推升美債殖利率寫下52週新高；美股三大指數同步收黑，僅費半逆勢收紅。",
+  "business_angle": "美債殖利率同步寫下52週新高，正好適合和客戶聊聊資產配置中固定收益的角色——美元利變型保單在長期規劃裡穩健配息的定位，值得找時間一起回顧。",
+  "caring_note": "白露已至，晝夜溫差漸大，早晚微涼，願您與家人朋友都添衣保暖、平安順心。",
+  "source_note": "資料來源：Alpha Vantage／Twelve Data／Oil Price API／TheStreet／UDN・數據為 2026/09/09 最近交易日"
+}
