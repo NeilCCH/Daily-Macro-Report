@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/14",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,657", "change_pts": "65.3", "change_pct": "0.86%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,333", "change_pts": "251.3", "change_pct": "0.96%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,824", "change_pts": "209.8", "change_pct": "1.81%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "64,011", "change_pts": "1,259.6", "change_pct": "1.93%", "dir": "down"},
+      {"label": "台股加權", "value": "46,185", "change_pts": "755.6", "change_pct": "1.61%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "46,679", "change_pts": "522", "change_pct": "1.11%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.66", "change_pts": "0.06", "change_pct": "0.18%", "dir": "up"},
+      {"label": "USD / JPY", "value": "153.6", "change_pts": "0.0", "change_pct": "0.02%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "0.06%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.863", "change_pts": "0.001", "change_pct": "0.07%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$102.77", "change_pts": "$2.78", "change_pct": "2.8%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$107.58", "change_pts": "$3.26", "change_pct": "3.1%", "dir": "up"},
+      {"label": "黃金", "value": "$4,339.4", "change_pts": "$9.1", "change_pct": "0.21%", "dir": "down"},
+      {"label": "白銀", "value": "$64.69", "change_pts": "$0.75", "change_pct": "1.17%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "4.95%", "change_pts": "0.12%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "中東情勢再度升溫，WTI、Brent同步彈升逾3%站回百元關卡；Fed主席華許鷹派立場未歇，10年期公債殖利率持續貼近4.95%高檔，上週五美股三大指數同步收紅。",
+  "business_angle": "10年期公債殖利率持續於高檔震盪，正好和夥伴聊聊資產配置中固定收益的角色，找時間一起回顧美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "白露節氣進入尾聲，早晚涼意漸濃，新的一週開始，願您留意保暖之餘，也為自己保留一份從容，穩健迎接忙碌的每一天。",
+  "source_note": "資料來源：Alpha Vantage／Twelve Data／Oil Price API／Investing.com／TheStreet／經濟日報・數據為 2026/09/11 最近交易日（匯率與原物料為即時報價）"
+}
