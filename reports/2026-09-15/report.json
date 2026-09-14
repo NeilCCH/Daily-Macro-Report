@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/15",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,621.54", "change_pts": "35.31", "change_pct": "0.46%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,186.41", "change_pts": "146.63", "change_pct": "0.55%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,203.21", "change_pts": "620.79", "change_pct": "5.25%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "63,492.99", "change_pts": "518.35", "change_pct": "0.81%", "dir": "down"},
+      {"label": "台股加權", "value": "45,862.52", "change_pts": "322.33", "change_pct": "0.70%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "45,727", "change_pts": "85", "change_pct": "0.19%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.71", "change_pts": "0.05", "change_pct": "0.17%", "dir": "down"},
+      {"label": "USD / JPY", "value": "154.4", "change_pts": "0.1", "change_pct": "0.05%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "0.03%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.866", "change_pts": "0.000", "change_pct": "0.01%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$102.09", "change_pts": "$0.68", "change_pct": "0.7%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$106.24", "change_pts": "$1.50", "change_pct": "1.4%", "dir": "down"},
+      {"label": "黃金", "value": "$4,289.8", "change_pts": "$8.6", "change_pct": "0.20%", "dir": "down"},
+      {"label": "白銀", "value": "$63.22", "change_pts": "$1.38", "change_pct": "2.14%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.96%", "change_pts": "0.01%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "AI大老示警開發步調過快、OpenAI延後上市引爆賣壓，費半重挫逾5%；國際油價站穩百元關卡、10年期公債殖利率貼近5%創逾兩年新高，市場緊盯本週Fed利率決策。",
+  "business_angle": "近期核心通膨仍維持3%以上高檔，正好和夥伴聊聊生活成本墊高之際，家庭保障額度是否還足夠因應目前需求，值得找時間一起檢視。",
+  "caring_note": "距中秋佳節僅剩十天，早晚溫差漸大，趁團圓前添件薄外套，也給自己與家人多一份貼心的問候。",
+  "source_note": "資料來源：TheStreet／日本經濟新聞／經濟日報／聯合新聞網／Alpha Vantage／Twelve Data／Oil Price API・數據為 2026/09/14 最近交易日（台股加權為前一交易日收盤；台指期夜盤為 2026/09/15 收盤；匯率與原物料為即時報價）"
+}
