@@ -1,0 +1,31 @@
+{
+  "report_date": "2026/09/16",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,585.73", "change_pts": "34.2", "change_pct": "0.45%", "dir": "down"},
+      {"label": "NASDAQ", "value": "25,981.57", "change_pts": "204.3", "change_pct": "0.78%", "dir": "down"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "63,735", "change_pts": "242", "change_pct": "0.38%", "dir": "up"},
+      {"label": "台股加權", "value": "45,511.49", "change_pts": "351.03", "change_pct": "0.77%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.80", "change_pts": "0.02", "change_pct": "0.06%", "dir": "down"},
+      {"label": "USD / JPY", "value": "155.2", "change_pts": "0.1", "change_pct": "0.05%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.867", "change_pts": "0.000", "change_pct": "0.04%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$105.40", "change_pts": "$3.43", "change_pct": "3.4%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$108.32", "change_pts": "$2.08", "change_pct": "2.0%", "dir": "up"},
+      {"label": "黃金", "value": "$4,286.1", "change_pts": "$7.7", "change_pct": "0.18%", "dir": "down"},
+      {"label": "白銀", "value": "$63.20", "change_pts": "", "change_pct": "0.6%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.97%", "change_pts": "0.01%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "聯準會今明兩日召開決策會議，市場預期升息機率逾九成，10年期公債殖利率再創近18年新高；沙國關鍵油管遇襲推升油價，AI風險疑慮則拖累半導體類股走弱。",
+  "business_angle": "10年期公債殖利率來到近18年高點，正好與夥伴聊聊固定收益在資產配置中的角色，一起檢視美元利率變動型保單是否仍貼合現在的規劃需求。",
+  "caring_note": "時序入白露，早晚溫差漸大，提醒身邊的夥伴添件外套，也別忘了為家人的保障規劃做一次溫暖的檢視。",
+  "source_note": "資料來源：CNBC／Yahoo奇摩股市／中央社／FXStreet／Alpha Vantage／Twelve Data／Oil Price API・數據為 2026/09/15 最近交易日（日經225與台股加權為前一交易日收盤；費半SOX與台指期夜盤因查無可信收盤數據而省略；匯率與原物料為即時報價）"
+}
