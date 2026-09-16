@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/17",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,551.81", "change_pts": "33.92", "change_pct": "0.45%", "dir": "down"},
+      {"label": "NASDAQ", "value": "25,978.42", "change_pts": "3.15", "change_pct": "0.01%", "dir": "down"},
+      {"label": "費半 SOX", "value": "11,409.91", "change_pts": "223.9", "change_pct": "2.0%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "63,923.00", "change_pts": "438.90", "change_pct": "0.69%", "dir": "up"},
+      {"label": "台股加權", "value": "45,848", "change_pts": "337.41", "change_pct": "0.74%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "46,382", "change_pts": "322", "change_pct": "0.70%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.86", "change_pts": "0.04", "change_pct": "0.13%", "dir": "down"},
+      {"label": "USD / JPY", "value": "156.1", "change_pts": "0.2", "change_pct": "0.11%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "0.02%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.872", "change_pts": "0.000", "change_pct": "0.05%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$102.00", "change_pts": "$3.40", "change_pct": "3.2%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$105.52", "change_pts": "$2.80", "change_pct": "2.6%", "dir": "down"},
+      {"label": "黃金", "value": "$4,240.1", "change_pts": "$51.5", "change_pct": "1.2%", "dir": "down"},
+      {"label": "白銀", "value": "$64.54", "change_pts": "$0.87", "change_pct": "1.36%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "5.00%", "change_pts": "0.02%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "Fed三年來首度升息1碼至3.75%-4.00%，主席沃許示警通膨仍偏高、後續不排除再升息，美股道瓊重挫631點，10年期公債殖利率站上5%創2007年來新高；沙國東西向油管遇襲、延布港裝載中斷，國際油價本週急漲後今日拉回。",
+  "business_angle": "美債殖利率站上5%、升息環境延續，藉此與客戶聊聊美元利率變動型保單在資產配置中固定收益的角色，一起檢視配置是否需要調整。",
+  "caring_note": "白露已過、秋分將至，早晚溫差漸大，提醒夥伴與客戶都要記得添件外套、把健康顧好。",
+  "source_note": "資料來源：CNBC / Yahoo Finance / 經濟日報 / Twelve Data・數據為 2026/09/16 最近交易日"
+}
