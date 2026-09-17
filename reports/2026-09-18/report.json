@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/18",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,637.76", "change_pts": "85.95", "change_pct": "1.14%", "dir": "up"},
+      {"label": "NASDAQ", "value": "25,978.42", "change_pts": "3.15", "change_pct": "0.01%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,599.49", "change_pts": "353.39", "change_pct": "3.14%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "64,136.25", "change_pts": "213.25", "change_pct": "0.33%", "dir": "up"},
+      {"label": "台股加權", "value": "46,288", "change_pts": "439.10", "change_pct": "0.95%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "47,160", "change_pts": "701", "change_pct": "1.51%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.87", "change_pts": "0.01", "change_pct": "0.02%", "dir": "down"},
+      {"label": "USD / JPY", "value": "156.0", "change_pts": "0.1", "change_pct": "0.04%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.871", "change_pts": "0.000", "change_pct": "0.01%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$101.15", "change_pts": "$0.89", "change_pct": "0.9%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$104.09", "change_pts": "$1.43", "change_pct": "1.4%", "dir": "down"},
+      {"label": "黃金", "value": "$4,343.8", "change_pts": "$1.9", "change_pct": "0.04%", "dir": "up"},
+      {"label": "白銀", "value": "$66.02", "change_pts": "$0.41", "change_pct": "0.62%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "5.01%", "change_pts": "0.01%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "Fed三年來首度升息一碼至3.75-4.00%，主席強調通膨仍偏高；油價回落帶動美股債同步走高，費半重漲逾3%，台指期夜盤同步衝上47,160點。",
+  "business_angle": "「Fed升息後美債殖利率站上5%，這樣的利率環境，您的資產配置中固定收益部位，最近有沒有重新盤點一下？」",
+  "caring_note": "白露已過、秋分將至，日夜溫差漸大，早晚出門記得添件外套，也提醒夥伴們留意保暖、別讓辛苦耕耘的業績被感冒打亂節奏。",
+  "source_note": "資料來源：Yahoo Finance / 日本經濟新聞 / 經濟日報 / Alpha Vantage / Twelve Data / Oil Price API・數據為 2026/09/17 最近交易日收盤與 09/18 台指期夜盤"
+}
