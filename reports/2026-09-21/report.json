@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/21",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,650.50", "change_pts": "12.74", "change_pct": "0.17%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,522", "change_pts": "104.25", "change_pct": "0.39%", "dir": "up"},
+      {"label": "費半 SOX", "value": "11,921.69", "change_pts": "322.19", "change_pct": "2.78%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,018.95", "change_pts": "882.70", "change_pct": "1.38%", "dir": "up"},
+      {"label": "台股加權", "value": "47,180.75", "change_pts": "892.75", "change_pct": "1.93%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "47,405", "change_pts": "23", "change_pct": "0.05%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.82", "change_pts": "0.00", "change_pct": "0.01%", "dir": "down"},
+      {"label": "USD / JPY", "value": "157.0", "change_pts": "0.2", "change_pct": "0.11%", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.70", "change_pts": "0.00", "change_pct": "0.03%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.871", "change_pts": "0.000", "change_pct": "0.06%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$95.93", "change_pts": "$3.60", "change_pct": "3.6%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$103.76", "change_pts": "$0.39", "change_pct": "0.4%", "dir": "up"},
+      {"label": "黃金", "value": "$4,374.7", "change_pts": "$5.4", "change_pct": "0.12%", "dir": "down"},
+      {"label": "白銀", "value": "$67.18", "change_pts": "$1.97", "change_pct": "3.03%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "5.01%", "change_pts": "0.02%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "日本央行升息一碼至1.25%創31年新高，加上Fed官員鷹派發言，帶動美債10年期殖利率站上5%關卡；AI需求熱潮推升費半勁揚2.78%，台股同步收漲逾1.9%。",
+  "business_angle": "美股費半與台股同步走高，此時正適合安排一次投資型保單帳戶的定期健檢，檢視配置與紀律，而非追高殺低。",
+  "caring_note": "秋分將至，日夜漸趨等長、早晚溫差加大，提醒夥伴們外出記得添件薄外套，也留意作息與健康的平衡。",
+  "source_note": "資料來源：TheStreet / Yahoo Finance / 經濟日報 / Alpha Vantage / Twelve Data / Oil Price API・數據為 2026/09/18 最近交易日收盤與 09/18 台指期夜盤（日經225因日本敬老の日／秋分連休沿用 09/18 收盤）"
+}
