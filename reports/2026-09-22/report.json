@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/22",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,764.70", "change_pts": "114.20", "change_pct": "1.49%", "dir": "up"},
+      {"label": "NASDAQ", "value": "27,122.09", "change_pts": "599", "change_pct": "2.26%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,433.17", "change_pts": "511.49", "change_pct": "4.29%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,018.95", "change_pts": "882.70", "change_pct": "1.38%", "dir": "up"},
+      {"label": "台股加權", "value": "47,718.84", "change_pts": "538.09", "change_pct": "1.14%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "48,288", "change_pts": "235", "change_pct": "0.49%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.75", "change_pts": "0.03", "change_pct": "0.08%", "dir": "up"},
+      {"label": "USD / JPY", "value": "157.3", "change_pts": "0.1", "change_pct": "0.03%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.70", "change_pts": "0.00", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.872", "change_pts": "0.000", "change_pct": "", "dir": "flat"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$92.16", "change_pts": "$3.77", "change_pct": "3.9%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$100.09", "change_pts": "$3.67", "change_pct": "3.5%", "dir": "down"},
+      {"label": "黃金", "value": "$4,366.8", "change_pts": "$23.0", "change_pct": "0.53%", "dir": "up"},
+      {"label": "白銀", "value": "$66.93", "change_pts": "$0.67", "change_pct": "1.0%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "5.01%", "change_pts": "0.07%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "Fed 9月甫升息1碼至3.75%~4.00%，點陣圖顯示年底前恐再進一步升息，鷹派基調未歇；AI晶片需求熱潮續燒，那斯達克與費半齊創收盤新高，美股全面收紅、國際油價同步走跌。",
+  "business_angle": "美10年期公債殖利率續留5%高檔，加上Fed本月甫升息、後續路徑仍偏鷹，正是和夥伴聊聊固定收益資產在整體配置中角色的好時機，順道檢視美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "明日即迎秋分，日夜均長、寒暑相半，提醒夥伴早晚溫差漸大，記得添件外套、照顧好自己，也願大家在轉涼時節裡穩穩前行。",
+  "source_note": "資料來源：SETN / 經濟日報 / 工商時報 / TheStreet / Alpha Vantage / Twelve Data / Oil Price API・美股與台股數據為2026/09/21最近交易日收盤，台指期夜盤為09/21-22夜盤收盤；日經225因日本敬老の日／秋分の日連假休市，沿用09/18收盤"
+}
