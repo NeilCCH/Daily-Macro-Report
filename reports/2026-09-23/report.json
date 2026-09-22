@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/23",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,764.7", "change_pts": "113.7", "change_pct": "1.49%", "dir": "up"},
+      {"label": "NASDAQ", "value": "27,122.1", "change_pts": "599.6", "change_pct": "2.26%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,433.2", "change_pts": "511.5", "change_pct": "4.29%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,019", "change_pts": "882.8", "change_pct": "1.38%", "dir": "up"},
+      {"label": "台股加權", "value": "47,800", "change_pts": "81", "change_pct": "0.17%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "48,456", "change_pts": "231", "change_pct": "0.48%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.69", "change_pts": "0.01", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "157.5", "change_pts": "0.1", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.70", "change_pts": "", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.874", "change_pts": "", "change_pct": "", "dir": "flat"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$89.66", "change_pts": "$2.41", "change_pct": "2.6%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$98.44", "change_pts": "$1.57", "change_pct": "1.6%", "dir": "down"},
+      {"label": "黃金", "value": "$4,362.2", "change_pts": "$4.6", "change_pct": "0.10%", "dir": "up"},
+      {"label": "白銀", "value": "$65.61", "change_pts": "$0.52", "change_pct": "0.78%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "4.96%", "change_pts": "0.05%", "change_pct": "", "dir": "down"}
+    ]
+  },
+  "highlights": "Fed日前升息1碼至3.75%-4.00%，官員鷹派發言不斷，暗示年底前恐再升息；同時AI與半導體類股領漲，那斯達克收盤創新高、費半勁揚逾4%，市場呈現高利率與科技股續強並存的格局。",
+  "business_angle": "在10年期公債殖利率逼近5%的環境下，很適合找個時間跟客戶聊聊固定收益在資產配置中的角色，看看美元利變型保單在他們的長期規劃裡是否仍然適配。",
+  "caring_note": "今日秋分，晝夜均、寒暑平，正是收心調整步調的好時節，祝夥伴們忙碌之餘也記得照顧好自己，收穫滿滿。",
+  "source_note": "資料來源：Sina財經／鉅亨網／經濟日報／Twelve Data／Alpha Vantage・數據為2026/09/22最近交易日收盤"
+}
