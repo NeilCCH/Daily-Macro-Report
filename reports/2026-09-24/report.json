@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/24",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,706.03", "change_pts": "58.61", "change_pct": "0.75%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,936.04", "change_pts": "308.24", "change_pct": "1.13%", "dir": "down"},
+      {"label": "費半 SOX", "value": "12,496.98", "change_pts": "192.84", "change_pct": "1.52%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,018.95", "change_pts": "882.75", "change_pct": "1.38%", "dir": "up"},
+      {"label": "台股加權", "value": "48,157.29", "change_pts": "357.12", "change_pct": "0.75%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "48,497", "change_pts": "272", "change_pct": "0.56%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.81", "change_pts": "0.01", "change_pct": "0.03%", "dir": "up"},
+      {"label": "USD / JPY", "value": "158.3", "change_pts": "0.0", "change_pct": "0.01%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.879", "change_pts": "0.000", "change_pct": "0.03%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$92.24", "change_pts": "$2.60", "change_pct": "2.9%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$103.00", "change_pts": "$4.56", "change_pct": "4.6%", "dir": "up"},
+      {"label": "黃金", "value": "$4,286.8", "change_pts": "", "change_pct": "", "dir": "flat"},
+      {"label": "白銀", "value": "$65.45", "change_pts": "$1.62", "change_pct": "2.42%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "5.09%", "change_pts": "0.13%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美國9月製造與服務業數據強勁，推升聯準會續升息預期，10年期公債殖利率盤中飆破5%、創2007年以來新高，那斯達克應聲走弱；中東供應疑慮與美伊外交進展同步推升國際油價。",
+  "business_angle": "10年期公債殖利率衝上2007年以來新高，正好藉此提醒客戶，重新檢視美元利變型保單在整體資產配置中，固定收益角色的定位與比重。",
+  "caring_note": "秋分已過，明日即是中秋佳節，祝夥伴們闔家團圓、月圓人圓事事圓滿。",
+  "source_note": "資料來源：TheStreet／經濟日報／工商時報／TradingKey・美股數據為 2026/09/23 收盤，台指期夜盤至 2026/09/24 05:00，日經225為 2026/09/18 最近交易日收盤（假期休市）"
+}
