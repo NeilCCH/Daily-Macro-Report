@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/09/30",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,671", "change_pts": "12.9", "change_pct": "0.17%", "dir": "down"},
+      {"label": "NASDAQ", "value": "26,798", "change_pts": "22.8", "change_pct": "0.08%", "dir": "down"},
+      {"label": "費半 SOX", "value": "12,629", "change_pts": "163.9", "change_pct": "1.32%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "65,481", "change_pts": "396.4", "change_pct": "0.60%", "dir": "down"},
+      {"label": "台股加權", "value": "47,632", "change_pts": "392.6", "change_pct": "0.82%", "dir": "down"},
+      {"label": "台指期夜盤", "value": "48,479", "change_pts": "698", "change_pct": "1.46%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.86", "change_pts": "0.04", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "157.4", "change_pts": "0.1", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "", "dir": "flat"},
+      {"label": "USD / EUR", "value": "0.882", "change_pts": "0.000", "change_pct": "", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$89.34", "change_pts": "$3.87", "change_pct": "4.2%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$103.57", "change_pts": "$2.23", "change_pct": "2.1%", "dir": "down"},
+      {"label": "黃金", "value": "$4,180", "change_pts": "$1.7", "change_pct": "0.04%", "dir": "down"},
+      {"label": "白銀", "value": "$61.37", "change_pts": "", "change_pct": "1.1%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "5.24%", "change_pts": "0.07%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美債殖利率續創多年新高，30年期達24年高點，美股三大指數連兩日收低；費半逆勢反彈逾1%。",
+  "business_angle": "殖利率處於相對高檔，不妨藉此和客戶聊聊固定收益在整體資產配置中的角色，以及美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "中秋連假收心，願夥伴今天帶著充飽的電，穩穩踏出月底衝刺的每一步。",
+  "source_note": "資料來源：經濟日報／鉅亨網／Yahoo・數據為 2026/09/29 最近交易日"
+}
