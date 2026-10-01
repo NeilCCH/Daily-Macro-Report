@@ -1,0 +1,32 @@
+{
+  "report_date": "2026/10/02",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,666", "change_pts": "14.9", "change_pct": "0.19%", "dir": "up"},
+      {"label": "NASDAQ", "value": "26,872", "change_pts": "10.5", "change_pct": "0.04%", "dir": "up"},
+      {"label": "費半 SOX", "value": "12,829", "change_pts": "199.6", "change_pct": "1.58%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "68,957", "change_pts": "2,203.0", "change_pct": "3.30%", "dir": "up"},
+      {"label": "台股加權", "value": "48,353", "change_pts": "413.4", "change_pct": "0.86%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.92", "change_pts": "0.01", "change_pct": "0.02%", "dir": "up"},
+      {"label": "USD / JPY", "value": "157.9", "change_pts": "0.2", "change_pct": "0.13%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "0.00%", "dir": "up"},
+      {"label": "USD / EUR", "value": "0.889", "change_pts": "0.000", "change_pct": "0.02%", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$93.07", "change_pts": "$2.90", "change_pct": "3.2%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$102.56", "change_pts": "$0.94", "change_pct": "0.9%", "dir": "down"},
+      {"label": "黃金", "value": "$4,177.6", "change_pts": "$0.1", "change_pct": "0.00%", "dir": "up"},
+      {"label": "白銀", "value": "$60.50", "change_pts": "", "change_pct": "0.15%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "5.29%", "change_pts": "0.03%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美國通膨數據低於預期，但10年期殖利率一度升至5.34%、為2002年以來高點後回落；美股小漲，台股再創收盤新高。",
+  "business_angle": "「殖利率處於多年高檔，您的資產配置裡，固定收益的角色是否也值得一起檢視？」",
+  "caring_note": "寒露將至，早晚溫差變大，記得添件外套，也替自己和家人留意身體。",
+  "source_note": "資料來源：Yahoo Finance / CNBC / 鉅亨 / 中時・美股為 2026/10/01 最近交易日收盤"
+}
