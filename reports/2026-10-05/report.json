@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/10/05",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,723", "change_pts": "56.3", "change_pct": "0.73%", "dir": "up"},
+      {"label": "NASDAQ", "value": "27,191", "change_pts": "319.3", "change_pct": "1.20%", "dir": "up"},
+      {"label": "費半 SOX", "value": "13,137", "change_pts": "307.7", "change_pct": "2.40%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "68,309", "change_pts": "647.3", "change_pct": "0.94%", "dir": "down"},
+      {"label": "台股加權", "value": "48,476", "change_pts": "122.3", "change_pct": "0.25%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "49,346", "change_pts": "677", "change_pct": "1.39%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.83", "change_pts": "0.01", "change_pct": "0.04%", "dir": "up"},
+      {"label": "USD / JPY", "value": "157.8", "change_pts": "0.1", "change_pct": "0.06%", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.70", "change_pts": "0.00", "change_pct": "0.03%", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.889", "change_pts": "0.000", "change_pct": "0.04%", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$91.07", "change_pts": "$0.19", "change_pct": "0.2%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$102.65", "change_pts": "$0.07", "change_pct": "0.1%", "dir": "down"},
+      {"label": "黃金", "value": "$4,145", "change_pts": "$7.6", "change_pct": "0.18%", "dir": "up"},
+      {"label": "白銀", "value": "$61.07", "change_pts": "", "change_pct": "0.12%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "5.28%", "change_pts": "0.04%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "美國 9 月就業數據不如預期，市場對 Fed 升息的擔憂降溫，科技股領軍、Nasdaq 盤中創高；台指期夜盤大漲並創新高。",
+  "business_angle": "美債 10 年期殖利率仍在 5% 以上，這是檢視資產配置中固定收益角色的好時機，也歡迎聊聊美元利變型保單在長期規劃裡的定位。",
+  "caring_note": "寒露將至，秋意漸濃，早晚溫差大，記得替自己和家人添件外套。",
+  "source_note": "資料來源：Yahoo Finance / CNBC / 經濟日報・數據為 2026/10/02 最近交易日"
+}
