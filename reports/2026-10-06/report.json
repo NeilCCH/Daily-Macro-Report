@@ -1,0 +1,33 @@
+{
+  "report_date": "2026/10/06",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,774", "change_pts": "51.3", "change_pct": "0.66%", "dir": "up"},
+      {"label": "NASDAQ", "value": "27,477", "change_pts": "286.5", "change_pct": "1.05%", "dir": "up"},
+      {"label": "費半 SOX", "value": "13,173", "change_pts": "36.1", "change_pct": "0.27%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "69,947", "change_pts": "1,637.4", "change_pct": "2.40%", "dir": "up"},
+      {"label": "台股加權", "value": "49,712", "change_pts": "1,236.3", "change_pct": "2.55%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "50,028", "change_pts": "79.0", "change_pct": "0.16%", "dir": "up"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.77", "change_pts": "0.04", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "157.9", "change_pts": "0.1", "change_pct": "", "dir": "down"},
+      {"label": "USD / CNY", "value": "6.70", "change_pts": "0.00", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.891", "change_pts": "0.000", "change_pct": "", "dir": "down"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$89.21", "change_pts": "$1.86", "change_pct": "2.0%", "dir": "down"},
+      {"label": "Brent 原油", "value": "$100.24", "change_pts": "$2.52", "change_pct": "2.5%", "dir": "down"},
+      {"label": "黃金", "value": "$4,137.5", "change_pts": "$3.6", "change_pct": "0.09%", "dir": "down"},
+      {"label": "白銀", "value": "$61.72", "change_pts": "$1.35", "change_pct": "2.24%", "dir": "up"},
+      {"label": "美 10Y 公債", "value": "5.28%", "change_pts": "0.04%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "非農就業低於預期，市場對 Fed 再升息的疑慮降溫，那指創收盤新高；台股收 49,712 點，Fed 會議紀要即將公布。",
+  "business_angle": "美債殖利率仍在 5% 上方，不妨和客戶聊聊固定收益在整體資產配置中扮演的角色，一起檢視目前的規劃是否均衡。",
+  "caring_note": "寒露將至，早晚轉涼，記得添件外衣，也祝夥伴們今天一切順心。",
+  "source_note": "資料來源：CNBC / udn / 鉅亨・數據為 2026/10/05 最近交易日"
+}
