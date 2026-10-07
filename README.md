@@ -51,9 +51,25 @@ node scripts/shot_card.js reports/<日期>/card.html reports/<日期>/card.png r
 SHA="<含該日報告的 commit SHA>"
 BASE="https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/${SHA}/reports/<日期>"
 FIRST=$(echo "$LINE_GROUP_IDS" | cut -d',' -f1)
-LINE_GROUP_IDS="$FIRST" python scripts/push_line.py \
-  --image-url "${BASE}/card.png" --preview-url "${BASE}/card_preview.png"
+LINE_GROUP_IDS="$FIRST" /usr/bin/python3 scripts/push_line.py --report reports/<日期>/report.json \
+  --image-url "${BASE}/card.png" --preview-url "${BASE}/card_preview.png" --git-sha "${SHA}"
 ```
+
+> 這會對真實 LINE 群組發送。`push_line.py` 現在要求 `--report`（通過驗證、日期必須是今天）且圖片網址必須固定在完整 commit SHA；每個群組的結果記在 `reports/<日期>/push_state.json`，重跑只會處理未被 LINE 接受的群組。
+
+## 程式測試（離線，不呼叫真實 API／LINE）
+
+```bash
+python3 -m compileall scripts
+python3 -m unittest discover -s tests -v     # 只用標準庫 unittest / unittest.mock
+node --check scripts/shot_card.js
+git diff --check
+```
+
+- 測試全部使用假 HTTP 回應與虛構群組；沒有 `requests` 的直譯器會自動略過 2 個依賴 `requests` 的測試。
+- 報告驗證：`python3 scripts/validate_report.py reports/<日期>/report.json [--images card.png card_preview.png] [--for-push]`。`--legacy` 只用來重新渲染舊報告，**不能**和 `--for-push` 併用。
+- 推播狀態：`reports/<日期>/push_state.json` 只存群組 ID 的雜湊、retry key、狀態與 LINE request id（不含 token）。失敗恢復：重跑 Routine（或手動呼叫 `push_line.py`），已 `accepted` 的群組不會重送；`manual_review`（第一次嘗試超過 24 小時仍未確認）需人工判定。
+- 已知限制：若 Routine 在「已送出 LINE、但狀態檔尚未合併回預設分支」之前整個工作目錄遺失，下一次執行看不到狀態，會重新產圖（新 SHA、新 payload），無法被 LINE 的 retry key 擋下。這是持久化放在 git 的取捨，要完全避免需要外部儲存。
 
 ## 行事曆資料
 
