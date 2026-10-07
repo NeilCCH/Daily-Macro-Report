@@ -5,18 +5,26 @@ No Pillow / no network needed — designed to be screenshotted to PNG by
 headless Chromium (see shot_card.js). Uses the WenQuanYi Zen Hei CJK font
 that ships with the base image, so Traditional Chinese renders correctly.
 
-Usage: make_card_html.py path/to/report.json path/to/card.html
+Usage: make_card_html.py path/to/report.json path/to/card.html [--legacy]
+
+The report is validated first (validate_report.py); on any error nothing is
+written. --legacy only relaxes provenance checks so OLD reports can still be
+re-rendered; it is never accepted by the push gate.
 """
 import html
 import json
+import re
 import sys
+from pathlib import Path
+
+import validate_report
 
 RED_UP = "#d62828"     # 漲=紅（台股慣例）
 GREEN_DOWN = "#1e8c50"  # 跌=綠
 FLAT = "#788092"
 
 SECTION_TITLES = {
-    "us_market": "美股 / 費半",
+    "us_market": "美股",
     "asia_market": "亞股",
     "fx": "匯率",
     "commodity_rate": "原物料 / 利率",
@@ -29,7 +37,17 @@ def arrow(dirn: str) -> tuple[str, str]:
         return "▲", RED_UP
     if dirn == "down":
         return "▼", GREEN_DOWN
-    return "→", FLAT
+    if dirn == "flat":  # confirmed zero change only
+        return "→", FLAT
+    if dirn == "unknown":  # comparison value unavailable: show no direction
+        return "–", FLAT
+    raise ValueError(f"unsupported dir {dirn!r}")
+
+
+def section_title(key: str, items: list) -> str:
+    if key == "us_market" and any("SOX" in str(i.get("label", "")) for i in items):
+        return "美股 / 費半"
+    return SECTION_TITLES.get(key, key)
 
 
 def esc(s: str) -> str:
@@ -44,7 +62,7 @@ def render(report: dict) -> str:
     rows_html = []
     for key in SECTION_ORDER:
         items = sections.get(key) or []
-        title = SECTION_TITLES.get(key, key)
+        title = section_title(key, items)
         if key == "us_market" and closed:
             rows_html.append(
                 f'<div class="sec"><div class="sec-title">{esc(title)}</div>'
@@ -55,11 +73,11 @@ def render(report: dict) -> str:
             continue
         line_items = []
         for it in items:
-            ar, col = arrow(it.get("dir", "flat"))
+            ar, col = arrow(it["dir"])
             pts = esc(it.get("change_pts", ""))
             pct = esc(it.get("change_pct", ""))
             delta = " ".join(p for p in (pts, f"({pct})" if pct else "") if p)
-            delta_html = f'<span class="pct" style="color:{col}">{delta}</span>' if delta else ""
+            delta_html = f'<span class="pct" style="color:{col}">{delta}</span>'  # empty span keeps columns aligned
             line_items.append(
                 f'<div class="row">'
                 f'<span class="label">{esc(it.get("label",""))}</span>'
@@ -136,14 +154,24 @@ def render(report: dict) -> str:
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
-        print("usage: make_card_html.py report.json card.html", file=sys.stderr)
+    args = [a for a in sys.argv[1:] if a != "--legacy"]
+    legacy = "--legacy" in sys.argv[1:]
+    if len(args) != 2:
+        print("usage: make_card_html.py report.json card.html [--legacy]", file=sys.stderr)
         return 2
-    with open(sys.argv[1], encoding="utf-8") as f:
+    src = Path(args[0])
+    with open(src, encoding="utf-8") as f:
         report = json.load(f)
-    with open(sys.argv[2], "w", encoding="utf-8") as f:
+    dir_date = src.parent.name if re.fullmatch(r"\d{4}-\d{2}-\d{2}", src.parent.name) else None
+    issues = validate_report.validate(report, report_dir_date=dir_date, legacy=legacy)
+    for i in issues:
+        print(f"{i.level.upper():7} {i.path}: {i.msg}", file=sys.stderr)
+    if any(i.level == "error" for i in issues):
+        print("make_card_html: report failed validation; no card written", file=sys.stderr)
+        return 1
+    with open(args[1], "w", encoding="utf-8") as f:
         f.write(render(report))
-    print(f"wrote {sys.argv[2]}")
+    print(f"wrote {args[1]}")
     return 0
 
 

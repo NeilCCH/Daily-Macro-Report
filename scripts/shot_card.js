@@ -11,22 +11,35 @@ const { chromium } = require('playwright');
     process.exit(2);
   }
   const browser = await chromium.launch();
-  const page = await browser.newPage({ deviceScaleFactor: 2 });
-  await page.goto('file://' + require('path').resolve(htmlPath));
-  const card = await page.$('#card');
-  await card.screenshot({ path: outPng });
+  try {
+    const page = await browser.newPage({ deviceScaleFactor: 2 });
+    await page.goto('file://' + require('path').resolve(htmlPath));
+    await page.evaluate(() => document.fonts.ready);
+    const card = await page.$('#card');
+    if (!card) {
+      console.error('shot_card: #card element not found in ' + htmlPath);
+      process.exitCode = 1;
+      return;
+    }
+    await card.screenshot({ path: outPng });
 
-  if (previewPng) {
-    // Downscale to <=1MB by capping width at 480px for the LINE preview.
-    const box = await card.boundingBox();
-    const scale = 480 / box.width;
-    await page.setViewportSize({ width: 480, height: Math.ceil(box.height * scale) });
-    await page.addStyleTag({ content: `#card{transform:scale(${scale});transform-origin:top left;}` });
-    await page.screenshot({
-      path: previewPng,
-      clip: { x: 0, y: 0, width: 480, height: Math.ceil(box.height * scale) },
-    });
+    if (previewPng) {
+      // Layout width 480 css px; with deviceScaleFactor 2 the file is 960px wide
+      // (still well under LINE's 1 MB preview limit).
+      const box = await card.boundingBox();
+      const scale = 480 / box.width;
+      await page.setViewportSize({ width: 480, height: Math.ceil(box.height * scale) });
+      await page.addStyleTag({ content: `#card{transform:scale(${scale});transform-origin:top left;}` });
+      await page.screenshot({
+        path: previewPng,
+        clip: { x: 0, y: 0, width: 480, height: Math.ceil(box.height * scale) },
+      });
+    }
+    console.log('wrote', outPng, previewPng || '');
+  } catch (err) {
+    console.error('shot_card failed:', err.message);
+    process.exitCode = 1;
+  } finally {
+    await browser.close();
   }
-  await browser.close();
-  console.log('wrote', outPng, previewPng || '');
 })();

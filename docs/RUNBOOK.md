@@ -75,7 +75,7 @@ docs/RUNBOOK.md         本文件
 ### 3.1 GitHub repo 必須是 Public
 圖床靠 `raw.githubusercontent.com`，LINE 伺服器要抓得到圖，**repo 必須 public**。
 - repo → **Settings** → 最下方 **Danger Zone** → **Change visibility** → **Public**。
-- 驗證：瀏覽器開 `https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/<分支>/reports/<日期>/card.png`
+- 驗證：瀏覽器開 `https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/<完整 commit SHA>/reports/<日期>/card.png`
   能看到圖 = OK。
 
 ### 3.2 建立 LINE Messaging API channel 並取得 token
@@ -196,9 +196,10 @@ curl -sS -o /dev/null -w "%{http_code}\n" https://api.line.me/v2/bot/info \
 SHA="<某個含該日報告的 commit SHA>"
 BASE="https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/${SHA}/reports/<日期>"
 FIRST=$(echo "$LINE_GROUP_IDS" | cut -d',' -f1)
-LINE_GROUP_IDS="$FIRST" python scripts/push_line.py \
-  --image-url "${BASE}/card.png" --preview-url "${BASE}/card_preview.png"
+LINE_GROUP_IDS="$FIRST" /usr/bin/python3 scripts/push_line.py --report reports/<日期>/report.json \
+  --image-url "${BASE}/card.png" --preview-url "${BASE}/card_preview.png" --git-sha "${SHA}"
 ```
+（圖片網址一律固定在完整 commit SHA，不用分支名稱；狀態寫在 `reports/<日期>/push_state.json`。）
 用手機看那個群組，確認圖片正常顯示（LINE 是延遲抓圖，push API 就算圖壞也回 OK，
 所以圖片能否顯示只能人眼確認）。
 
