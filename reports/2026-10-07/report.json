@@ -1,0 +1,31 @@
+{
+  "report_date": "2026/10/07",
+  "us_market_closed": false,
+  "sections": {
+    "us_market": [
+      {"label": "S&P 500", "value": "7,819", "change_pts": "45.0", "change_pct": "0.58%", "dir": "up"},
+      {"label": "NASDAQ", "value": "27,600", "change_pts": "122.5", "change_pct": "0.45%", "dir": "up"}
+    ],
+    "asia_market": [
+      {"label": "日經 225", "value": "70,684", "change_pts": "737.1", "change_pct": "1.05%", "dir": "up"},
+      {"label": "台股加權", "value": "49,823", "change_pts": "110.5", "change_pct": "0.22%", "dir": "up"},
+      {"label": "台指期夜盤", "value": "50,051", "change_pts": "31.0", "change_pct": "0.06%", "dir": "down"}
+    ],
+    "fx": [
+      {"label": "USD / TWD", "value": "31.82", "change_pts": "0.02", "change_pct": "", "dir": "up"},
+      {"label": "USD / JPY", "value": "158.5", "change_pts": "0.3", "change_pct": "", "dir": "up"},
+      {"label": "USD / CNY", "value": "6.71", "change_pts": "0.00", "change_pct": "", "dir": "down"},
+      {"label": "USD / EUR", "value": "0.889", "change_pts": "0.001", "change_pct": "", "dir": "up"}
+    ],
+    "commodity_rate": [
+      {"label": "WTI 原油", "value": "$89.96", "change_pts": "$0.63", "change_pct": "0.7%", "dir": "up"},
+      {"label": "Brent 原油", "value": "$101.22", "change_pts": "$0.85", "change_pct": "0.8%", "dir": "up"},
+      {"label": "黃金", "value": "$4,153", "change_pts": "$16.3", "change_pct": "0.39%", "dir": "down"},
+      {"label": "美 10Y 公債", "value": "5.31%", "change_pts": "0.03%", "change_pct": "", "dir": "up"}
+    ]
+  },
+  "highlights": "AI 買盤延續（輝達回購消息帶動），S&P 500 與 NASDAQ 同創收盤新高；美 10Y 殖利率仍在 5% 上方。",
+  "business_angle": "美股近期屢創新高，您的投資型保單帳戶，這個月是不是也該安排一次定期檢視了？",
+  "caring_note": "寒露將至，早晚溫差變大，記得添件外套，也替自己留一段喘口氣的時間。",
+  "source_note": "資料來源：Twelve Data / Alpha Vantage / Oil Price API / 鉅亨 / 經濟日報・美股為 2026/10/06 收盤；費半、白銀查無可靠數據已省略"
+}
