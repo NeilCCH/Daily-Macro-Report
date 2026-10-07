@@ -16,7 +16,7 @@ GREEN_DOWN = "#1e8c50"  # 跌=綠
 FLAT = "#788092"
 
 SECTION_TITLES = {
-    "us_market": "美股 / 費半",
+    "us_market": "美股",
     "asia_market": "亞股",
     "fx": "匯率",
     "commodity_rate": "原物料 / 利率",
