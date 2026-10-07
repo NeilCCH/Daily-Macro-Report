@@ -99,6 +99,15 @@ def _dir_from_change(change) -> str | None:
     return "flat"
 
 
+def fmt_magnitude(value: float, formatter) -> str:
+    """Format |value| but never let a non-zero change render as a misleading zero."""
+    out = formatter(abs(value))
+    num = to_float(out.replace("$", "").replace("%", ""))
+    if value != 0 and num == 0:
+        return ("$" if out.startswith("$") else "") + f"{abs(value):.4f}".rstrip("0").rstrip(".")
+    return out
+
+
 def _obj(v, what: str) -> dict:
     if not isinstance(v, dict):
         raise DataIssue("schema_error", f"{what} is not an object")
@@ -225,7 +234,7 @@ def fetch_twelve_data_quote(symbol: str, label: str, fmt, now: datetime, pts_fmt
     market_date = (as_of_dt.date() if as_of_dt else as_of_date).isoformat()
     return {
         "label": label, "value": fmt(close),
-        "change_pts": pf(abs(change)) if change is not None else "",
+        "change_pts": fmt_magnitude(change, pf) if change is not None else "",
         "change_pct": f"{abs(pct):.2f}%" if pct is not None else "",
         "dir": dirn,
         "source": "Twelve Data", "source_url": f"https://api.twelvedata.com/quote?symbol={symbol}",
@@ -261,7 +270,7 @@ def fetch_oil_price(code: str, label: str, now: datetime) -> dict:
     return {
         "label": label, "value": f"${price:,.2f}",
         "change_pts": f"${abs(amount):,.2f}" if amount is not None else "",
-        "change_pct": f"{abs(pct):.1f}%" if pct is not None else "",
+        "change_pct": f"{abs(pct):.2f}%" if pct is not None else "",
         "dir": dirn,
         "source": "Oil Price API", "source_url": f"https://api.oilpriceapi.com/v1/prices/latest?by_code={code}",
         "as_of": as_of, "market_date": market_date, "fetched_at": _fetched_at(now), "quote_kind": "realtime",

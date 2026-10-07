@@ -55,7 +55,7 @@ git show "origin/${DEFAULT_BRANCH}:reports/${DATE}/push_state.json" 2>/dev/null 
 ### 步驟 1a：先跑 API 腳本，拿到的欄位不用再搜尋
 
 ```bash
-python3 scripts/fetch_market_data.py --diagnostics-file "reports/<YYYY-MM-DD>/fetch_diagnostics.json"
+/usr/bin/python3 scripts/fetch_market_data.py --diagnostics-file "reports/<YYYY-MM-DD>/fetch_diagnostics.json"
 ```
 
 > 若直譯器缺 `requests`，腳本不會崩潰，而是對每一項輸出 `missing_dependency` 診斷；此時改用 `/usr/bin/python3` 重跑（它有 `requests`），仍不行才整批改走 WebSearch。
@@ -222,7 +222,13 @@ WebSearch 常會回傳過時或彼此矛盾的數字（例如把好幾天前的�
 
 ## 步驟 4：寫出 `line_text.txt`（LINE 文字訊息）
 
-存到 `reports/<YYYY-MM-DD>/line_text.txt`，格式（方便直接貼上 LINE，整則 300 字內）：
+**用腳本由 `report.json` 產生，不要手打**（避免與卡片數字不一致、符號寫錯）：
+
+```bash
+python3 scripts/make_line_text.py "reports/<YYYY-MM-DD>/report.json" "reports/<YYYY-MM-DD>/line_text.txt"
+```
+
+存到 `reports/<YYYY-MM-DD>/line_text.txt`，格式（方便直接貼上 LINE）：
 
 ```
 【早安報報｜每日總經速報】2026/07/02

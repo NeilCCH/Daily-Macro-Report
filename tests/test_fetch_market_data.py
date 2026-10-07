@@ -212,6 +212,19 @@ class Fetch(unittest.TestCase):
                 fm._http_get("https://x.test")
             self.assertEqual(cm.exception.status, "schema_error")
 
+    def test_tiny_change_never_renders_as_zero(self):
+        result, _ = run(td_resp=td(close="6.7041", change="-0.0041", pct="-0.06"))
+        cny = result["fx"][2]
+        self.assertEqual(cny["dir"], "down")
+        self.assertEqual(cny["change_pts"], "0.0041")
+        self.assertEqual(fm.fmt_magnitude(0.004, lambda v: f"${v:,.1f}"), "$0.004")
+        self.assertEqual(fm.fmt_magnitude(0, lambda v: f"{v:.2f}"), "0.00")
+        self.assertEqual(fm.fmt_magnitude(-0.5, lambda v: f"{v:.2f}"), "0.50")
+
+    def test_oil_percent_uses_two_decimals_like_other_rows(self):
+        result, _ = run(oil_resp=oil(changes={"24h": {"amount": 1.0, "percent": 1.234}}))
+        self.assertEqual(next(r for r in result["commodity_rate"] if r["label"] == "WTI 原油")["change_pct"], "1.23%")
+
     def test_source_url_has_no_credentials(self):
         result, _ = run()
         for rows in result.values():
