@@ -74,11 +74,28 @@ def _date_or_none(s) -> date | None:
         return None
 
 
+def _tw_holiday(d: date) -> bool:
+    try:
+        cal = json.loads((Path(__file__).resolve().parent.parent / "data" / f"taiwan_calendar_{d.year}.json").read_text(encoding="utf-8"))
+        return any(x.get("date") == d.strftime("%Y%m%d") and x.get("isHoliday") for x in cal)
+    except (OSError, ValueError):
+        return False
+
+
 def expected_market_dates(section: str, kind: str | None, report_day: date) -> set[date]:
     prev = qf.prev_weekday(report_day)
     if section == "us_market":
         return {prev}
-    return {report_day, prev}
+    out = {report_day, prev}
+    if section == "asia_market":
+        # 台灣連假／補假期間休市：上一個「台灣交易日」也算有效
+        d = report_day
+        for _ in range(14):
+            d -= timedelta(days=1)
+            if d.weekday() < 5 and not _tw_holiday(d):
+                out.add(d)
+                break
+    return out
 
 
 def validate(report, *, report_dir_date: str | None = None, today: date | None = None,
