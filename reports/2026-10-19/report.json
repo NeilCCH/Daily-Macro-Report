@@ -1,0 +1,207 @@
+{
+ "report_date": "2026/10/19",
+ "us_market_closed": false,
+ "omitted": [],
+ "sections": {
+  "us_market": [
+   {
+    "label": "S&P 500",
+    "value": "7,659.44",
+    "change_pts": "",
+    "change_pct": "1.09%",
+    "dir": "down",
+    "source": "新頭殼",
+    "source_url": "https://newtalk.tw/news/view/2026-10-17/1066026",
+    "as_of": "2026-10-16T16:00:00-04:00",
+    "market_date": "2026-10-16",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "NASDAQ",
+    "value": "26,140.04",
+    "change_pts": "",
+    "change_pct": "2.14%",
+    "dir": "down",
+    "source": "新頭殼",
+    "source_url": "https://newtalk.tw/news/view/2026-10-17/1066026",
+    "as_of": "2026-10-16T16:00:00-04:00",
+    "market_date": "2026-10-16",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "費半 SOX",
+    "value": "11,137.29",
+    "change_pts": "443",
+    "change_pct": "3.83%",
+    "dir": "down",
+    "source": "新頭殼",
+    "source_url": "https://newtalk.tw/news/view/2026-10-17/1066026",
+    "as_of": "2026-10-16T16:00:00-04:00",
+    "market_date": "2026-10-16",
+    "quote_kind": "daily_close"
+   }
+  ],
+  "asia_market": [
+   {
+    "label": "日經 225",
+    "value": "65,324.29",
+    "change_pts": "898.34",
+    "change_pct": "1.39%",
+    "dir": "up",
+    "source": "MoneyDJ／中時",
+    "source_url": "https://www.chinatimes.com/realtimenews/20261016003628-260410",
+    "as_of": "2026-10-16T15:30:00+09:00",
+    "market_date": "2026-10-16",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "台股加權",
+    "value": "47,111.26",
+    "change_pts": "141.39",
+    "change_pct": "0.30%",
+    "dir": "up",
+    "source": "ETtoday",
+    "source_url": "https://finance.ettoday.net/news/3255768",
+    "as_of": "2026-10-16T13:30:00+08:00",
+    "market_date": "2026-10-16",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "台指期夜盤",
+    "value": "46,140",
+    "change_pts": "1,144",
+    "change_pct": "2.42%",
+    "dir": "down",
+    "source": "自由財經",
+    "source_url": "https://ec.ltn.com.tw/article/breakingnews/5609189",
+    "as_of": "2026-10-17T05:00:00+08:00",
+    "market_date": "2026-10-16",
+    "quote_kind": "futures_night"
+   }
+  ],
+  "fx": [
+   {
+    "label": "USD / TWD",
+    "value": "32.40",
+    "change_pts": "0.05",
+    "change_pct": "0.16%",
+    "dir": "down",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/TWD",
+    "as_of": "2026-10-18T23:44:00Z",
+    "market_date": "2026-10-19",
+    "fetched_at": "2026-10-18T23:44:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / JPY",
+    "value": "157.8",
+    "change_pts": "0.2",
+    "change_pct": "0.13%",
+    "dir": "down",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/JPY",
+    "as_of": "2026-10-18T23:44:00Z",
+    "market_date": "2026-10-19",
+    "fetched_at": "2026-10-18T23:44:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / CNY",
+    "value": "6.69",
+    "change_pts": "0.01",
+    "change_pct": "0.14%",
+    "dir": "down",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/CNY",
+    "as_of": "2026-10-18T23:44:00Z",
+    "market_date": "2026-10-19",
+    "fetched_at": "2026-10-18T23:44:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / EUR",
+    "value": "0.891",
+    "change_pts": "0.003",
+    "change_pct": "0.35%",
+    "dir": "down",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/EUR",
+    "as_of": "2026-10-18T23:44:00Z",
+    "market_date": "2026-10-19",
+    "fetched_at": "2026-10-18T23:44:58Z",
+    "quote_kind": "realtime"
+   }
+  ],
+  "commodity_rate": [
+   {
+    "label": "WTI 原油",
+    "value": "$98.23",
+    "change_pts": "$3.61",
+    "change_pct": "3.54%",
+    "dir": "down",
+    "source": "Oil Price API",
+    "source_url": "https://api.oilpriceapi.com/v1/prices/latest?by_code=WTI_USD",
+    "as_of": "2026-10-18T22:56:20Z",
+    "market_date": "2026-10-19",
+    "fetched_at": "2026-10-18T23:44:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "Brent 原油",
+    "value": "$108.80",
+    "change_pts": "$0.89",
+    "change_pct": "0.81%",
+    "dir": "down",
+    "source": "Oil Price API",
+    "source_url": "https://api.oilpriceapi.com/v1/prices/latest?by_code=BRENT_CRUDE_USD",
+    "as_of": "2026-10-18T22:56:21Z",
+    "market_date": "2026-10-19",
+    "fetched_at": "2026-10-18T23:44:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "黃金",
+    "value": "$4,183.0",
+    "change_pts": "$17.5",
+    "change_pct": "0.42%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=XAU/USD",
+    "as_of": "2026-10-18T23:45:00Z",
+    "market_date": "2026-10-19",
+    "fetched_at": "2026-10-18T23:44:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "白銀",
+    "value": "$57.31",
+    "change_pts": "",
+    "change_pct": "0.5%",
+    "dir": "down",
+    "source": "MoneyDJ",
+    "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=3e5db306-afd1-4433-847e-05f26f11f4c1",
+    "as_of": "2026-10-16T16:00:00-04:00",
+    "market_date": "2026-10-16",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "美 10Y 公債",
+    "value": "5.10%",
+    "change_pts": "0.09%",
+    "change_pct": "",
+    "dir": "down",
+    "source": "Alpha Vantage",
+    "source_url": "https://www.alphavantage.co/query?function=TREASURY_YIELD&maturity=10year",
+    "as_of": "2026-10-15",
+    "market_date": "2026-10-15",
+    "fetched_at": "2026-10-18T23:44:58Z",
+    "quote_kind": "daily_yield"
+   }
+  ]
+ },
+ "highlights": "美股週五全面收跌，費半連 8 黑、單週跌逾 11%；AI 獲利疑慮、油價重返百元上方，加上 Fed 升息路徑，壓抑市場風險情緒。",
+ "business_angle": "美債殖利率仍在 5% 上下，不妨一起聊聊固定收益在長期配置中的角色，以及美元利變型保單的定位。",
+ "caring_note": "霜降將至，早晚溫差大，記得多添件外套，照顧好自己與家人。",
+ "source_note": "資料來源：新頭殼／MoneyDJ／ETtoday／自由財經／Twelve Data・數據為 2026/10/16 最近交易日"
+}
