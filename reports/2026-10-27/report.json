@@ -1,0 +1,183 @@
+{
+ "report_date": "2026/10/27",
+ "us_market_closed": false,
+ "omitted": [
+  {
+   "label": "台股加權",
+   "reason": "查無 10/26 收盤可靠報導"
+  },
+  {
+   "label": "台指期夜盤",
+   "reason": "查無當日夜盤收盤報導"
+  },
+  {
+   "label": "白銀",
+   "reason": "搜尋僅見盤中報價，查無可靠收盤"
+  }
+ ],
+ "sections": {
+  "us_market": [
+   {
+    "label": "S&P 500",
+    "value": "7,677",
+    "change_pts": "",
+    "change_pct": "0.70%",
+    "dir": "up",
+    "source": "富途／自由財經",
+    "source_url": "https://news.futunn.com/en/post/1002332779/us-stocks-close-anthropic-s-ipo-rekindles-ai-optimism-with",
+    "as_of": "2026-10-26T16:00:00-04:00",
+    "market_date": "2026-10-26",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "NASDAQ",
+    "value": "26,169",
+    "change_pts": "214.0",
+    "change_pct": "0.82%",
+    "dir": "up",
+    "source": "UDN／投資實驗室",
+    "source_url": "https://money.udn.com/money/story/123398/9838717",
+    "as_of": "2026-10-26T16:00:00-04:00",
+    "market_date": "2026-10-26",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "費半 SOX",
+    "value": "11,083",
+    "change_pts": "304.0",
+    "change_pct": "2.82%",
+    "dir": "up",
+    "source": "UDN 經濟日報",
+    "source_url": "https://money.udn.com/money/story/123398/9838717",
+    "as_of": "2026-10-26T16:00:00-04:00",
+    "market_date": "2026-10-26",
+    "quote_kind": "daily_close"
+   }
+  ],
+  "asia_market": [
+   {
+    "label": "日經 225",
+    "value": "62,190",
+    "change_pts": "503.5",
+    "change_pct": "0.80%",
+    "dir": "down",
+    "source": "財經新聞 Zaikei／共同通信",
+    "source_url": "https://www.zaikei.co.jp/article/20261026/874936.html",
+    "as_of": "2026-10-26T15:30:00+09:00",
+    "market_date": "2026-10-26",
+    "quote_kind": "daily_close"
+   }
+  ],
+  "fx": [
+   {
+    "label": "USD / TWD",
+    "value": "32.55",
+    "change_pts": "0.02",
+    "change_pct": "",
+    "dir": "down",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/TWD",
+    "as_of": "2026-10-26T23:43:00Z",
+    "market_date": "2026-10-26",
+    "fetched_at": "2026-10-26T23:43:09Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / JPY",
+    "value": "157.6",
+    "change_pts": "0.05",
+    "change_pct": "",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/JPY",
+    "as_of": "2026-10-26T23:43:00Z",
+    "market_date": "2026-10-26",
+    "fetched_at": "2026-10-26T23:43:09Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / CNY",
+    "value": "6.67",
+    "change_pts": "0.00",
+    "change_pct": "",
+    "dir": "flat",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/CNY",
+    "as_of": "2026-10-26T23:43:00Z",
+    "market_date": "2026-10-26",
+    "fetched_at": "2026-10-26T23:43:09Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / EUR",
+    "value": "0.895",
+    "change_pts": "0.0004",
+    "change_pct": "",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/EUR",
+    "as_of": "2026-10-26T23:43:00Z",
+    "market_date": "2026-10-26",
+    "fetched_at": "2026-10-26T23:43:09Z",
+    "quote_kind": "realtime"
+   }
+  ],
+  "commodity_rate": [
+   {
+    "label": "WTI 原油",
+    "value": "$101.41",
+    "change_pts": "$0.81",
+    "change_pct": "0.79%",
+    "dir": "down",
+    "source": "Oil Price API",
+    "source_url": "https://api.oilpriceapi.com/v1/prices/latest?by_code=WTI_USD",
+    "as_of": "2026-10-26T23:41:30Z",
+    "market_date": "2026-10-26",
+    "fetched_at": "2026-10-26T23:43:09Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "Brent 原油",
+    "value": "$115.32",
+    "change_pts": "$0.54",
+    "change_pct": "0.47%",
+    "dir": "down",
+    "source": "Oil Price API",
+    "source_url": "https://api.oilpriceapi.com/v1/prices/latest?by_code=BRENT_CRUDE_USD",
+    "as_of": "2026-10-26T23:31:28Z",
+    "market_date": "2026-10-26",
+    "fetched_at": "2026-10-26T23:43:09Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "黃金",
+    "value": "$4,009.7",
+    "change_pts": "$3.7",
+    "change_pct": "0.09%",
+    "dir": "down",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=XAU/USD",
+    "as_of": "2026-10-26T23:43:00Z",
+    "market_date": "2026-10-26",
+    "fetched_at": "2026-10-26T23:43:09Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "美 10Y 公債",
+    "value": "4.99%",
+    "change_pts": "",
+    "change_pct": "",
+    "dir": "unknown",
+    "source": "CNBC",
+    "source_url": "https://www.cnbc.com/2026/10/26/us-treasury-yields-investors-feds-interest-rate-decision-.html",
+    "as_of": "2026-10-26T16:00:00-04:00",
+    "market_date": "2026-10-26",
+    "quote_kind": "daily_yield"
+   }
+  ]
+ },
+ "highlights": "Anthropic 遞交 IPO 申請，AI 類股回溫，費半收漲約 2.8%；Fed 週三公布利率決策，市場預期維持 3.75%–4% 不變。",
+ "business_angle": "美債 10 年期殖利率仍在 5% 附近，不妨和客戶聊聊固定收益在長期資產配置中的角色，以及美元利變型保單的定位。",
+ "caring_note": "霜降過後早晚轉涼，記得為自己與家人添件外套。",
+ "source_note": "資料來源：UDN／CNBC／Zaikei／Twelve Data／Oil Price API・數據為 2026/10/26 最近交易日"
+}

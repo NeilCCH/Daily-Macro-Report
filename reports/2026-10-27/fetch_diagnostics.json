@@ -1,0 +1,10 @@
+{
+  "fetched_at": "2026-10-26T23:41:29Z",
+  "diagnostics": [
+    {
+      "item": "美 10Y 公債",
+      "status": "rate_limited",
+      "detail": "Alpha Vantage returned a usage notice"
+    }
+  ]
+}
