@@ -1,0 +1,20 @@
+{
+  "fetched_at": "2026-10-27T23:43:29Z",
+  "diagnostics": [
+    {
+      "item": "USD / EUR",
+      "status": "rate_limited",
+      "detail": "HTTP 429"
+    },
+    {
+      "item": "黃金",
+      "status": "rate_limited",
+      "detail": "HTTP 429"
+    },
+    {
+      "item": "美 10Y 公債",
+      "status": "rate_limited",
+      "detail": "Alpha Vantage returned a usage notice"
+    }
+  ]
+}

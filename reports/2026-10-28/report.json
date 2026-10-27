@@ -1,0 +1,206 @@
+{
+ "report_date": "2026/10/28",
+ "us_market_closed": false,
+ "sections": {
+  "us_market": [
+   {
+    "label": "S&P 500",
+    "value": "7,723",
+    "change_pts": "45.83",
+    "change_pct": "0.60%",
+    "dir": "up",
+    "source": "FX168／新華社",
+    "source_url": "https://www.fx168news.com/express/fastnews/1456420",
+    "as_of": "2026-10-27T16:00:00-04:00",
+    "market_date": "2026-10-27",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "NASDAQ",
+    "value": "26,478",
+    "change_pts": "308.43",
+    "change_pct": "1.18%",
+    "dir": "up",
+    "source": "FX168／新華社",
+    "source_url": "https://www.fx168news.com/express/fastnews/1456420",
+    "as_of": "2026-10-27T16:00:00-04:00",
+    "market_date": "2026-10-27",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "費半 SOX",
+    "value": "11,483",
+    "change_pts": "399.04",
+    "change_pct": "3.60%",
+    "dir": "up",
+    "source": "TradingKey",
+    "source_url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262243619-us-stock-market-close-nasdaq-rise-chips-rally-coreweave-tradingkey",
+    "as_of": "2026-10-27T16:00:00-04:00",
+    "market_date": "2026-10-27",
+    "quote_kind": "daily_close"
+   }
+  ],
+  "asia_market": [
+   {
+    "label": "日經 225",
+    "value": "63,268",
+    "change_pts": "1,079",
+    "change_pct": "1.73%",
+    "dir": "up",
+    "source": "Jiji Press／Yahoo Finance",
+    "source_url": "https://finance.yahoo.com/quote/%5EN225/",
+    "as_of": "2026-10-27T15:30:00+09:00",
+    "market_date": "2026-10-27",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "台股加權",
+    "value": "46,096",
+    "change_pts": "54.8",
+    "change_pct": "0.12%",
+    "dir": "up",
+    "source": "中央社／ETtoday",
+    "source_url": "https://finance.ettoday.net/news/3261575",
+    "as_of": "2026-10-27T13:30:00+08:00",
+    "market_date": "2026-10-27",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "台指期夜盤",
+    "value": "46,880",
+    "change_pts": "774",
+    "change_pct": "1.68%",
+    "dir": "up",
+    "source": "經濟日報",
+    "source_url": "https://money.udn.com/money/story/11112/9841076",
+    "as_of": "2026-10-28T05:00:00+08:00",
+    "market_date": "2026-10-28",
+    "quote_kind": "futures_night"
+   }
+  ],
+  "fx": [
+   {
+    "label": "USD / TWD",
+    "value": "32.48",
+    "change_pts": "0.06",
+    "change_pct": "0.19%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/TWD",
+    "as_of": "2026-10-27T23:41:00Z",
+    "market_date": "2026-10-27",
+    "fetched_at": "2026-10-27T23:41:51Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / JPY",
+    "value": "158.0",
+    "change_pts": "0.1",
+    "change_pct": "0.04%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/JPY",
+    "as_of": "2026-10-27T23:41:00Z",
+    "market_date": "2026-10-27",
+    "fetched_at": "2026-10-27T23:41:51Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / CNY",
+    "value": "6.67",
+    "change_pts": "0.0007",
+    "change_pct": "0.01%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/CNY",
+    "as_of": "2026-10-27T23:41:00Z",
+    "market_date": "2026-10-27",
+    "fetched_at": "2026-10-27T23:41:51Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / EUR",
+    "value": "0.899",
+    "change_pts": "0.001",
+    "change_pct": "0.08%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/EUR",
+    "as_of": "2026-10-27T23:41:00Z",
+    "market_date": "2026-10-27",
+    "fetched_at": "2026-10-27T23:41:51Z",
+    "quote_kind": "realtime"
+   }
+  ],
+  "commodity_rate": [
+   {
+    "label": "WTI 原油",
+    "value": "$100.00",
+    "change_pts": "$1.39",
+    "change_pct": "1.37%",
+    "dir": "down",
+    "source": "Oil Price API",
+    "source_url": "https://api.oilpriceapi.com/v1/prices/latest?by_code=WTI_USD",
+    "as_of": "2026-10-27T23:41:16Z",
+    "market_date": "2026-10-27",
+    "fetched_at": "2026-10-27T23:41:51Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "Brent 原油",
+    "value": "$113.86",
+    "change_pts": "$1.35",
+    "change_pct": "1.17%",
+    "dir": "down",
+    "source": "Oil Price API",
+    "source_url": "https://api.oilpriceapi.com/v1/prices/latest?by_code=BRENT_CRUDE_USD",
+    "as_of": "2026-10-27T23:31:15Z",
+    "market_date": "2026-10-27",
+    "fetched_at": "2026-10-27T23:41:51Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "黃金",
+    "value": "$4,058.3",
+    "change_pts": "$4.0",
+    "change_pct": "0.10%",
+    "dir": "down",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=XAU/USD",
+    "as_of": "2026-10-27T23:41:00Z",
+    "market_date": "2026-10-27",
+    "fetched_at": "2026-10-27T23:41:51Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "白銀",
+    "value": "$54.15",
+    "change_pts": "$0.19",
+    "change_pct": "0.35%",
+    "dir": "up",
+    "source": "Trading Economics",
+    "source_url": "https://tradingeconomics.com/commodity/silver",
+    "as_of": "2026-10-27T23:00:00Z",
+    "market_date": "2026-10-27",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "美 10Y 公債",
+    "value": "5.00%",
+    "change_pts": "0.00%",
+    "change_pct": "",
+    "dir": "flat",
+    "source": "Alpha Vantage",
+    "source_url": "https://www.alphavantage.co/query?function=TREASURY_YIELD&maturity=10year",
+    "as_of": "2026-10-26",
+    "market_date": "2026-10-26",
+    "fetched_at": "2026-10-27T23:41:51Z",
+    "quote_kind": "daily_yield"
+   }
+  ]
+ },
+ "highlights": "Fed 兩天會議週二起跑，市場預期利率維持不變；Anthropic 申請 IPO 帶動晶片股走強，費半大漲約 3.6%，油價回落。",
+ "business_angle": "美債 10 年期殖利率仍在 5% 上下，不妨和客戶聊聊固定收益在資產配置中的角色，以及美元利變型保單的定位。",
+ "caring_note": "霜降時節早晚溫差大，記得替自己與家人添件外套。",
+ "source_note": "資料來源：FX168／TradingKey／中央社／經濟日報／Twelve Data／Oil Price API・數據為 2026/10/27 最近交易日"
+}
