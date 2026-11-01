@@ -1,0 +1,175 @@
+{
+ "report_date": "2026/11/02",
+ "us_market_closed": false,
+ "sections": {
+  "us_market": [
+   {
+    "label": "S&P 500",
+    "value": "7,580",
+    "change_pts": "140.3",
+    "change_pct": "1.82%",
+    "dir": "down",
+    "source": "FX168",
+    "source_url": "https://www.fx168news.com/express/fastnews/1459742",
+    "as_of": "2026-10-30T16:00:00-04:00",
+    "market_date": "2026-10-30",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "NASDAQ",
+    "value": "25,437",
+    "change_pts": "747.7",
+    "change_pct": "2.86%",
+    "dir": "down",
+    "source": "FX168",
+    "source_url": "https://www.fx168news.com/express/fastnews/1459742",
+    "as_of": "2026-10-30T16:00:00-04:00",
+    "market_date": "2026-10-30",
+    "quote_kind": "daily_close"
+   },
+   {
+    "label": "費半 SOX",
+    "value": "10,689",
+    "change_pts": "830",
+    "change_pct": "7.20%",
+    "dir": "down",
+    "source": "Yahoo奇摩股市/中天新聞",
+    "source_url": "https://ctinews.com/news/items/9pWzXJpjxv",
+    "as_of": "2026-10-30T16:00:00-04:00",
+    "market_date": "2026-10-30",
+    "quote_kind": "daily_close"
+   }
+  ],
+  "asia_market": [
+   {
+    "label": "台股加權",
+    "value": "45,212",
+    "change_pts": "1,156.5",
+    "change_pct": "2.49%",
+    "dir": "down",
+    "source": "聯合新聞網",
+    "source_url": "https://money.udn.com/money/story/5607/9847003",
+    "as_of": "2026-10-30T13:30:00+08:00",
+    "market_date": "2026-10-30",
+    "quote_kind": "daily_close"
+   }
+  ],
+  "fx": [
+   {
+    "label": "USD / TWD",
+    "value": "32.63",
+    "change_pts": "0.02",
+    "change_pct": "0.06%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/TWD",
+    "as_of": "2026-11-01T23:41:00Z",
+    "market_date": "2026-11-02",
+    "fetched_at": "2026-11-01T23:41:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / JPY",
+    "value": "157.7",
+    "change_pts": "0.1",
+    "change_pct": "0.07%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/JPY",
+    "as_of": "2026-11-01T23:41:00Z",
+    "market_date": "2026-11-02",
+    "fetched_at": "2026-11-01T23:41:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / CNY",
+    "value": "6.66",
+    "change_pts": "0.0016",
+    "change_pct": "0.02%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/CNY",
+    "as_of": "2026-11-01T23:41:00Z",
+    "market_date": "2026-11-02",
+    "fetched_at": "2026-11-01T23:41:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "USD / EUR",
+    "value": "0.896",
+    "change_pts": "0.0001",
+    "change_pct": "0.01%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=USD/EUR",
+    "as_of": "2026-11-01T23:41:00Z",
+    "market_date": "2026-11-02",
+    "fetched_at": "2026-11-01T23:41:58Z",
+    "quote_kind": "realtime"
+   }
+  ],
+  "commodity_rate": [
+   {
+    "label": "WTI 原油",
+    "value": "$102.37",
+    "change_pts": "$0.52",
+    "change_pct": "0.51%",
+    "dir": "down",
+    "source": "Oil Price API",
+    "source_url": "https://api.oilpriceapi.com/v1/prices/latest?by_code=WTI_USD",
+    "as_of": "2026-11-01T23:41:08Z",
+    "market_date": "2026-11-02",
+    "fetched_at": "2026-11-01T23:41:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "Brent 原油",
+    "value": "$111.66",
+    "change_pts": "$1.74",
+    "change_pct": "1.53%",
+    "dir": "down",
+    "source": "Oil Price API",
+    "source_url": "https://api.oilpriceapi.com/v1/prices/latest?by_code=BRENT_CRUDE_USD",
+    "as_of": "2026-11-01T23:41:14Z",
+    "market_date": "2026-11-02",
+    "fetched_at": "2026-11-01T23:41:58Z",
+    "quote_kind": "realtime"
+   },
+   {
+    "label": "黃金",
+    "value": "$3,900",
+    "change_pts": "$24.4",
+    "change_pct": "0.63%",
+    "dir": "up",
+    "source": "Twelve Data",
+    "source_url": "https://api.twelvedata.com/quote?symbol=XAU/USD",
+    "as_of": "2026-11-01T23:41:00Z",
+    "market_date": "2026-11-02",
+    "fetched_at": "2026-11-01T23:41:58Z",
+    "quote_kind": "realtime"
+   }
+  ]
+ },
+ "highlights": "英特爾財測不如預期暴跌近三成、亞馬遜財報引發 AI 投資回報疑慮，費半單日重挫逾 7%，那指跌 2.86%；台股上週五同步收跌。",
+ "business_angle": "油價仍在高檔、黃金走揚，市場不確定感升溫，不妨藉此和客戶聊聊：家庭風險保障的額度與缺口，是否仍符合現階段的生活所需？",
+ "caring_note": "十一月到了，立冬將近、天氣漸涼，記得添件外套，也別忘了關心身邊的人。",
+ "source_note": "資料來源：FX168／聯合新聞網／Twelve Data／Oil Price API・美股為 2026/10/30 最近交易日",
+ "omitted": [
+  {
+   "label": "日經 225",
+   "reason": "兩次搜尋查無 10/30 可靠收盤"
+  },
+  {
+   "label": "台指期夜盤",
+   "reason": "多次搜尋查無當日夜盤收盤"
+  },
+  {
+   "label": "白銀",
+   "reason": "搜尋查無可靠最新報價"
+  },
+  {
+   "label": "美 10Y 公債",
+   "reason": "API 額度限流，搜尋查無 10/30 收盤"
+  }
+ ]
+}
