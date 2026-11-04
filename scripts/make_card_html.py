@@ -149,7 +149,7 @@ def render(report: dict) -> str:
     <div class="hdr-right"><div class="hdr-date">{date}</div><div class="hdr-hi">夥伴早安 ☀</div></div>
   </div>
   <div class="body">{''.join(rows_html)}{boxes_html}</div>
-  <div class="foot">{foot}<br>本訊息僅供內部參考，不構成投資建議。</div>
+  <div class="foot">{foot}<br>數據若有出入，以 Yahoo 奇摩股市／Yahoo Finance 為準。<br>本訊息僅供內部參考，不構成投資建議。</div>
 </div></body></html>"""
 
 
