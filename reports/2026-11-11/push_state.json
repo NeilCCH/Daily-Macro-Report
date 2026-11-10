@@ -1,0 +1,20 @@
+{
+  "image_url": "https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/c4cabaa3f1aaa87505a21fabafc8f0d92f57861a/reports/2026-11-11/card.png",
+  "payload_hash": "81b1cb1487ccbd30",
+  "preview_url": "https://raw.githubusercontent.com/NeilCCH/Daily-Macro-Report/c4cabaa3f1aaa87505a21fabafc8f0d92f57861a/reports/2026-11-11/card_preview.png",
+  "report_date": "2026-11-11",
+  "targets": {
+    "57ed86dfb807": {
+      "accepted_at": "2026-11-10T23:42:26Z",
+      "attempts": 1,
+      "first_attempt_at": "2026-11-10T23:42:25Z",
+      "last_error_class": "",
+      "last_http_status": 200,
+      "name": "南區 單位主管群組",
+      "payload_hash": "81b1cb1487ccbd30",
+      "request_id": "67549c32-2153-4b63-8f95-f810f2dcaf55",
+      "retry_key": "05420cb4-089f-5448-89d9-15d42c79f499",
+      "status": "accepted"
+    }
+  }
+}
